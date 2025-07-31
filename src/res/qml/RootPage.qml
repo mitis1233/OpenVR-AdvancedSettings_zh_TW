@@ -7,6 +7,7 @@ import "common"
 import "utilities_page"
 import "audio_page"
 import "video_page"
+import "video_page/brightness"
 
 MyStackViewPage {
     id: rootPage
@@ -181,6 +182,12 @@ MyStackViewPage {
                    Layout.fillWidth: true
                    Layout.leftMargin: 80
                    spacing: 9
+
+                   BrightnessGroupBox {
+                       id: brightnessGroupBox
+                       Layout.fillWidth: true
+                       visible: !(VideoTabController.isOverlayMethodActive)
+                   }
 
                    RowLayout {
                        spacing: 18
