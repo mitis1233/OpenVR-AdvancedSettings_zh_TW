@@ -11,7 +11,7 @@ import "view_ratchet"
 
 MyStackViewPage {
     width: 1200
-    headerText: "Rotation Settings"
+    headerText: "旋轉設定"
     content: ColumnLayout {
         spacing: 8
         AutoTurnGroupBox{

@@ -7,7 +7,7 @@ import "../../common"
 RowLayout {
     id: audioMirrorNameCombo
     // Text shown to the left.
-    property string deviceText: "Mirror Device: "
+    property string deviceText: "鏡像裝置： "
 
     // The entries in the dropdown box.
     property alias devices: selector.model

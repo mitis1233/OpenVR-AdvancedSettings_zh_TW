@@ -6,7 +6,7 @@ import ovras.advsettings 1.0
 import "common"
 
 MyStackViewPage {
-    headerText: "Application Settings"
+    headerText: "應用程式設定"
 
     content: ScrollView{
         ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
@@ -20,7 +20,7 @@ MyStackViewPage {
 
             RowLayout{
                 MyText {
-                    text: "Application Volume:"
+                    text: "應用程式音量："
                     Layout.rightMargin: 12
                 }
 
@@ -87,14 +87,14 @@ MyStackViewPage {
 
             MyToggleButton {
                 id: settingsAutoStartToggle
-                text: "Autostart"
+                text: "開機時自動啟動"
                 onCheckedChanged: {
                     SettingsTabController.setAutoStartEnabled(checked, false)
                 }
             }
             MyToggleButton {
                 id: desktopModeToggleButton
-                text: "Desktop Mode (restart required)"
+                text: "桌面模式 (需要重新啟動)"
                 onCheckedChanged: {
                     OverlayController.setDesktopModeToggle(this.checked, false)
                 }
@@ -102,7 +102,7 @@ MyStackViewPage {
 
             MyToggleButton {
                 id: universeCenteredRotationToggle
-                text: "Universe-Centered Rotation (Disables HMD Centering)"
+                text: "以宇宙為中心的旋轉 (停用頭戴顯示器置中)"
                 onCheckedChanged: {
                     MoveCenterTabController.setUniverseCenteredRotation(checked, true)
                 }
@@ -111,7 +111,7 @@ MyStackViewPage {
 
             MyToggleButton {
                 id: disableCrashRecoveryToggle
-                text: "Enable Automatic Crash Recovery of Chaperone Config"
+                text: "啟用引導系統設定檔的自動崩潰恢復"
                 onCheckedChanged: {
                     OverlayController.setCrashRecoveryDisabled(!checked, true)
                 }
@@ -119,14 +119,14 @@ MyStackViewPage {
 
             MyToggleButton {
                 id: disableVersionCheckToggle
-                text: "Disable Notification of Newer Version Availability"
+                text: "停用新版本可用性通知"
                 onCheckedChanged: {
                     OverlayController.setDisableVersionCheck(checked, true)
                 }
             }
             MyToggleButton {
                 id: nativeChaperoneToggleButton
-                text: "Force Use SteamVR Chaperone (experimental + SteamVR restart required)"
+                text: "強制使用 SteamVR 引導系統 (實驗性功能，需重啟 SteamVR)"
                 onCheckedChanged: {
                     SettingsTabController.setNativeChaperoneToggle(this.checked, true)
                 }
@@ -136,7 +136,7 @@ MyStackViewPage {
 
                 MyToggleButton {
                     id: autoApplyChaperoneToggleButton
-                    text: "Auto Apply Chaperone Profile:"
+                    text: "自動套用引導系統設定檔："
                     onCheckedChanged: {
                         OverlayController.setAutoApplyChaperoneEnabled(this.checked, true)
                     }
@@ -163,7 +163,7 @@ MyStackViewPage {
                     id: summaryChaperoneProfileApplyButton
                     enabled: false
                     Layout.preferredWidth: 150
-                    text: "Select"
+                    text: "選擇"
                     onClicked: {
                         if (summaryChaperoneProfileComboBox.currentIndex > 0) {
                             ChaperoneTabController.applyChaperoneProfile(summaryChaperoneProfileComboBox.currentIndex - 1)
@@ -175,14 +175,14 @@ MyStackViewPage {
             }
             MyToggleButton {
                 id: oculusSdkToggleButton
-                text: "Force Use SteamVR (Disable Oculus API [experimental])"
+                text: "強制使用 SteamVR (停用 Oculus API [實驗性功能])"
                 onCheckedChanged: {
                     SettingsTabController.setOculusSdkToggle(this.checked, true)
                 }
             }
             MyToggleButton {
                 id: exclusiveInputToggleButton
-                text: "Exclusive Input Toggle (This enables Key Binding to Toggle state)"
+                text: "獨佔輸入切換 (啟用按鍵綁定以切換狀態)"
                 onCheckedChanged: {
                     OverlayController.setExclusiveInputEnabled(this.checked, true)
                 }
@@ -193,7 +193,7 @@ MyStackViewPage {
 
                 MyToggleButton {
                     id: vsyncDisabledToggle
-                    text: "Disable App Vsync"
+                    text: "停用應用程式垂直同步"
                     onCheckedChanged: {
                         OverlayController.setVsyncDisabled(checked, true)
                         customTickRateText.visible = checked

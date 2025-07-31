@@ -13,7 +13,7 @@ MyStackViewPage {
     id: rootPage
     width: 1200
     height: 800
-    headerText: "OVR Advanced Settings"
+    headerText: "OVR 進階設定"
     headerShowBackButton: false
     stackView: mainView
     content: Item {
@@ -43,7 +43,7 @@ MyStackViewPage {
                        id: chaperoneButton
                        iconPath: "qrc:/main_menu_icons/chaperone_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Chaperone"
+                       text: "   引導系統"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -55,7 +55,7 @@ MyStackViewPage {
                        id: playSpaceButton
                        iconPath: "qrc:/main_menu_icons/offsets_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Offsets"
+                       text: "   空間位移"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -67,7 +67,7 @@ MyStackViewPage {
                        id: motionButton
                        iconPath: "qrc:/main_menu_icons/motion_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Motion"
+                       text: "   移動設置"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -78,7 +78,7 @@ MyStackViewPage {
                        id: rotationButton
                        iconPath: "qrc:/main_menu_icons/rotation_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Rotation"
+                       text: "   旋轉設定"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -90,7 +90,7 @@ MyStackViewPage {
                        id: fixFloorButton
                        iconPath: "qrc:/main_menu_icons/space_fix_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Space Fix"
+                       text: "   空間校正"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -102,7 +102,7 @@ MyStackViewPage {
                        id: audioButton
                        iconPath: "qrc:/main_menu_icons/audio_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Audio"
+                       text: "   音訊"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -114,7 +114,7 @@ MyStackViewPage {
                        id: videoButton
                        iconPath: "qrc:/main_menu_icons/video_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Video"
+                       text: "   視訊"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -126,7 +126,7 @@ MyStackViewPage {
                        id: utilitiesButton
                        iconPath: "qrc:/main_menu_icons/utilities_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Utilities"
+                       text: "   工具"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -139,7 +139,7 @@ MyStackViewPage {
                        id: statisticsButton
                        iconPath: "qrc:/main_menu_icons/statistics_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Statistics"
+                       text: "   統計資料"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -156,7 +156,7 @@ MyStackViewPage {
                        id: bindingsButton
                        iconPath: "qrc:/main_menu_icons/bindings_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Bindings"
+                       text: "   按鍵綁定"
                        Layout.fillWidth: true
                        onClicked: {
                             SteamVRTabController.launchBindingUI()
@@ -167,7 +167,7 @@ MyStackViewPage {
                        id: settingsButton
                        iconPath: "qrc:/main_menu_icons/settings_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Settings"
+                       text: "   設定"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -189,11 +189,124 @@ MyStackViewPage {
                        visible: !(VideoTabController.isOverlayMethodActive)
                    }
 
+                   GroupBox {
+                       id: gravityGroupBox
+                       Layout.fillWidth: true
+
+                       label: MyText {
+                           leftPadding: 10
+                           text: "重力設定"
+                           bottomPadding: -10
+                       }
+                       background: Rectangle {
+                           color: "transparent"
+                           border.color: "#d9dbe0"
+                           radius: 8
+                       }
+
+                       ColumnLayout {
+                           anchors.fill: parent
+
+                           Rectangle {
+                               color: "#d9dbe0"
+                               height: 1
+                               Layout.fillWidth: true
+                               Layout.bottomMargin: 5
+                           }
+
+                           RowLayout {
+                               Layout.fillWidth: true
+
+                               MyToggleButton {
+                                   id: gravityToggleButton
+                                   text: "開啟"
+                                   onCheckedChanged: {
+                                       MoveCenterTabController.gravityActive = this.checked
+                                   }
+                               }
+                               Item {
+                                   Layout.fillWidth: true
+                               }
+                               MyText {
+                                   text: "重力強度 (+ 為向下)："
+                                   horizontalAlignment: Text.AlignRight
+                                   Layout.rightMargin: 2
+                               }
+
+                               MyTextField {
+                                    id: gravityStrengthText
+                                    text: "9.80"
+                                    keyBoardUID: 152
+                                    Layout.preferredWidth: 120
+                                    Layout.leftMargin: 10
+                                    Layout.rightMargin: 10
+                                    horizontalAlignment: Text.AlignHCenter
+                                    function onInputEvent(input) {
+                                        var val = parseFloat(input)
+                                        if (!isNaN(val)) {
+                                            MoveCenterTabController.gravityStrength = val.toFixed(2)
+                                            text = MoveCenterTabController.gravityStrength.toFixed(2)
+                                        } else {
+                                            text = MoveCenterTabController.gravityStrengtht.toFixed(2)
+                                        }
+                                    }
+                                }
+                            }
+
+                           RowLayout {
+                                MyPushButton {
+                                    id: gravityMoonButton
+                                    Layout.preferredWidth: 110
+                                    text:"月球"
+                                    onClicked: {
+                                        MoveCenterTabController.gravityStrength = 1.62
+                                    }
+                                }
+                                MyPushButton {
+                                    id: gravityMarsButton
+                                    Layout.preferredWidth: 110
+                                    text:"火星"
+                                    onClicked: {
+                                        MoveCenterTabController.gravityStrength = 3.71
+                                    }
+                               }
+                                MyPushButton {
+                                    id: gravityEarthButton
+                                    Layout.preferredWidth: 110
+                                    text:"地球"
+                                    onClicked: {
+                                        MoveCenterTabController.gravityStrength = 9.80
+                                    }
+                               }
+                                MyPushButton {
+                                    id: gravityJupiterButton
+                                    Layout.preferredWidth: 110
+                                    text:"木星"
+                                    onClicked: {
+                                        MoveCenterTabController.gravityStrength = 24.79
+                                    }
+                               }
+                           }
+                       }
+
+                       Component.onCompleted: {
+                           gravityToggleButton.checked = MoveCenterTabController.gravityActive
+                       }
+
+                       Connections {
+                           target: MoveCenterTabController
+
+                           onGravityActiveChanged: {
+                               gravityToggleButton.checked = MoveCenterTabController.gravityActive
+                           }
+                       }
+                   }
+                   
                    RowLayout {
                        spacing: 18
 
                        MyText {
-                           text: "Video Profile:"
+                           text: "視訊設定檔："
                        }
                        Item{
                           Layout.fillWidth: true
@@ -218,7 +331,7 @@ MyStackViewPage {
                            id: summaryVideoProfileApplyButton
                            enabled: false
                            Layout.preferredWidth: 150
-                           text: "Apply"
+                           text: "套用"
                            onClicked: {
                                if (summaryVideoProfileComboBox.currentIndex > 0) {
                                    VideoTabController.applyVideoProfile(summaryVideoProfileComboBox.currentIndex - 1)
@@ -232,7 +345,7 @@ MyStackViewPage {
                        spacing: 18
 
                        MyText {
-                           text: "Chaperone Profile:"
+                           text: "引導系統設定檔："
                        }
 
                        MyComboBox {
@@ -256,7 +369,7 @@ MyStackViewPage {
                            id: summaryChaperoneProfileApplyButton
                            enabled: false
                            Layout.preferredWidth: 150
-                           text: "Apply"
+                           text: "套用"
                            onClicked: {
                                if (summaryChaperoneProfileComboBox.currentIndex > 0) {
                                    ChaperoneTabController.applyChaperoneProfile(summaryChaperoneProfileComboBox.currentIndex - 1)
@@ -273,79 +386,19 @@ MyStackViewPage {
 
                    RowLayout {
                        MyText {
-                           text: "Tracking Universe:"
+                           text: "追蹤範圍："
                        }
                        MyText {
                            id: summaryPlaySpaceModeText
                            Layout.fillWidth: true
                            horizontalAlignment: Text.AlignRight
-                           text: "Unknown"
-                       }
-                   }
-
-                   RowLayout {
-                       MyText {
-                           text: "HMD Rotations:"
-                       }
-                       MyText {
-                           id: summaryHmdRotationsText
-                           Layout.fillWidth: true
-                           horizontalAlignment: Text.AlignRight
-                           text: "-999.9"
+                           text: "未知"
                        }
                    }
 
                    Item {
                        Layout.fillHeight: true
                        Layout.fillWidth: true
-                   }
-
-                   RowLayout {
-                       MyText {
-                           text: "Dropped Frames:"
-                       }
-                       MyText {
-                           id: summaryDroppedFramesText
-                           Layout.fillWidth: true
-                           horizontalAlignment: Text.AlignRight
-                           text: "0"
-                       }
-                   }
-
-                   RowLayout {
-                       MyText {
-                           text: "Reprojected Frames:"
-                       }
-                       MyText {
-                           id: summaryReprojectedFramesText
-                           Layout.fillWidth: true
-                           horizontalAlignment: Text.AlignRight
-                           text: "0"
-                       }
-                   }
-
-                   RowLayout {
-                       MyText {
-                           text: "Timed Out:"
-                       }
-                       MyText {
-                           id: summaryTimedOutText
-                           Layout.fillWidth: true
-                           horizontalAlignment: Text.AlignRight
-                           text: "0"
-                       }
-                   }
-
-                   RowLayout {
-                       MyText {
-                           text: "Reprojection Ratio:"
-                       }
-                       MyText {
-                           id: summaryTotalRatioText
-                           Layout.fillWidth: true
-                           horizontalAlignment: Text.AlignRight
-                           text: "0"
-                       }
                    }
 
                    Item {
@@ -357,7 +410,7 @@ MyStackViewPage {
 
                    RowLayout {
                        MyText {
-                           text: "Microphone:"
+                           text: "麥克風："
                        }
                        MySlider {
                            id: summaryMicVolumeSlider
@@ -399,7 +452,7 @@ MyStackViewPage {
                    RowLayout {
                        MyToggleButton {
                            id: summaryPttToggle
-                           text: "Push-to-Talk"
+                           text: "按住說話"
                            onClicked: {
                                 AudioTabController.setPttEnabled(checked, true)
                            }
@@ -463,11 +516,11 @@ MyStackViewPage {
 
 
        if (MoveCenterTabController.trackingUniverse === 0) {
-           summaryPlaySpaceModeText.text = "Sitting"
+           summaryPlaySpaceModeText.text = "坐姿"
        } else if (MoveCenterTabController.trackingUniverse === 1) {
-           summaryPlaySpaceModeText.text = "Standing"
+           summaryPlaySpaceModeText.text = "站姿"
        } else {
-           summaryPlaySpaceModeText.text = "Unknown(" + MoveCenterTabController.trackingUniverse + ")"
+           summaryPlaySpaceModeText.text = "未知(" + MoveCenterTabController.trackingUniverse + ")"
        }
        updateStatistics()
        if (visible) {
@@ -489,23 +542,23 @@ MyStackViewPage {
            }
        }
        onVersionCheckTextChanged: {
-           summaryVersionCheckText.text = OverlayController.versionCheckText
-       }
-       onDisableVersionCheckChanged: {
-           if (OverlayController.disableVersionCheck)
-           {
-               summaryVersionCheckText.visible = false
-               summaryVersionCheckTextRect.color = "#2a2e35"
-           } else {
-               summaryVersionCheckText.visible = true
-               if (OverlayController.newVersionDetected)
-               {
-                   summaryVersionCheckTextRect.color = "#ff0000"
-               } else {
-                   summaryVersionCheckTextRect.color = "#2a2e35"
-               }
-           }
-       }
+            summaryVersionCheckText.text = OverlayController.versionCheckText
+        }
+        onDisableVersionCheckChanged: {
+            if (OverlayController.disableVersionCheck)
+            {
+                summaryVersionCheckText.visible = false
+                summaryVersionCheckTextRect.color = "#2a2e35"
+            } else {
+                summaryVersionCheckText.visible = true
+                if (OverlayController.newVersionDetected)
+                {
+                    summaryVersionCheckTextRect.color = "#ff0000"
+                } else {
+                    summaryVersionCheckTextRect.color = "#2a2e35"
+                }
+            }
+        }
    }
 
    Connections {
@@ -539,11 +592,11 @@ MyStackViewPage {
        target: MoveCenterTabController
        onTrackingUniverseChanged: {
            if (MoveCenterTabController.trackingUniverse === 0) {
-               summaryPlaySpaceModeText.text = "Sitting"
+               summaryPlaySpaceModeText.text = "坐姿"
            } else if (MoveCenterTabController.trackingUniverse === 1) {
-               summaryPlaySpaceModeText.text = "Standing"
+               summaryPlaySpaceModeText.text = "站姿"
            } else {
-               summaryPlaySpaceModeText.text = "Unknown(" + MoveCenterTabController.trackingUniverse + ")"
+               summaryPlaySpaceModeText.text = "未知(" + MoveCenterTabController.trackingUniverse + ")"
            }
        }
    }

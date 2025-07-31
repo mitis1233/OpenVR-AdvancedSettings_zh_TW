@@ -6,7 +6,7 @@ import "../../common"
 
 RowLayout {
     id: audioPlaybackNameCombo
-    property string deviceText: "Audio Device: "
+    property string deviceText: "音訊裝置： "
 
     property alias devices: selector.model
     property alias deviceIndex: selector.currentIndex
@@ -18,7 +18,7 @@ RowLayout {
     MyToggleButton {
         id: playbackOverrideToggle
         Layout.preferredWidth: 250
-        text: "Toggle Override"
+        text: "切換覆蓋"
         onClicked: {
             AudioTabController.setPlaybackOverride(this.checked, false)
         }

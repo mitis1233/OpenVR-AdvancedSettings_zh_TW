@@ -12,7 +12,7 @@ import "overlaycolorbright"
 
 MyStackViewPage {
     width: 1200
-    headerText: "Video Settings"
+    headerText: "畫面設定"
     content: ColumnLayout {
         spacing: 10
 

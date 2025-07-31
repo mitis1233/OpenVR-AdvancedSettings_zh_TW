@@ -9,7 +9,7 @@ import "steamvrbind"
 
 MyStackViewPage {
     width: 1200
-    headerText: "SteamVR"
+    headerText: "SteamVR 設定"
 
     content: ColumnLayout {
         spacing: 16
@@ -28,7 +28,7 @@ MyStackViewPage {
             Layout.fillWidth: true
 
             MyPushButton {
-                text: "Device Pairing Information"
+                text: "裝置配對資訊"
                 Layout.preferredWidth: 350
 
                 onClicked: {
@@ -42,7 +42,7 @@ MyStackViewPage {
 
             MyPushButton {
                 id: steamVRRestartButton
-                text: "Restart SteamVR"
+                text: "重新啟動 SteamVR"
                 Layout.preferredWidth: 250
                 onClicked: {
                     SteamVRTabController.restartSteamVR()

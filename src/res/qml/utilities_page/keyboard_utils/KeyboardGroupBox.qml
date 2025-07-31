@@ -10,7 +10,7 @@ GroupBox {
     
     label: MyText {
         leftPadding: 10
-        text: "Keyboard Utilities"
+        text: "鍵盤工具"
         bottomPadding: -10
     }
     background: Rectangle {
@@ -30,7 +30,7 @@ GroupBox {
         
         
         MyText {
-            text: "Send to active application: "
+            text: "傳送到目前應用程式："
         }
         
         RowLayout {
@@ -38,7 +38,7 @@ GroupBox {
             Layout.fillWidth: true
             
             MyPushButton {
-                text: "Keyboard Input"
+                text: "鍵盤輸入"
                 Layout.fillWidth: true
                 onClicked: {
                     OverlayController.showKeyboard("", 601)
@@ -113,21 +113,21 @@ GroupBox {
                 }
              }
             MyPushButton {
-                text: "Custom Key 1"
+                text: "自訂按鍵 1"
                 Layout.preferredWidth: 200
                 onClicked: {
                     UtilitiesTabController.sendKeyboardOne();
                 }
              }
             MyPushButton {
-                text: "Custom Key 2"
+                text: "自訂按鍵 2"
                 Layout.preferredWidth: 200
                 onClicked: {
                     UtilitiesTabController.sendKeyboardTwo();
                 }
              }
             MyPushButton {
-                text: "Custom Key 3"
+                text: "自訂按鍵 3"
                 Layout.preferredWidth: 200
                 onClicked: {
                     UtilitiesTabController.sendKeyboardThree();
