@@ -245,6 +245,7 @@ void VideoTabController::setBrightnessOpacityValue( float percvalue,
     settings::setSetting( settings::DoubleSetting::VIDEO_brightnessOpacityValue,
                           static_cast<double>( percvalue ) );
 
+    /*
     if ( realvalue >= 0.9999f || realvalue < 0.00f )
     {
         LOG( WARNING ) << "alpha value is invalid setting to 1.0";
@@ -252,6 +253,7 @@ void VideoTabController::setBrightnessOpacityValue( float percvalue,
             settings::DoubleSetting::VIDEO_brightnessOpacityValue, 1.0 );
         realvalue = 0;
     }
+    */
     ovr_overlay_wrapper::setOverlayAlpha( m_brightnessOverlayHandle,
                                           realvalue );
 

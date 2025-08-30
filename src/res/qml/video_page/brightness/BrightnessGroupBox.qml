@@ -51,7 +51,7 @@ GroupBox {
 
             MySlider {
                 id: brightnessSlider
-                from: 0.2
+                from: 0.01
                 to: 1.0
                 stepSize: 0.01
                 value: 1.0
@@ -71,8 +71,8 @@ GroupBox {
                 function onInputEvent(input) {
                     var val = parseFloat(input)
                     if (!isNaN(val)) {
-                        if (val < 3) {
-                            val = 3
+                        if (val < 1) {
+                            val = 1
                         } else if (val > 100.0) {
                             val = 100.0
                         }
