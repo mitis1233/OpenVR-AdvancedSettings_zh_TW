@@ -146,7 +146,10 @@ MyStackViewPage {
                            mainView.push(statisticsPage)
                        }
                    }
-
+                   Item {
+                       Layout.fillHeight: true
+                       Layout.fillWidth: true
+                   }
                    MyPushButton {
                        id: bindingsButton
                        iconPath: "qrc:/main_menu_icons/bindings_tab_icon"
@@ -395,7 +398,7 @@ MyStackViewPage {
                             }
                         }
                         MyPushButton {
-                            text: "Ctrl-V-Enter"
+                            text: "Ctrl-V+Enter"
                             Layout.fillWidth: true
                             onClicked: {
                                 UtilitiesTabController.sendKeyboardCtrlV()
@@ -500,11 +503,6 @@ MyStackViewPage {
                            horizontalAlignment: Text.AlignRight
                            text: "未知"
                        }
-                   }
-
-                   Item {
-                       Layout.fillHeight: true
-                       Layout.fillWidth: true
                    }
 
                    Item {
