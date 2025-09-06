@@ -22,7 +22,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "視訊設定檔："
+        text: "畫面設定檔："
         bottomPadding: -10
     }
     background: Rectangle {

@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "高度切換 / 重力地板偏移"
+        text: "高度切換"
         bottomPadding: -10
     }
     background: Rectangle {
@@ -72,7 +72,7 @@ GroupBox {
             MyPushButton {
                 id: heightOffsetFromYOffsetButton
                 Layout.preferredWidth: 230
-                text:"從 Y 軸偏移量設定"
+                text:"從目前高度設定"
                 onClicked: {
                     MoveCenterTabController.heightToggleOffset = MoveCenterTabController.offsetY
                 }

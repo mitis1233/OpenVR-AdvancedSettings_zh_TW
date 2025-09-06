@@ -67,7 +67,7 @@ MyStackViewPage {
                        id: motionButton
                        iconPath: "qrc:/main_menu_icons/motion_tab_icon"
                        activationSoundEnabled: false
-                       text: "   移動設置"
+                       text: "   移動設定"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -114,7 +114,7 @@ MyStackViewPage {
                        id: videoButton
                        iconPath: "qrc:/main_menu_icons/video_tab_icon"
                        activationSoundEnabled: false
-                       text: "   視訊"
+                       text: "   畫面"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -145,11 +145,6 @@ MyStackViewPage {
                            MyResources.playFocusChangedSound()
                            mainView.push(statisticsPage)
                        }
-                   }
-
-                   Item {
-                       Layout.fillHeight: true
-                       Layout.fillWidth: true
                    }
 
                    MyPushButton {
@@ -187,6 +182,72 @@ MyStackViewPage {
                        id: brightnessGroupBox
                        Layout.fillWidth: true
                        visible: !(VideoTabController.isOverlayMethodActive)
+                   }
+
+                   RowLayout {
+                       Layout.fillWidth: true
+
+                       MyToggleButton {
+                           id: heightToggleButton
+                           text: "高度切換"
+                           onCheckedChanged: {
+                               MoveCenterTabController.heightToggle = this.checked
+                           }
+                       }
+
+                       Item {
+                           Layout.fillWidth: true
+                       }
+
+                       MyText {
+                           text: "高度偏移："
+                           horizontalAlignment: Text.AlignRight
+                           Layout.rightMargin: 2
+                       }
+
+                       MyTextField {
+                           id: heightToggleOffsetText
+                           text: "-1.00"
+                           keyBoardUID: 151
+                           Layout.preferredWidth: 140
+                           Layout.leftMargin: 10
+                           Layout.rightMargin: 10
+                           horizontalAlignment: Text.AlignHCenter
+                           function onInputEvent(input) {
+                               var val = parseFloat(input)
+                               if (!isNaN(val)) {
+                                   MoveCenterTabController.heightToggleOffset = val.toFixed(2)
+                                   text = MoveCenterTabController.heightToggleOffset.toFixed(2)
+                               } else {
+                                   text = MoveCenterTabController.heightToggleOffset.toFixed(2)
+                               }
+                           }
+                       }
+
+                       MyPushButton {
+                           id: heightOffsetFromYOffsetButton
+                           Layout.preferredWidth: 230
+                           text:"從目前高度設定"
+                           onClicked: {
+                               MoveCenterTabController.heightToggleOffset = MoveCenterTabController.offsetY
+                           }
+                       }
+
+                       Component.onCompleted: {
+                           heightToggleButton.checked = MoveCenterTabController.heightToggle
+                           heightToggleOffsetText.text = MoveCenterTabController.heightToggleOffset.toFixed(2)
+                       }
+
+                       Connections {
+                           target: MoveCenterTabController
+
+                           onHeightToggleChanged: {
+                               heightToggleButton.checked = MoveCenterTabController.heightToggle
+                           }
+                           onHeightToggleOffsetChanged: {
+                               heightToggleOffsetText.text = MoveCenterTabController.heightToggleOffset.toFixed(2)
+                           }
+                       }
                    }
 
                    GroupBox {
@@ -250,8 +311,8 @@ MyStackViewPage {
                                             text = MoveCenterTabController.gravityStrengtht.toFixed(2)
                                         }
                                     }
-                                }
-                            }
+                               }
+                           }
 
                            RowLayout {
                                 MyPushButton {
@@ -301,7 +362,52 @@ MyStackViewPage {
                            }
                        }
                    }
-                   
+
+                    RowLayout {
+                        spacing: 18
+                        Layout.fillWidth: true
+                        MyPushButton {
+                            text: "Ctrl-V"
+                            Layout.preferredWidth: 150
+                            onClicked: {
+                                UtilitiesTabController.sendKeyboardCtrlV()
+                           }
+                        }
+                        MyPushButton {
+                            text: "Enter"
+                            Layout.fillWidth: true
+                            onClicked: {
+                                UtilitiesTabController.sendKeyboardEnter()
+                            }
+                        }
+                        MyPushButton {
+                            text: "Alt+Tab"
+                            Layout.preferredWidth: 150
+                            onClicked: {
+                                UtilitiesTabController.sendKeyboardAltTab()
+                            }
+                       }
+                        MyPushButton {
+                            text: "Ctrl-C"
+                            Layout.preferredWidth: 150
+                            onClicked: {
+                                UtilitiesTabController.sendKeyboardCtrlC()
+                            }
+                        }
+                        MyPushButton {
+                            text: "Ctrl-V-Enter"
+                            Layout.fillWidth: true
+                            onClicked: {
+                                UtilitiesTabController.sendKeyboardCtrlV()
+                                UtilitiesTabController.sendKeyboardEnter()
+                            }
+                       }
+
+                        Item {
+                            Layout.fillWidth: true
+                        }
+                   }
+
                    RowLayout {
                        spacing: 18
 
