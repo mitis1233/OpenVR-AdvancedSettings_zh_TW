@@ -90,7 +90,7 @@ ColumnLayout {
         }
         MyText {
             // Text continues from RowLayout above.
-            text: "		更改按住通話設定。"
+            text: "    更改按住通話設定"
         }
     }
     Component.onCompleted: {
