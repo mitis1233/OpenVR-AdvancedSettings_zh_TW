@@ -1,0 +1,53 @@
+<RCC>
+  <qresource prefix="/qt/qml/AdvancedSettings/">
+    <file alias="qml/utilities_page/keyboard_utils/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/utilities_page/keyboard_utils/qmldir</file>
+    <file alias="qml/utilities_page/media_keys/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/utilities_page/media_keys/qmldir</file>
+    <file alias="qml/utilities_page/misc/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/utilities_page/misc/qmldir</file>
+    <file alias="qml/utilities_page/alarm_clock/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/utilities_page/alarm_clock/qmldir</file>
+    <file alias="qml/utilities_page/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/utilities_page/qmldir</file>
+    <file alias="qml/motion_page/space_drag/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/motion_page/space_drag/qmldir</file>
+    <file alias="qml/motion_page/height_toggle/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/motion_page/height_toggle/qmldir</file>
+    <file alias="qml/motion_page/gravity/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/motion_page/gravity/qmldir</file>
+    <file alias="qml/motion_page/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/motion_page/qmldir</file>
+    <file alias="qml/orient_page/space_orient/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/orient_page/space_orient/qmldir</file>
+    <file alias="qml/orient_page/adjust_orientation/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/orient_page/adjust_orientation/qmldir</file>
+    <file alias="qml/orient_page/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/orient_page/qmldir</file>
+    <file alias="qml/motion_page/move_space/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/motion_page/move_space/qmldir</file>
+    <file alias="qml/motion_page/offset_profiles/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/motion_page/offset_profiles/qmldir</file>
+    <file alias="qml/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/qmldir</file>
+    <file alias="qml/chaperone_page/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/chaperone_page/qmldir</file>
+    <file alias="qml/chaperone_page/change_orientation/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/chaperone_page/change_orientation/qmldir</file>
+    <file alias="qml/chaperone_page/proximity_warnings/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/chaperone_page/proximity_warnings/qmldir</file>
+    <file alias="qml/chaperone_page/chaperonemisc/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/chaperone_page/chaperonemisc/qmldir</file>
+    <file alias="qml/chaperone_page/chaperoneboundscolor/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/chaperone_page/chaperoneboundscolor/qmldir</file>
+    <file alias="qml/steamvr_page/steamvrmisc/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/steamvr_page/steamvrmisc/qmldir</file>
+    <file alias="qml/steamvr_page/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/steamvr_page/qmldir</file>
+    <file alias="qml/steamvr_page/camera/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/steamvr_page/camera/qmldir</file>
+    <file alias="qml/steamvr_page/steamvr_additional/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/steamvr_page/steamvr_additional/qmldir</file>
+    <file alias="qml/steamvr_page/steamvrbind/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/steamvr_page/steamvrbind/qmldir</file>
+    <file alias="qml/steamvr_page/gamebindings/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/steamvr_page/gamebindings/qmldir</file>
+    <file alias="qml/audio_page/device_selector/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/audio_page/device_selector/qmldir</file>
+    <file alias="qml/audio_page/dialog_boxes/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/audio_page/dialog_boxes/qmldir</file>
+    <file alias="qml/audio_page/proximity/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/audio_page/proximity/qmldir</file>
+    <file alias="qml/audio_page/profiles/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/audio_page/profiles/qmldir</file>
+    <file alias="qml/audio_page/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/audio_page/qmldir</file>
+    <file alias="qml/audio_page/push_to_talk/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/audio_page/push_to_talk/qmldir</file>
+    <file alias="qml/utilities_page/space_fix/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/utilities_page/space_fix/qmldir</file>
+    <file alias="qml/common/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/common/qmldir</file>
+    <file alias="qml/rotation_page/view_ratchet/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/rotation_page/view_ratchet/qmldir</file>
+    <file alias="qml/rotation_page/redirected/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/rotation_page/redirected/qmldir</file>
+    <file alias="qml/rotation_page/snap_turn/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/rotation_page/snap_turn/qmldir</file>
+    <file alias="qml/rotation_page/space_turn/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/rotation_page/space_turn/qmldir</file>
+    <file alias="qml/rotation_page/rotate_space/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/rotation_page/rotate_space/qmldir</file>
+    <file alias="qml/rotation_page/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/rotation_page/qmldir</file>
+    <file alias="qml/video_page/brightness/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/video_page/brightness/qmldir</file>
+    <file alias="qml/video_page/profiles/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/video_page/profiles/qmldir</file>
+    <file alias="qml/video_page/overlaycolorbright/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/video_page/overlaycolorbright/qmldir</file>
+    <file alias="qml/video_page/miscvid/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/video_page/miscvid/qmldir</file>
+    <file alias="qml/video_page/supersampling/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/video_page/supersampling/qmldir</file>
+    <file alias="qml/video_page/color/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/video_page/color/qmldir</file>
+    <file alias="qml/video_page/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/video_page/qmldir</file>
+    <file alias="qml/video_page/dialogboxes/qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/AdvancedSettings/qml/video_page/dialogboxes/qmldir</file>
+  </qresource>
+</RCC>
+

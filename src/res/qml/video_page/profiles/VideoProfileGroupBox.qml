@@ -5,46 +5,38 @@ import ovras.advsettings 1.0
 import "../../common"
 import "../dialogboxes"
 
-GroupBox {
+SettingsGroupBox {
     id: videoProfileGroupBox
     Layout.fillWidth: true
 
+    property Item dialogParent: videoProfileGroupBox
+
     VideoDeleteProfileDialog {
         id: videoDeleteProfileDialog
+        parent: videoProfileGroupBox.dialogParent
     }
 
     VideoNewProfileDialog {
         id: videoNewProfileDialog
+        parent: videoProfileGroupBox.dialogParent
     }
     VideoMessageDialog{
         id:videoMessageDialog
+        parent: videoProfileGroupBox.dialogParent
     }
 
-    label: MyText {
-        leftPadding: 10
-        text: "畫面設定檔："
-        bottomPadding: -10
-    }
-    background: Rectangle {
-        color: "transparent"
-        border.color: "#d9dbe0"
-        radius: 8
-    }
+    title: qsTr("Video Profiles")
     ColumnLayout {
+        spacing: 0
         anchors.fill: parent
 
-        Rectangle {
-            color: "#d9dbe0"
-            height: 1
-            Layout.fillWidth: true
-            Layout.bottomMargin: 5
-        }
         RowLayout {
+            Layout.preferredHeight: rowHeight
             spacing: 10
 
             MyText {
                 Layout.preferredWidth: 150
-                text: "設定檔：  "
+                text: qsTr("Profile  ")
             }
 
             MyComboBox {
@@ -66,7 +58,7 @@ GroupBox {
                 id: videoApplyProfileButton
                 enabled: true
                 Layout.preferredWidth: 150
-                text: "套用"
+                text: qsTr("Apply")
                 onClicked: {
                     if (videoProfileComboBox.currentIndex > 0) {
                         VideoTabController.applyVideoProfile(
@@ -75,7 +67,11 @@ GroupBox {
                 }
             }
         }
+        LineSeparator {
+        }
+
         RowLayout {
+            Layout.preferredHeight: rowHeight
             spacing: 10
             Item{
                 Layout.fillWidth: true
@@ -86,7 +82,7 @@ GroupBox {
                 enabled: true
                 Layout.preferredWidth: 200
 
-                text: "刪除設定檔"
+                text: qsTr("Delete Profile")
                 onClicked: {
                     if (videoProfileComboBox.currentIndex > 0) {
                         videoDeleteProfileDialog.profileIndex = videoProfileComboBox.currentIndex - 1
@@ -96,7 +92,7 @@ GroupBox {
             }
             MyPushButton {
                 Layout.preferredWidth: 200
-                text: "新增設定檔"
+                text: qsTr("New Profile")
                 onClicked: {
                     videoNewProfileDialog.openPopup()
                 }
@@ -108,10 +104,10 @@ GroupBox {
     }
     Connections {
         target: VideoTabController
-        onVideoProfilesUpdated: {
+        function onVideoProfilesUpdated() {
             reloadVideoProfiles()
         }
-        onVideoProfileAdded: {
+        function onVideoProfileAdded() {
             videoProfileComboBox.currentIndex = VideoTabController.getVideoProfileCount()
         }
 

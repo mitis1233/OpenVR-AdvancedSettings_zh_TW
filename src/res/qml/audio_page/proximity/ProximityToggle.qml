@@ -6,8 +6,9 @@ import "../../common"
 
 MyToggleButton {
     id: audioMuteProximitySensorToggle
+    Layout.preferredHeight: 48
     Layout.preferredWidth: 600
-    text: "近距離感應器靜音/取消靜音麥克風"
+    text: qsTr("Proximity Sensor Mutes/Unmutes Microphone")
     onClicked: {
         AudioTabController.setMicProximitySensorCanMute(checked, false)
     }
@@ -21,7 +22,7 @@ MyToggleButton {
     }
     Connections {
         target: AudioTabController
-        onMicProximitySensorCanMuteChanged: {
+        function onMicProximitySensorCanMuteChanged() {
             audioMuteProximitySensorToggle.checked = AudioTabController.micProximitySensorCanMute
         }
     }

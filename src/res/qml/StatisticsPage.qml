@@ -6,187 +6,265 @@ import "common"
 
 
 MyStackViewPage {
-    headerText: "統計資料"
+    headerText: qsTr("Statistics")
+
+    // Every group box row on this page uses this height.
+    readonly property int groupBoxRowHeight: 44
 
     content: ColumnLayout {
-        spacing: 18
+        spacing: 8
 
-        GridLayout {
-            columns: 3
+        SettingsGroupBox {
+            rowHeight: groupBoxRowHeight
+            title: qsTr("Movement")
+            GridLayout {
+                anchors.fill: parent
+                columns: 3
+                rowSpacing: 0
 
-            MyText {
-                text: "頭戴顯示器移動距離："
-            }
-
-            MyText {
-                id: statsHmdMovedText
-                text: "-00.0"
-                Layout.fillWidth: true
-                horizontalAlignment: Text.AlignRight
-                Layout.rightMargin: 10
-            }
-
-            MyPushButton {
-                text: "重設"
-                onClicked: {
-                    StatisticsTabController.statsDistanceResetClicked()
+                MyText {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: qsTr("HMD Distance Moved")
                 }
-            }
 
-            MyText {
-                text: "頭戴顯示器旋轉角度："
-            }
-
-            MyText {
-                id: statsHmdRotationText
-                text: "0.0 CCW"
-                Layout.fillWidth: true
-                horizontalAlignment: Text.AlignRight
-                Layout.rightMargin: 10
-            }
-
-            MyPushButton {
-                text: "重設"
-                onClicked: {
-                    StatisticsTabController.statsRotationResetClicked()
+                MyText {
+                    id: statsHmdMovedText
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: "-00.0"
+                    Layout.fillWidth: true
+                    horizontalAlignment: Text.AlignRight
+                    Layout.rightMargin: 10
                 }
-            }
 
-            MyText {
-                text: "左控制器最大速度："
-            }
-
-            MyText {
-                id: statsLeftControllerSpeedText
-                text: "99.9 m/s"
-                Layout.fillWidth: true
-                horizontalAlignment: Text.AlignRight
-                Layout.rightMargin: 10
-            }
-
-            MyPushButton {
-                text: "重設"
-                onClicked: {
-                    StatisticsTabController.statsLeftControllerSpeedResetClicked()
+                MyPushButton {
+                    text: qsTr("Reset")
+                    onClicked: {
+                        StatisticsTabController.statsDistanceResetClicked()
+                    }
                 }
-            }
 
-            MyText {
-                text: "右控制器最大速度："
-            }
+                LineSeparator {
+                    Layout.columnSpan: 3
+                }
 
-            MyText {
-                id: statsRightControllerSpeedText
-                text: "99.9 m/s"
-                Layout.fillWidth: true
-                horizontalAlignment: Text.AlignRight
-                Layout.rightMargin: 10
-            }
+                MyText {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: qsTr("HMD Rotations")
+                }
 
-            MyPushButton {
-                text: "重設"
-                onClicked: {
-                    StatisticsTabController.statsRightControllerSpeedResetClicked()
+                MyText {
+                    id: statsHmdRotationText
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: qsTr("0.0 CCW")
+                    Layout.fillWidth: true
+                    horizontalAlignment: Text.AlignRight
+                    Layout.rightMargin: 10
+                }
+
+                MyPushButton {
+                    text: qsTr("Reset")
+                    onClicked: {
+                        StatisticsTabController.statsRotationResetClicked()
+                    }
+                }
+
+                LineSeparator {
+                    Layout.columnSpan: 3
+                }
+
+                MyText {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: qsTr("Left Controller Max Speed")
+                }
+
+                MyText {
+                    id: statsLeftControllerSpeedText
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: "99.9 m/s"
+                    Layout.fillWidth: true
+                    horizontalAlignment: Text.AlignRight
+                    Layout.rightMargin: 10
+                }
+
+                MyPushButton {
+                    text: qsTr("Reset")
+                    onClicked: {
+                        StatisticsTabController.statsLeftControllerSpeedResetClicked()
+                    }
+                }
+
+                LineSeparator {
+                    Layout.columnSpan: 3
+                }
+
+                MyText {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: qsTr("Right Controller Max Speed")
+                }
+
+                MyText {
+                    id: statsRightControllerSpeedText
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: "99.9 m/s"
+                    Layout.fillWidth: true
+                    horizontalAlignment: Text.AlignRight
+                    Layout.rightMargin: 10
+                }
+
+                MyPushButton {
+                    text: qsTr("Reset")
+                    onClicked: {
+                        StatisticsTabController.statsRightControllerSpeedResetClicked()
+                    }
                 }
             }
         }
 
-        GridLayout {
-            columns: 3
-            Layout.topMargin: 32
+        SettingsGroupBox {
+            rowHeight: groupBoxRowHeight
+            title: qsTr("Frames")
+            GridLayout {
+                anchors.fill: parent
+                columns: 3
+                rowSpacing: 0
 
-            MyText {
-                text: "輸出幀數："
-            }
-
-            MyText {
-                id: statsPresentedFramesText
-                text: "000"
-                Layout.fillWidth: true
-                horizontalAlignment: Text.AlignRight
-                Layout.rightMargin: 10
-            }
-
-            MyPushButton {
-                text: "重設"
-                onClicked: {
-                    StatisticsTabController.presentedFramesResetClicked()
+                MyText {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: qsTr("Presented Frames")
                 }
-            }
 
-            MyText {
-                text: "遺失幀數："
-            }
-
-            MyText {
-                id: statsDroppedFramesText
-                text: "000"
-                Layout.fillWidth: true
-                horizontalAlignment: Text.AlignRight
-                Layout.rightMargin: 10
-            }
-
-            MyPushButton {
-                text: "重設"
-                onClicked: {
-                    StatisticsTabController.droppedFramesResetClicked()
+                MyText {
+                    id: statsPresentedFramesText
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: "000"
+                    Layout.fillWidth: true
+                    horizontalAlignment: Text.AlignRight
+                    Layout.rightMargin: 10
                 }
-            }
 
-            MyText {
-                text: "重投影幀數："
-            }
-
-            MyText {
-                id: statsReprojectionFramesText
-                text: "000"
-                Layout.fillWidth: true
-                horizontalAlignment: Text.AlignRight
-                Layout.rightMargin: 10
-            }
-
-            MyPushButton {
-                text: "重設"
-                onClicked: {
-                    StatisticsTabController.reprojectedFramesResetClicked()
+                MyPushButton {
+                    text: qsTr("Reset")
+                    onClicked: {
+                        StatisticsTabController.presentedFramesResetClicked()
+                    }
                 }
-            }
 
-            MyText {
-                text: "超時幀數："
-            }
-
-            MyText {
-                id: statsTimedOutText
-                text: "000"
-                Layout.fillWidth: true
-                horizontalAlignment: Text.AlignRight
-                Layout.rightMargin: 10
-            }
-
-            MyPushButton {
-                text: "重設"
-                onClicked: {
-                    StatisticsTabController.timedOutResetClicked()
+                LineSeparator {
+                    Layout.columnSpan: 3
                 }
-            }
 
-            MyText {
-                text: "重投影比例："
-            }
+                MyText {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: qsTr("Dropped Frames")
+                }
 
-            MyText {
-                id: statstotalRatioText
-                text: "0.0"
-                Layout.fillWidth: true
-                horizontalAlignment: Text.AlignRight
-                Layout.rightMargin: 10
-            }
+                MyText {
+                    id: statsDroppedFramesText
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: "000"
+                    Layout.fillWidth: true
+                    horizontalAlignment: Text.AlignRight
+                    Layout.rightMargin: 10
+                }
 
-            MyPushButton {
-                text: "重設"
-                onClicked: {
-                    StatisticsTabController.totalRatioResetClicked()
+                MyPushButton {
+                    text: qsTr("Reset")
+                    onClicked: {
+                        StatisticsTabController.droppedFramesResetClicked()
+                    }
+                }
+
+                LineSeparator {
+                    Layout.columnSpan: 3
+                }
+
+                MyText {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: qsTr("Reprojected Frames")
+                }
+
+                MyText {
+                    id: statsReprojectionFramesText
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: "000"
+                    Layout.fillWidth: true
+                    horizontalAlignment: Text.AlignRight
+                    Layout.rightMargin: 10
+                }
+
+                MyPushButton {
+                    text: qsTr("Reset")
+                    onClicked: {
+                        StatisticsTabController.reprojectedFramesResetClicked()
+                    }
+                }
+
+                LineSeparator {
+                    Layout.columnSpan: 3
+                }
+
+                MyText {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: qsTr("Timed Out")
+                }
+
+                MyText {
+                    id: statsTimedOutText
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: "000"
+                    Layout.fillWidth: true
+                    horizontalAlignment: Text.AlignRight
+                    Layout.rightMargin: 10
+                }
+
+                MyPushButton {
+                    text: qsTr("Reset")
+                    onClicked: {
+                        StatisticsTabController.timedOutResetClicked()
+                    }
+                }
+
+                LineSeparator {
+                    Layout.columnSpan: 3
+                }
+
+                MyText {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: qsTr("Reprojection Ratio")
+                }
+
+                MyText {
+                    id: statstotalRatioText
+                    Layout.preferredHeight: groupBoxRowHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: "0.0"
+                    Layout.fillWidth: true
+                    horizontalAlignment: Text.AlignRight
+                    Layout.rightMargin: 10
+                }
+
+                MyPushButton {
+                    text: qsTr("Reset")
+                    onClicked: {
+                        StatisticsTabController.totalRatioResetClicked()
+                    }
                 }
             }
         }
@@ -198,9 +276,9 @@ MyStackViewPage {
             statsHmdMovedText.text = StatisticsTabController.hmdDistanceMoved.toFixed(1) + " m"
             var rotations = StatisticsTabController.hmdRotations
             if (rotations > 0) {
-                statsHmdRotationText.text = rotations.toFixed(2) + " CCW"
+                statsHmdRotationText.text = qsTr("%1 CCW").arg(rotations.toFixed(2))
             } else {
-                statsHmdRotationText.text = -rotations.toFixed(2) + " CW"
+                statsHmdRotationText.text = qsTr("%1 CW").arg(-rotations.toFixed(2))
             }
             statsLeftControllerSpeedText.text = "    " + StatisticsTabController.leftControllerMaxSpeed.toFixed(1) + " m/s"
             statsRightControllerSpeedText.text = "    " + StatisticsTabController.rightControllerMaxSpeed.toFixed(1) + " m/s"

@@ -1,0 +1,20 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 15,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"closed\".",
+                        "functionName": "onClosed",
+                        "line": 16
+                    }
+                ],
+                "filepath": "Z:/OpenVR-AdvancedSettings-qt6/src/res/qml/audio_page/dialog_boxes/AudioDeleteProfileDialog.qml"
+            }
+        ],
+        "moduleId": "AdvancedSettings(AdvancedSettings)"
+    }
+]

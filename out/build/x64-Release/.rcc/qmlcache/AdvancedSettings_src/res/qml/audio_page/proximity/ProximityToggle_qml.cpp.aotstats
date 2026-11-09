@@ -1,0 +1,44 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 16,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 12
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 28,
+                        "durationMicroseconds": 78,
+                        "errorMessage": "Cannot access value for name AudioTabController",
+                        "functionName": "onCompleted",
+                        "line": 15
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 17,
+                        "durationMicroseconds": 63,
+                        "errorMessage": "Cannot access value for name AudioTabController",
+                        "functionName": "target",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 9,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: audioMuteProximitySensorToggle",
+                        "functionName": "onMicProximitySensorCanMuteChanged",
+                        "line": 25
+                    }
+                ],
+                "filepath": "Z:/OpenVR-AdvancedSettings-qt6/src/res/qml/audio_page/proximity/ProximityToggle.qml"
+            }
+        ],
+        "moduleId": "AdvancedSettings(AdvancedSettings)"
+    }
+]

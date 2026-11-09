@@ -1,0 +1,16 @@
+-rootPath
+Z:/OpenVR-AdvancedSettings-qt6
+-cmake-output
+-output-file
+Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/.qt/qml_imports/AdvancedSettings_conf.cmake
+-importPath
+Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/AdvancedSettings
+-importPath
+Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release
+-importPath
+C:/Qt/6.8.3/msvc2022_64/qml
+-qrcFiles
+Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/.qt/rcc/qmake_AdvancedSettings.qrc
+Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/.qt/rcc/AdvancedSettings_raw_qml_0.qrc
+Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/.qt/rcc/AdvancedSettings_raw_qml_0_extra_qmldirs.qrc
+Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/.qt/rcc/AdvancedSettings_translations.qrc

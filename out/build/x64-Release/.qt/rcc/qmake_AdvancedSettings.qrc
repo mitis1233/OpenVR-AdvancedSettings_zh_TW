@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/AdvancedSettings">
+    <file alias="qmldir">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/AdvancedSettings/qmldir</file>
+  </qresource>
+</RCC>
+

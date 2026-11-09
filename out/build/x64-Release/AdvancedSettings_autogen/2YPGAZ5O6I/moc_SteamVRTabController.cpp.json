@@ -1,0 +1,851 @@
+{
+    "classes": [
+        {
+            "className": "SteamVRTabController",
+            "lineNumber": 45,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 42,
+                    "name": "searchRXTX",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 43,
+                    "name": "launchBindingUI",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 44,
+                    "name": "getRXTXCount",
+                    "returnType": "uint"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "i",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 45,
+                    "name": "getTXList",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "i",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 46,
+                    "name": "getRXList",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "i",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 47,
+                    "name": "getDeviceName",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "i",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 48,
+                    "name": "getDongleType",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "index": 49,
+                    "name": "getDongleUsage",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "sn",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 50,
+                    "name": "pairDevice",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 51,
+                    "name": "updateRXTXList",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "appID",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "def",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 52,
+                    "name": "setBindingQMLWrapper",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "appID",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 53,
+                    "isCloned": true,
+                    "name": "setBindingQMLWrapper",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "systemButton",
+                    "notify": "systemButtonChanged",
+                    "read": "systemButton",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setSystemButton"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "multipleDriver",
+                    "notify": "multipleDriverChanged",
+                    "read": "multipleDriver",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setMultipleDriver"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "noFadeToGrid",
+                    "notify": "noFadeToGridChanged",
+                    "read": "noFadeToGrid",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setNoFadeToGrid"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "performanceGraph",
+                    "notify": "performanceGraphChanged",
+                    "read": "performanceGraph",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setPerformanceGraph"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "dnd",
+                    "notify": "dNDChanged",
+                    "read": "dnd",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setDND"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "name": "cameraActive",
+                    "notify": "cameraActiveChanged",
+                    "read": "cameraActive",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setCameraActive"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "name": "cameraBounds",
+                    "notify": "cameraBoundsChanged",
+                    "read": "cameraBounds",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setCameraBounds"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "name": "cameraCont",
+                    "notify": "cameraContChanged",
+                    "read": "cameraCont",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setCameraCont"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 8,
+                    "name": "perAppBindEnabled",
+                    "notify": "perAppBindEnabledChanged",
+                    "read": "perAppBindEnabled",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setPerAppBindEnabled"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 9,
+                    "name": "controllerPower",
+                    "notify": "controllerPowerChanged",
+                    "read": "controllerPower",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setControllerPower"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 10,
+                    "name": "noHMD",
+                    "notify": "noHMDChanged",
+                    "read": "noHMD",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setNoHMD"
+                }
+            ],
+            "qualifiedClassName": "advsettings::SteamVRTabController",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "performanceGraphChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "multipleDriverChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "systemButtonChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "noFadeToGridChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "dNDChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "controllerPowerChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "noHMDChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "cameraActiveChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 8,
+                    "name": "cameraBoundsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 9,
+                    "name": "cameraContChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 10,
+                    "name": "pairStatusChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 11,
+                    "name": "updateRXTX",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 12,
+                    "name": "perAppBindEnabledChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "index": 13,
+                    "name": "onConnected",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 14,
+                    "name": "onDisconnect",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "Msg",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 15,
+                    "name": "onMsgRec",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 16,
+                    "name": "setPerformanceGraph",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 17,
+                    "isCloned": true,
+                    "name": "setPerformanceGraph",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 18,
+                    "name": "setSystemButton",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 19,
+                    "isCloned": true,
+                    "name": "setSystemButton",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 20,
+                    "name": "setNoFadeToGrid",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 21,
+                    "isCloned": true,
+                    "name": "setNoFadeToGrid",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 22,
+                    "name": "setMultipleDriver",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 23,
+                    "isCloned": true,
+                    "name": "setMultipleDriver",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 24,
+                    "name": "setDND",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 25,
+                    "isCloned": true,
+                    "name": "setDND",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 26,
+                    "name": "setControllerPower",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 27,
+                    "isCloned": true,
+                    "name": "setControllerPower",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 28,
+                    "name": "setNoHMD",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 29,
+                    "isCloned": true,
+                    "name": "setNoHMD",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 30,
+                    "name": "setCameraActive",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 31,
+                    "isCloned": true,
+                    "name": "setCameraActive",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 32,
+                    "name": "setCameraBounds",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 33,
+                    "isCloned": true,
+                    "name": "setCameraBounds",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 34,
+                    "name": "setCameraCont",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 35,
+                    "isCloned": true,
+                    "name": "setCameraCont",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 36,
+                    "name": "setPerAppBindEnabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 37,
+                    "isCloned": true,
+                    "name": "setPerAppBindEnabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 38,
+                    "name": "restartSteamVR",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "reply",
+                            "type": "QNetworkReply*"
+                        }
+                    ],
+                    "index": 39,
+                    "name": "onGetBindingUrlResponse",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "reply",
+                            "type": "QNetworkReply*"
+                        }
+                    ],
+                    "index": 40,
+                    "name": "onApplyBindingResponse",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "reply",
+                            "type": "QNetworkReply*"
+                        }
+                    ],
+                    "index": 41,
+                    "name": "onGetBindingDataResponse",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "SteamVRTabController.h",
+    "outputRevision": 68
+}

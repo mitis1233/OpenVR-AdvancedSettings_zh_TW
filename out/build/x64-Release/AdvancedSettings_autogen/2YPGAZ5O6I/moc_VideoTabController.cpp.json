@@ -1,0 +1,869 @@
+{
+    "classes": [
+        {
+            "className": "VideoTabController",
+            "lineNumber": 91,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 46,
+                    "name": "getVideoProfileCount",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "uint"
+                        }
+                    ],
+                    "index": 47,
+                    "name": "getVideoProfileName",
+                    "returnType": "QString"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "brightnessEnabled",
+                    "notify": "brightnessEnabledChanged",
+                    "read": "brightnessEnabled",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setBrightnessEnabled"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "brightnessOpacityValue",
+                    "notify": "brightnessOpacityValueChanged",
+                    "read": "brightnessOpacityValue",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "float",
+                    "user": false,
+                    "write": "setBrightnessOpacityValue"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "colorRed",
+                    "notify": "colorRedChanged",
+                    "read": "colorRed",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "float",
+                    "user": false,
+                    "write": "setColorRed"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "colorGreen",
+                    "notify": "colorGreenChanged",
+                    "read": "colorGreen",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "float",
+                    "user": false,
+                    "write": "setColorGreen"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "colorBlue",
+                    "notify": "colorBlueChanged",
+                    "read": "colorBlue",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "float",
+                    "user": false,
+                    "write": "setColorBlue"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "name": "superSampling",
+                    "notify": "superSamplingChanged",
+                    "read": "superSampling",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "float",
+                    "user": false,
+                    "write": "setSuperSampling"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "name": "allowSupersampleOverride",
+                    "notify": "allowSupersampleOverrideChanged",
+                    "read": "allowSupersampleOverride",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setAllowSupersampleOverride"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "name": "motionSmoothing",
+                    "notify": "motionSmoothingChanged",
+                    "read": "motionSmoothing",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setMotionSmoothing"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 8,
+                    "name": "allowSupersampleFiltering",
+                    "notify": "allowSupersampleFilteringChanged",
+                    "read": "allowSupersampleFiltering",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setAllowSupersampleFiltering"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 9,
+                    "name": "isOverlayMethodActive",
+                    "notify": "isOverlayMethodActiveChanged",
+                    "read": "isOverlayMethodActive",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setIsOverlayMethodActive"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 10,
+                    "name": "colorOverlayEnabled",
+                    "notify": "colorOverlayEnabledChanged",
+                    "read": "colorOverlayEnabled",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setColorOverlayEnabled"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 11,
+                    "name": "colorOverlayOpacity",
+                    "notify": "colorOverlayOpacityChanged",
+                    "read": "colorOverlayOpacity",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "float",
+                    "user": false,
+                    "write": "setColorOverlayOpacity"
+                }
+            ],
+            "qualifiedClassName": "advsettings::VideoTabController",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "brightnessEnabledChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "brightnessOpacityValueChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "colorRedChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "colorGreenChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "colorBlueChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "isOverlayMethodActiveChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "colorOverlayEnabledChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "colorOverlayOpacityChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        }
+                    ],
+                    "index": 8,
+                    "name": "superSamplingChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 9,
+                    "name": "allowSupersampleOverrideChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 10,
+                    "name": "motionSmoothingChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 11,
+                    "name": "allowSupersampleFilteringChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 12,
+                    "name": "videoProfilesUpdated",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 13,
+                    "name": "videoProfileAdded",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "keepValue",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 14,
+                    "name": "setBrightnessEnabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 15,
+                    "isCloned": true,
+                    "name": "setBrightnessEnabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 16,
+                    "isCloned": true,
+                    "name": "setBrightnessEnabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "percvalue",
+                            "type": "float"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 17,
+                    "name": "setBrightnessOpacityValue",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "percvalue",
+                            "type": "float"
+                        }
+                    ],
+                    "index": 18,
+                    "isCloned": true,
+                    "name": "setBrightnessOpacityValue",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 19,
+                    "name": "setSuperSampling",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        }
+                    ],
+                    "index": 20,
+                    "isCloned": true,
+                    "name": "setSuperSampling",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 21,
+                    "name": "setAllowSupersampleOverride",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 22,
+                    "isCloned": true,
+                    "name": "setAllowSupersampleOverride",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "keepValue",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 23,
+                    "name": "setColorRed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 24,
+                    "isCloned": true,
+                    "name": "setColorRed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        }
+                    ],
+                    "index": 25,
+                    "isCloned": true,
+                    "name": "setColorRed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "keepValue",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 26,
+                    "name": "setColorGreen",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 27,
+                    "isCloned": true,
+                    "name": "setColorGreen",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        }
+                    ],
+                    "index": 28,
+                    "isCloned": true,
+                    "name": "setColorGreen",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "keepValue",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 29,
+                    "name": "setColorBlue",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 30,
+                    "isCloned": true,
+                    "name": "setColorBlue",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        }
+                    ],
+                    "index": 31,
+                    "isCloned": true,
+                    "name": "setColorBlue",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "keepValue",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 32,
+                    "name": "setColorOverlayEnabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 33,
+                    "isCloned": true,
+                    "name": "setColorOverlayEnabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 34,
+                    "isCloned": true,
+                    "name": "setColorOverlayEnabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 35,
+                    "name": "setColorOverlayOpacity",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "float"
+                        }
+                    ],
+                    "index": 36,
+                    "isCloned": true,
+                    "name": "setColorOverlayOpacity",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 37,
+                    "name": "setMotionSmoothing",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 38,
+                    "isCloned": true,
+                    "name": "setMotionSmoothing",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 39,
+                    "name": "setAllowSupersampleFiltering",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 40,
+                    "isCloned": true,
+                    "name": "setAllowSupersampleFiltering",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 41,
+                    "name": "setIsOverlayMethodActive",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 42,
+                    "isCloned": true,
+                    "name": "setIsOverlayMethodActive",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "name",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 43,
+                    "name": "addVideoProfile",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "uint"
+                        }
+                    ],
+                    "index": 44,
+                    "name": "applyVideoProfile",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "uint"
+                        }
+                    ],
+                    "index": 45,
+                    "name": "deleteVideoProfile",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "VideoTabController.h",
+    "outputRevision": 68
+}

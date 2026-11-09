@@ -1,609 +1,702 @@
-import QtQuick 2.7
-import QtQuick.Controls 2.0
-import QtQuick.Layouts 1.3
-import ovras.advsettings 1.0
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import ovras.advsettings
 import "." // QTBUG-34418, singletons require explicit import to load qmldir file
 import "common"
 import "utilities_page"
 import "audio_page"
 import "video_page"
-import "video_page/brightness"
 
 MyStackViewPage {
     id: rootPage
-    width: 1200
-    height: 800
-    headerText: "OVR 進階設定"
+    headerText: qsTr("Home")
+
+    // Every group box row on this page uses this height.
+    readonly property int groupBoxRowHeight: 44
     headerShowBackButton: false
     stackView: mainView
-    content: Item {
-           ColumnLayout {
-           anchors.fill: parent
-           RowLayout {
-               Layout.fillHeight: true
-               Layout.fillWidth: true
-               ColumnLayout {
-                   Layout.preferredWidth: 250
-                   Layout.maximumWidth: 250
-                   Layout.fillHeight: true
-                   spacing: 10
-                   MyPushButton {
-                       id: steamVRButton
-                       iconPath: "qrc:/main_menu_icons/steamvr_tab_icon"
-                       activationSoundEnabled: false
-                       text: "   SteamVR"
-                       Layout.fillWidth: true
-                       onClicked: {
-                           MyResources.playFocusChangedSound()
-                           mainView.push(steamVRPage)
-                       }
-                   }
+    content: ColumnLayout {
+        spacing: 8
 
-                   MyPushButton {
-                       id: chaperoneButton
-                       iconPath: "qrc:/main_menu_icons/chaperone_tab_icon"
-                       activationSoundEnabled: false
-                       text: "   引導系統"
-                       Layout.fillWidth: true
-                       onClicked: {
-                           MyResources.playFocusChangedSound()
-                           mainView.push(chaperonePage)
-                       }
-                   }
+        SettingsGroupBox {
+            visible: false // Hide the Profiles section without removing its functionality.
+            rowHeight: groupBoxRowHeight
+            title: qsTr("Profiles")
+            ColumnLayout {
+                anchors.fill: parent
+                spacing: 0
 
-                   MyPushButton {
-                       id: playSpaceButton
-                       iconPath: "qrc:/main_menu_icons/offsets_tab_icon"
-                       activationSoundEnabled: false
-                       text: "   空間位移"
-                       Layout.fillWidth: true
-                       onClicked: {
-                           MyResources.playFocusChangedSound()
-                           mainView.push(playspacePage)
-                       }
-                   }
-
-                   MyPushButton {
-                       id: motionButton
-                       iconPath: "qrc:/main_menu_icons/motion_tab_icon"
-                       activationSoundEnabled: false
-                       text: "   移動設定"
-                       Layout.fillWidth: true
-                       onClicked: {
-                           MyResources.playFocusChangedSound()
-                           mainView.push(motionPage)
-                       }
-                   }
-                   MyPushButton {
-                       id: rotationButton
-                       iconPath: "qrc:/main_menu_icons/rotation_tab_icon"
-                       activationSoundEnabled: false
-                       text: "   旋轉設定"
-                       Layout.fillWidth: true
-                       onClicked: {
-                           MyResources.playFocusChangedSound()
-                           mainView.push(rotationPage)
-                       }
-                   }
-
-                   MyPushButton {
-                       id: fixFloorButton
-                       iconPath: "qrc:/main_menu_icons/space_fix_tab_icon"
-                       activationSoundEnabled: false
-                       text: "   空間校正"
-                       Layout.fillWidth: true
-                       onClicked: {
-                           MyResources.playFocusChangedSound()
-                           mainView.push(fixFloorPage)
-                       }
-                   }
-
-                   MyPushButton {
-                       id: audioButton
-                       iconPath: "qrc:/main_menu_icons/audio_tab_icon"
-                       activationSoundEnabled: false
-                       text: "   音訊"
-                       Layout.fillWidth: true
-                       onClicked: {
-                           MyResources.playFocusChangedSound()
-                           mainView.push(audioPage)
-                       }
-                   }
-
-                   MyPushButton {
-                       id: videoButton
-                       iconPath: "qrc:/main_menu_icons/video_tab_icon"
-                       activationSoundEnabled: false
-                       text: "   畫面"
-                       Layout.fillWidth: true
-                       onClicked: {
-                           MyResources.playFocusChangedSound()
-                           mainView.push(videoPage)
-                       }
-                   }
-
-                   MyPushButton {
-                       id: utilitiesButton
-                       iconPath: "qrc:/main_menu_icons/utilities_tab_icon"
-                       activationSoundEnabled: false
-                       text: "   工具"
-                       Layout.fillWidth: true
-                       onClicked: {
-                           MyResources.playFocusChangedSound()
-                           mainView.push(utilitiesPage)
-                       }
-                   }
-
-
-                   MyPushButton {
-                       id: statisticsButton
-                       iconPath: "qrc:/main_menu_icons/statistics_tab_icon"
-                       activationSoundEnabled: false
-                       text: "   統計資料"
-                       Layout.fillWidth: true
-                       onClicked: {
-                           MyResources.playFocusChangedSound()
-                           mainView.push(statisticsPage)
-                       }
-                   }
-                   Item {
-                       Layout.fillHeight: true
-                       Layout.fillWidth: true
-                   }
-                   MyPushButton {
-                       id: bindingsButton
-                       iconPath: "qrc:/main_menu_icons/bindings_tab_icon"
-                       activationSoundEnabled: false
-                       text: "   按鍵綁定"
-                       Layout.fillWidth: true
-                       onClicked: {
-                            SteamVRTabController.launchBindingUI()
-                       }
-                   }
-
-                   MyPushButton {
-                       id: settingsButton
-                       iconPath: "qrc:/main_menu_icons/settings_tab_icon"
-                       activationSoundEnabled: false
-                       text: "   設定"
-                       Layout.fillWidth: true
-                       onClicked: {
-                           MyResources.playFocusChangedSound()
-                           mainView.push(settingsPage)
-                       }
-                   }
-               }
-
-
-               ColumnLayout {
-                   Layout.fillHeight: true
-                   Layout.fillWidth: true
-                   Layout.leftMargin: 80
-                   spacing: 9
-
-                   BrightnessGroupBox {
-                       id: brightnessGroupBox
-                       Layout.fillWidth: true
-                       visible: !(VideoTabController.isOverlayMethodActive)
-                   }
-
-                   RowLayout {
-                       Layout.fillWidth: true
-
-                       MyToggleButton {
-                           id: heightToggleButton
-                           text: "高度切換"
-                           onCheckedChanged: {
-                               MoveCenterTabController.heightToggle = this.checked
-                           }
-                       }
-
-                       Item {
-                           Layout.fillWidth: true
-                       }
-
-                       MyText {
-                           text: "高度偏移："
-                           horizontalAlignment: Text.AlignRight
-                           Layout.rightMargin: 2
-                       }
-
-                       MyTextField {
-                           id: heightToggleOffsetText
-                           text: "-1.00"
-                           keyBoardUID: 151
-                           Layout.preferredWidth: 140
-                           Layout.leftMargin: 10
-                           Layout.rightMargin: 10
-                           horizontalAlignment: Text.AlignHCenter
-                           function onInputEvent(input) {
-                               var val = parseFloat(input)
-                               if (!isNaN(val)) {
-                                   MoveCenterTabController.heightToggleOffset = val.toFixed(2)
-                                   text = MoveCenterTabController.heightToggleOffset.toFixed(2)
-                               } else {
-                                   text = MoveCenterTabController.heightToggleOffset.toFixed(2)
-                               }
-                           }
-                       }
-
-                       MyPushButton {
-                           id: heightOffsetFromYOffsetButton
-                           Layout.preferredWidth: 230
-                           text:"從目前高度設定"
-                           onClicked: {
-                               MoveCenterTabController.heightToggleOffset = MoveCenterTabController.offsetY
-                           }
-                       }
-
-                       Component.onCompleted: {
-                           heightToggleButton.checked = MoveCenterTabController.heightToggle
-                           heightToggleOffsetText.text = MoveCenterTabController.heightToggleOffset.toFixed(2)
-                       }
-
-                       Connections {
-                           target: MoveCenterTabController
-
-                           onHeightToggleChanged: {
-                               heightToggleButton.checked = MoveCenterTabController.heightToggle
-                           }
-                           onHeightToggleOffsetChanged: {
-                               heightToggleOffsetText.text = MoveCenterTabController.heightToggleOffset.toFixed(2)
-                           }
-                       }
-                   }
-
-                   GroupBox {
-                       id: gravityGroupBox
-                       Layout.fillWidth: true
-
-                       label: MyText {
-                           leftPadding: 10
-                           text: "重力設定"
-                           bottomPadding: -10
-                       }
-                       background: Rectangle {
-                           color: "transparent"
-                           border.color: "#d9dbe0"
-                           radius: 8
-                       }
-
-                       ColumnLayout {
-                           anchors.fill: parent
-
-                           Rectangle {
-                               color: "#d9dbe0"
-                               height: 1
-                               Layout.fillWidth: true
-                               Layout.bottomMargin: 5
-                           }
-
-                           RowLayout {
-                               Layout.fillWidth: true
-
-                               MyToggleButton {
-                                   id: gravityToggleButton
-                                   text: "開啟"
-                                   onCheckedChanged: {
-                                       MoveCenterTabController.gravityActive = this.checked
-                                   }
-                               }
-                               Item {
-                                   Layout.fillWidth: true
-                               }
-                               MyText {
-                                   text: "重力強度 (+ 為向下)："
-                                   horizontalAlignment: Text.AlignRight
-                                   Layout.rightMargin: 2
-                               }
-
-                               MyTextField {
-                                    id: gravityStrengthText
-                                    text: "9.80"
-                                    keyBoardUID: 152
-                                    Layout.preferredWidth: 120
-                                    Layout.leftMargin: 10
-                                    Layout.rightMargin: 10
-                                    horizontalAlignment: Text.AlignHCenter
-                                    function onInputEvent(input) {
-                                        var val = parseFloat(input)
-                                        if (!isNaN(val)) {
-                                            MoveCenterTabController.gravityStrength = val.toFixed(2)
-                                            text = MoveCenterTabController.gravityStrength.toFixed(2)
-                                        } else {
-                                            text = MoveCenterTabController.gravityStrengtht.toFixed(2)
-                                        }
-                                    }
-                               }
-                           }
-
-                           RowLayout {
-                                MyPushButton {
-                                    id: gravityMoonButton
-                                    Layout.preferredWidth: 110
-                                    text:"月球"
-                                    onClicked: {
-                                        MoveCenterTabController.gravityStrength = 1.62
-                                    }
-                                }
-                                MyPushButton {
-                                    id: gravityMarsButton
-                                    Layout.preferredWidth: 110
-                                    text:"火星"
-                                    onClicked: {
-                                        MoveCenterTabController.gravityStrength = 3.71
-                                    }
-                               }
-                                MyPushButton {
-                                    id: gravityEarthButton
-                                    Layout.preferredWidth: 110
-                                    text:"地球"
-                                    onClicked: {
-                                        MoveCenterTabController.gravityStrength = 9.80
-                                    }
-                               }
-                                MyPushButton {
-                                    id: gravityJupiterButton
-                                    Layout.preferredWidth: 110
-                                    text:"木星"
-                                    onClicked: {
-                                        MoveCenterTabController.gravityStrength = 24.79
-                                    }
-                               }
-                           }
-                       }
-
-                       Component.onCompleted: {
-                           gravityToggleButton.checked = MoveCenterTabController.gravityActive
-                       }
-
-                       Connections {
-                           target: MoveCenterTabController
-
-                           onGravityActiveChanged: {
-                               gravityToggleButton.checked = MoveCenterTabController.gravityActive
-                           }
-                       }
-                   }
-
-                    RowLayout {
-                        spacing: 18
+                RowLayout {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    spacing: 12
+                    MyText {
+                        text: qsTr("Video Profile")
                         Layout.fillWidth: true
-                        MyPushButton {
-                            text: "Ctrl-V"
-                            Layout.preferredWidth: 150
-                            onClicked: {
-                                UtilitiesTabController.sendKeyboardCtrlV()
-                           }
+                    }
+                    MyComboBox {
+                        id: summaryVideoProfileComboBox
+                        Layout.preferredWidth: 320
+                        model: [""]
+                        onCurrentIndexChanged: {
+                            if (currentIndex > 0) {
+                                summaryVideoProfileApplyButton.enabled = true
+                            } else {
+                                summaryVideoProfileApplyButton.enabled = false
+                            }
                         }
-                        MyPushButton {
-                            text: "Enter"
+                    }
+                    MyPushButton {
+                        id: summaryVideoProfileApplyButton
+                        enabled: false
+                        Layout.preferredWidth: 120
+                        text: qsTr("Apply")
+                        onClicked: {
+                            if (summaryVideoProfileComboBox.currentIndex > 0) {
+                                VideoTabController.applyVideoProfile(summaryVideoProfileComboBox.currentIndex - 1)
+                                summaryVideoProfileComboBox.currentIndex = 0
+                            }
+                        }
+                    }
+                }
+
+                LineSeparator {
+                }
+
+                RowLayout {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    spacing: 12
+                    MyText {
+                        text: qsTr("Chaperone Profile")
+                        Layout.fillWidth: true
+                    }
+                    MyComboBox {
+                        id: summaryChaperoneProfileComboBox
+                        Layout.preferredWidth: 320
+                        model: [""]
+                        onCurrentIndexChanged: {
+                            if (currentIndex > 0) {
+                                summaryChaperoneProfileApplyButton.enabled = true
+                            } else {
+                                summaryChaperoneProfileApplyButton.enabled = false
+                            }
+                        }
+                    }
+                    MyPushButton {
+                        id: summaryChaperoneProfileApplyButton
+                        enabled: false
+                        Layout.preferredWidth: 120
+                        text: qsTr("Apply")
+                        onClicked: {
+                            if (summaryChaperoneProfileComboBox.currentIndex > 0) {
+                                ChaperoneTabController.applyChaperoneProfile(summaryChaperoneProfileComboBox.currentIndex - 1)
+                                summaryChaperoneProfileComboBox.currentIndex = 0
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        SettingsGroupBox {
+            visible: false // Hide the Stats section without removing its functionality.
+            rowHeight: groupBoxRowHeight
+            title: qsTr("Stats")
+            ColumnLayout {
+                anchors.fill: parent
+                spacing: 0
+
+                RowLayout {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    spacing: 16
+                    RowLayout {
+                        Layout.fillWidth: true
+                        Layout.preferredWidth: 1
+                        MyText {
+                            text: qsTr("Tracking Universe")
+                            color: "#8b929a"
+                        }
+                        MyText {
+                            id: summaryPlaySpaceModeText
                             Layout.fillWidth: true
-                            onClicked: {
-                                UtilitiesTabController.sendKeyboardEnter()
-                            }
+                            horizontalAlignment: Text.AlignRight
+                            text: qsTr("Unknown")
                         }
-                        MyPushButton {
-                            text: "Alt+Tab"
-                            Layout.preferredWidth: 150
-                            onClicked: {
-                                UtilitiesTabController.sendKeyboardAltTab()
-                            }
-                       }
-                        MyPushButton {
-                            text: "Ctrl-C"
-                            Layout.preferredWidth: 150
-                            onClicked: {
-                                UtilitiesTabController.sendKeyboardCtrlC()
-                            }
+                    }
+                    VerticalSeparator {
+                    }
+                    RowLayout {
+                        Layout.fillWidth: true
+                        Layout.preferredWidth: 1
+                        MyText {
+                            text: qsTr("HMD Rotations")
+                            color: "#8b929a"
                         }
-                        MyPushButton {
-                            text: "Ctrl-V+Enter"
+                        MyText {
+                            id: summaryHmdRotationsText
                             Layout.fillWidth: true
-                            onClicked: {
-                                UtilitiesTabController.sendKeyboardCtrlV()
-                                UtilitiesTabController.sendKeyboardEnter()
-                            }
-                       }
-
-                        Item {
-                            Layout.fillWidth: true
+                            horizontalAlignment: Text.AlignRight
+                            text: "-999.9"
                         }
-                   }
+                    }
+                }
 
-                   RowLayout {
-                       spacing: 18
+                LineSeparator {
+                }
 
-                       MyText {
-                           text: "視訊設定檔："
-                       }
-                       Item{
-                          Layout.fillWidth: true
-                       }
+                RowLayout {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    spacing: 16
+                    RowLayout {
+                        Layout.fillWidth: true
+                        Layout.preferredWidth: 1
+                        MyText {
+                            text: qsTr("Dropped Frames")
+                            color: "#8b929a"
+                        }
+                        MyText {
+                            id: summaryDroppedFramesText
+                            Layout.fillWidth: true
+                            horizontalAlignment: Text.AlignRight
+                            text: "0"
+                        }
+                    }
+                    VerticalSeparator {
+                    }
+                    RowLayout {
+                        Layout.fillWidth: true
+                        Layout.preferredWidth: 1
+                        MyText {
+                            text: qsTr("Reprojected Frames")
+                            color: "#8b929a"
+                        }
+                        MyText {
+                            id: summaryReprojectedFramesText
+                            Layout.fillWidth: true
+                            horizontalAlignment: Text.AlignRight
+                            text: "0"
+                        }
+                    }
+                }
 
-                       MyComboBox {
-                           id: summaryVideoProfileComboBox
-                           Layout.maximumWidth: 378
-                           Layout.minimumWidth: 378
-                           Layout.preferredWidth: 378
-                           model: [""]
-                           onCurrentIndexChanged: {
-                               if (currentIndex > 0) {
-                                   summaryVideoProfileApplyButton.enabled = true
-                               } else {
-                                   summaryVideoProfileApplyButton.enabled = false
-                               }
-                           }
-                       }
+                LineSeparator {
+                }
 
-                       MyPushButton {
-                           id: summaryVideoProfileApplyButton
-                           enabled: false
-                           Layout.preferredWidth: 150
-                           text: "套用"
-                           onClicked: {
-                               if (summaryVideoProfileComboBox.currentIndex > 0) {
-                                   VideoTabController.applyVideoProfile(summaryVideoProfileComboBox.currentIndex - 1)
-                                   summaryVideoProfileComboBox.currentIndex = 0
-                               }
-                           }
-                       }
-                   }
+                RowLayout {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    spacing: 16
+                    RowLayout {
+                        Layout.fillWidth: true
+                        Layout.preferredWidth: 1
+                        MyText {
+                            text: qsTr("Timed Out")
+                            color: "#8b929a"
+                        }
+                        MyText {
+                            id: summaryTimedOutText
+                            Layout.fillWidth: true
+                            horizontalAlignment: Text.AlignRight
+                            text: "0"
+                        }
+                    }
+                    VerticalSeparator {
+                    }
+                    RowLayout {
+                        Layout.fillWidth: true
+                        Layout.preferredWidth: 1
+                        MyText {
+                            text: qsTr("Reprojection Ratio")
+                            color: "#8b929a"
+                        }
+                        MyText {
+                            id: summaryTotalRatioText
+                            Layout.fillWidth: true
+                            horizontalAlignment: Text.AlignRight
+                            text: "0"
+                        }
+                    }
+                }
+            }
+        }
 
-                   RowLayout {
-                       spacing: 18
+        SettingsGroupBox {
+            rowHeight: groupBoxRowHeight
+            title: qsTr("Brightness")
+            ColumnLayout {
+                anchors.fill: parent
+                spacing: 0
 
-                       MyText {
-                           text: "引導系統設定檔："
-                       }
+                RowLayout {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    spacing: 12
+                    MyToggleButton {
+                        id: summaryBrightnessToggle
+                        text: qsTr("On/Off")
+                        onCheckedChanged: {
+                            VideoTabController.setBrightnessEnabled(this.checked, true)
+                        }
+                    }
 
-                       MyComboBox {
-                           id: summaryChaperoneProfileComboBox
-                           Layout.leftMargin: 47
-                           Layout.maximumWidth: 378
-                           Layout.minimumWidth: 378
-                           Layout.preferredWidth: 378
-                           Layout.fillWidth: true
-                           model: [""]
-                           onCurrentIndexChanged: {
-                               if (currentIndex > 0) {
-                                   summaryChaperoneProfileApplyButton.enabled = true
-                               } else {
-                                   summaryChaperoneProfileApplyButton.enabled = false
-                               }
-                           }
-                       }
+                    Item {
+                        Layout.preferredWidth: 150
+                    }
 
-                       MyPushButton {
-                           id: summaryChaperoneProfileApplyButton
-                           enabled: false
-                           Layout.preferredWidth: 150
-                           text: "套用"
-                           onClicked: {
-                               if (summaryChaperoneProfileComboBox.currentIndex > 0) {
-                                   ChaperoneTabController.applyChaperoneProfile(summaryChaperoneProfileComboBox.currentIndex - 1)
-                                   summaryChaperoneProfileComboBox.currentIndex = 0
-                               }
-                           }
-                       }
-                   }
+                    MyText {
+                        text: qsTr("Brightness")
+                        horizontalAlignment: Text.AlignRight
+                        Layout.rightMargin: 10
+                    }
 
-                   Item {
-                       Layout.fillHeight: true
-                       Layout.fillWidth: true
-                   }
+                    MySlider {
+                        id: summaryBrightnessSlider
+                        from: 0.2
+                        to: 1.0
+                        stepSize: 0.01
+                        value: 1.0
+                        Layout.fillWidth: true
+                        onMoved: {
+                            VideoTabController.setBrightnessOpacityValue(this.value.toFixed(2), true)
+                        }
+                    }
 
-                   RowLayout {
-                       MyText {
-                           text: "追蹤範圍："
-                       }
-                       MyText {
-                           id: summaryPlaySpaceModeText
-                           Layout.fillWidth: true
-                           horizontalAlignment: Text.AlignRight
-                           text: "未知"
-                       }
-                   }
+                    MyTextField {
+                        id: summaryBrightnessValueText
+                        text: "100%"
+                        keyBoardUID: 901
+                        Layout.preferredWidth: 100
+                        Layout.leftMargin: 10
+                        horizontalAlignment: Text.AlignHCenter
+                        function onInputEvent(input) {
+                            var val = parseFloat(input)
+                            if (!isNaN(val)) {
+                                if (val < 3) {
+                                    val = 3
+                                } else if (val > 100.0) {
+                                    val = 100.0
+                                }
+                                var v = (val/100)
+                                VideoTabController.setBrightnessOpacityValue(v.toFixed(2), true)
+                            }
+                            text = Math.round(VideoTabController.brightnessOpacityValue * 100) + "%"
+                        }
+                    }
+                }
+            }
+        }
 
-                   Item {
-                       Layout.fillHeight: true
-                       Layout.fillWidth: true
-                   }
+        SettingsGroupBox {
+            rowHeight: groupBoxRowHeight
+            title: qsTr("Pitch")
+            ColumnLayout {
+                anchors.fill: parent
+                spacing: 0
 
+                RowLayout {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    spacing: 8
+                    MyPushButton2 {
+                        Layout.preferredWidth: 40
+                        text: "0"
+                        onClicked: {
+                            MoveCenterTabController.offsetPitch = 0
+                        }
+                    }
 
+                    MyPushButton2 {
+                        Layout.preferredWidth: 40
+                        text: "-"
+                        onClicked: {
+                            MoveCenterTabController.modOffsetPitch(-5)
+                        }
+                    }
 
-                   RowLayout {
-                       MyText {
-                           text: "麥克風："
-                       }
-                       MySlider {
-                           id: summaryMicVolumeSlider
-                           from: 0.0
-                           to: 1.0
-                           stepSize: 0.01
-                           value: 1.0
-                           Layout.fillWidth: true
-                           onPositionChanged: {
-                               var val = this.position * 100
-                               summaryMicVolumeText.text = Math.round(val) + "%"
-                           }
-                           onValueChanged: {
-                               AudioTabController.setMicVolume(this.value.toFixed(2))
-                           }
-                       }
-                       MyText {
-                           id: summaryMicVolumeText
-                           text: "100%"
-                           Layout.preferredWidth: 85
-                           horizontalAlignment: Text.AlignRight
-                       }
+                    MyTextField {
+                        id: summaryPitchText
+                        text: "0°"
+                        keyBoardUID: 1102
+                        Layout.preferredWidth: 140
+                        horizontalAlignment: Text.AlignHCenter
+                        function onInputEvent(input) {
+                            var val = parseFloat(input)
+                            if (!isNaN(val)) {
+                                MoveCenterTabController.offsetPitch = val
+                            }
+                            text = Math.round(MoveCenterTabController.offsetPitch) + "°"
+                        }
+                    }
 
-                       MyPushButton2 {
-                           id: summaryMicMuteToggle
-                           Layout.leftMargin: 12
-                           checkable: true
-                           contentItem: Image {
-                               source: parent.checked ? "qrc:/microphone/off" : "qrc:/microphone/on"
-                               sourceSize.width: 32
-                               sourceSize.height: 32
-                               anchors.fill: parent
-                           }
-                           onCheckedChanged: {
-                               AudioTabController.setMicMuted(checked)
-                           }
-                       }
-                   }
-                   RowLayout {
-                       MyToggleButton {
-                           id: summaryPttToggle
-                           text: "按住說話"
-                           onClicked: {
-                                AudioTabController.setPttEnabled(checked, true)
-                           }
-                       }
-                   }
+                    MyPushButton2 {
+                        Layout.preferredWidth: 40
+                        text: "+"
+                        onClicked: {
+                            MoveCenterTabController.modOffsetPitch(5)
+                        }
+                    }
 
-                   Item {
-                       Layout.fillHeight: true
-                       Layout.fillWidth: true
-                   }
+                    // 這裡改成 MyPushButton 就會有跟其他按鈕一樣的深灰底框，且寬度加寬到 280 更好按
+                    MyPushButton {
+                        Layout.preferredWidth: 280
+                        Layout.leftMargin: 12
+                        text: qsTr("Front Calibrate")
+                        onClicked: {
+                            MoveCenterTabController.offsetPitch = -MoveCenterTabController.offsetPitch
+                        }
+                    }
 
-                   RowLayout {
+                    Item {
+                        Layout.fillWidth: true
+                    }
 
-                           Rectangle {
-                               id: summaryVersionCheckTextRect
-                               visible: true
-                               color: "#2a2e35"
-                               MyText {
-                                   id: summaryVersionCheckText
-                                   text: ""
-                                   color: "#3d4450"
-                                   font.pointSize: 22
-                                   minimumPointSize: 11
-                                   fontSizeMode: Text.Fit
-                                   leftPadding: 8
-                                   rightPadding: 8
-                                   horizontalAlignment: Text.AlignHCenter
-                                   width: parent.width
-                                   wrapMode: Text.Wrap
-                               }
-                               height: 40
-                               Layout.fillWidth: true
-                           }
+                    // 補上足夠的寬度 (180)，讓「鎖定俯仰」四個字不會被截斷成「鎖...」
+                    MyToggleButton {
+                        id: summaryLockPitchToggle
+                        Layout.preferredWidth: 180
+                        text: qsTr("Lock Pitch")
+                        onCheckedChanged: {
+                            MoveCenterTabController.lockPitchToggle = this.checked
+                        }
+                    }
+                }
+            }
+        }
 
-                       MyText {
-                           id: summaryVersionText
-                           text: "v0.0.0"
-                           font.pointSize: 16
-                           horizontalAlignment: Text.AlignRight
-                       }
-                   }
+        SettingsGroupBox {
+            rowHeight: groupBoxRowHeight
+            title: qsTr("Height Toggle / Gravity Floor Offset")
+            ColumnLayout {
+                anchors.fill: parent
+                spacing: 0
 
+                RowLayout {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    spacing: 12
+                    MyToggleButton {
+                        id: summaryHeightToggleButton
+                        text: qsTr("On/Off")
+                        onCheckedChanged: {
+                            MoveCenterTabController.heightToggle = this.checked
+                        }
+                    }
 
-               }
-           }
-       }
-   }
+                    Item {
+                        Layout.fillWidth: true
+                    }
+
+                    MyText {
+                        text: qsTr("Height Offset (+ is down)")
+                        horizontalAlignment: Text.AlignRight
+                        Layout.rightMargin: 2
+                    }
+
+                    MyTextField {
+                        id: summaryHeightToggleOffsetText
+                        text: "-1.00"
+                        keyBoardUID: 151
+                        Layout.preferredWidth: 140
+                        Layout.leftMargin: 10
+                        Layout.rightMargin: 10
+                        horizontalAlignment: Text.AlignHCenter
+                        function onInputEvent(input) {
+                            var val = parseFloat(input)
+                            if (!isNaN(val)) {
+                                MoveCenterTabController.heightToggleOffset = val.toFixed(2)
+                                text = MoveCenterTabController.heightToggleOffset.toFixed(2)
+                            } else {
+                                text = MoveCenterTabController.heightToggleOffset.toFixed(2)
+                            }
+                        }
+                    }
+
+                    MyPushButton {
+                        id: summaryHeightOffsetFromYOffsetButton
+                        Layout.preferredWidth: 230
+                        text: qsTr("Set From Y-Offset")
+                        onClicked: {
+                            MoveCenterTabController.heightToggleOffset = MoveCenterTabController.offsetY
+                        }
+                    }
+                }
+            }
+        }
+
+        SettingsGroupBox {
+            rowHeight: groupBoxRowHeight
+            title: qsTr("Gravity Settings")
+            ColumnLayout {
+                anchors.fill: parent
+                spacing: 0
+
+                MyToggleButton {
+                    id: summaryGravityToggleButton
+                    Layout.preferredHeight: groupBoxRowHeight
+                    text: qsTr("Gravity")
+                    Layout.fillWidth: true
+                    Layout.rightMargin: 0
+                    onCheckedChanged: {
+                        MoveCenterTabController.gravityActive = this.checked
+                    }
+                }
+                LineSeparator {
+                }
+                RowLayout {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    spacing: 16
+                    Layout.leftMargin: 32
+
+                    MyText {
+                        text: qsTr("Gravity Strength (+ is down)")
+                        Layout.fillWidth: true
+                        horizontalAlignment: Text.AlignLeft
+                    }
+                    MyTextField {
+                        id: summaryGravityStrengthText
+                        text: "9.80"
+                        keyBoardUID: 152
+                        Layout.preferredWidth: 120
+                        horizontalAlignment: Text.AlignHCenter
+                        function onInputEvent(input) {
+                            var val = parseFloat(input)
+                            if (!isNaN(val)) {
+                                MoveCenterTabController.gravityStrength = val.toFixed(2)
+                                text = MoveCenterTabController.gravityStrength.toFixed(2)
+                            } else {
+                                text = MoveCenterTabController.gravityStrength.toFixed(2)
+                            }
+                        }
+                    }
+                    MyPushButton {
+                        id: summaryGravityMoonButton
+                        Layout.preferredWidth: 110
+                        text: qsTr("Moon")
+                        onClicked: {
+                            MoveCenterTabController.gravityStrength = 1.62
+                        }
+                    }
+                    MyPushButton {
+                        id: summaryGravityMarsButton
+                        Layout.preferredWidth: 110
+                        text: qsTr("Mars")
+                        onClicked: {
+                            MoveCenterTabController.gravityStrength = 3.71
+                        }
+                    }
+                    MyPushButton {
+                        id: summaryGravityEarthButton
+                        Layout.preferredWidth: 110
+                        text: qsTr("Earth")
+                        onClicked: {
+                            MoveCenterTabController.gravityStrength = 9.80
+                        }
+                    }
+                    MyPushButton {
+                        id: summaryGravityJupiterButton
+                        Layout.preferredWidth: 110
+                        text: qsTr("Jupiter")
+                        onClicked: {
+                            MoveCenterTabController.gravityStrength = 24.79
+                        }
+                    }
+                }
+                LineSeparator {
+                }
+                MyToggleButton {
+                    id: summaryMomentumToggleButton
+                    Layout.preferredHeight: groupBoxRowHeight
+                    text: qsTr("Save Momentum")
+                    Layout.fillWidth: true
+                    Layout.leftMargin: 32
+                    Layout.rightMargin: 0
+                    onCheckedChanged: {
+                        MoveCenterTabController.momentumSave = this.checked
+                    }
+                }
+                LineSeparator {
+                }
+                RowLayout {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    spacing: 16
+                    Layout.leftMargin: 32
+
+                    MyText {
+                        text: qsTr("Friction")
+                        horizontalAlignment: Text.AlignLeft
+                    }
+                    MyTextField {
+                        id: summaryFrictionPercentText
+                        text: "0%"
+                        keyBoardUID: 156
+                        Layout.preferredWidth: 120
+                        horizontalAlignment: Text.AlignHCenter
+                        function onInputEvent(input) {
+                            var val = parseInt(input)
+                            if (!isNaN(val)) {
+                                if ( val > 999 )
+                                {
+                                    val = 999
+                                }
+                                if ( val < 0 )
+                                {
+                                    val = 0
+                                }
+
+                                MoveCenterTabController.frictionPercent = val
+                                text = MoveCenterTabController.frictionPercent + "%"
+                            } else {
+                                text = MoveCenterTabController.frictionPercent + "%"
+                            }
+                        }
+                    }
+                    Item {
+                        Layout.fillWidth: true
+                    }
+                    MyText {
+                        text: qsTr("Fling Strength")
+                        horizontalAlignment: Text.AlignLeft
+                    }
+                    MyTextField {
+                        id: summaryFlingStrengthText
+                        text: "1.0"
+                        keyBoardUID: 153
+                        Layout.preferredWidth: 120
+                        horizontalAlignment: Text.AlignHCenter
+                        function onInputEvent(input) {
+                            var val = parseFloat(input)
+                            if (!isNaN(val)) {
+                                MoveCenterTabController.flingStrength = val.toFixed(2)
+                                text = MoveCenterTabController.flingStrength.toFixed(2)
+                            } else {
+                                text = MoveCenterTabController.flingStrength.toFixed(2)
+                            }
+                        }
+                    }
+                    MyPushButton2 {
+                        Layout.preferredWidth: 50
+                        text: "1x"
+                        onClicked: {
+                            MoveCenterTabController.flingStrength = 1.0
+                        }
+                    }
+                    MyPushButton2 {
+                        Layout.preferredWidth: 50
+                        text: "2x"
+                        onClicked: {
+                            MoveCenterTabController.flingStrength = 2.0
+                        }
+                    }
+                    MyPushButton2 {
+                        Layout.preferredWidth: 50
+                        text: "3x"
+                        onClicked: {
+                            MoveCenterTabController.flingStrength = 3.0
+                        }
+                    }
+                }
+            }
+        }
+
+        SettingsGroupBox {
+            rowHeight: groupBoxRowHeight
+            title: qsTr("Microphone")
+            ColumnLayout {
+                anchors.fill: parent
+                spacing: 0
+
+                RowLayout {
+                    Layout.preferredHeight: groupBoxRowHeight
+                    spacing: 8
+                    MyPushButton2 {
+                        id: summaryMicMuteToggle
+                        Layout.preferredWidth: 44
+                        Layout.preferredHeight: 40
+                        checkable: true
+                        contentItem: Image {
+                            source: parent.checked ? "qrc:/qt/qml/AdvancedSettings/img/audio/microphone/mic_off.svg" : "qrc:/qt/qml/AdvancedSettings/img/audio/microphone/mic_on.svg"
+                            sourceSize.width: 26
+                            sourceSize.height: 26
+                            fillMode: Image.PreserveAspectFit
+                        }
+                        onCheckedChanged: {
+                            AudioTabController.setMicMuted(checked)
+                        }
+                    }
+                    MySlider {
+                        id: summaryMicVolumeSlider
+                        from: 0.0
+                        to: 1.0
+                        stepSize: 0.01
+                        value: 1.0
+                        Layout.fillWidth: true
+                        onPositionChanged: {
+                            var val = this.position * 100
+                            summaryMicVolumeText.text = Math.round(val) + "%"
+                        }
+                        onValueChanged: {
+                            AudioTabController.setMicVolume(this.value.toFixed(2))
+                        }
+                    }
+                    MyText {
+                        id: summaryMicVolumeText
+                        text: "100%"
+                        Layout.preferredWidth: 64
+                        horizontalAlignment: Text.AlignRight
+                    }
+                }
+
+                LineSeparator {
+                }
+
+                MyToggleButton {
+                    id: summaryPttToggle
+                    Layout.preferredHeight: groupBoxRowHeight
+                    text: AudioTabController.micReversePtt ? qsTr("Push-to-Mute") : qsTr("Push-to-Talk")
+                    Layout.fillWidth: true
+                    onClicked: {
+                         AudioTabController.setPttEnabled(checked, true)
+                    }
+                }
+            }
+        }
+
+        Item {
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+        }
+
+        RowLayout {
+            spacing: 12
+
+            Rectangle {
+                id: summaryVersionCheckTextRect
+                visible: true
+                color: "transparent"
+                radius: 3
+                MyText {
+                    id: summaryVersionCheckText
+                    anchors.verticalCenter: parent.verticalCenter
+                    text: ""
+                    color: "#ffffff"
+                    font.pointSize: 15
+                    minimumPointSize: 10
+                    fontSizeMode: Text.Fit
+                    leftPadding: 12
+                    rightPadding: 12
+                    horizontalAlignment: Text.AlignLeft
+                    width: parent.width
+                    wrapMode: Text.Wrap
+                }
+                height: 36
+                Layout.fillWidth: true
+            }
+
+            MyText {
+                id: summaryVersionText
+                text: "v0.0.0"
+                font.pointSize: 13
+                color: "#8b929a"
+                horizontalAlignment: Text.AlignRight
+            }
+        }
+    }
 
    Component.onCompleted: {
        reloadChaperoneProfiles()
@@ -613,18 +706,18 @@ MyStackViewPage {
        summaryVersionCheckText.text = OverlayController.versionCheckText
        if (OverlayController.newVersionDetected)
        {
-           summaryVersionCheckTextRect.color = "#ff0000"
+           summaryVersionCheckTextRect.color = "#c4372d"
        } else {
-           summaryVersionCheckTextRect.color = "#2a2e35"
+           summaryVersionCheckTextRect.color = "transparent"
        }
 
 
        if (MoveCenterTabController.trackingUniverse === 0) {
-           summaryPlaySpaceModeText.text = "坐姿"
+           summaryPlaySpaceModeText.text = qsTr("Sitting")
        } else if (MoveCenterTabController.trackingUniverse === 1) {
-           summaryPlaySpaceModeText.text = "站姿"
+           summaryPlaySpaceModeText.text = qsTr("Standing")
        } else {
-           summaryPlaySpaceModeText.text = "未知(" + MoveCenterTabController.trackingUniverse + ")"
+           summaryPlaySpaceModeText.text = qsTr("Unknown(%1)").arg(MoveCenterTabController.trackingUniverse)
        }
        updateStatistics()
        if (visible) {
@@ -633,75 +726,126 @@ MyStackViewPage {
        summaryMicVolumeSlider.value = AudioTabController.micVolume
        summaryMicMuteToggle.checked = AudioTabController.micMuted
        summaryPttToggle.checked = AudioTabController.pttEnabled
-   }
 
+       var brightvalue = VideoTabController.brightnessOpacityValue
+       summaryBrightnessSlider.value = brightvalue
+       summaryBrightnessValueText.text = Math.round(brightvalue*100)+ "%"
+       summaryBrightnessToggle.checked = VideoTabController.brightnessEnabled
+
+       summaryHeightToggleButton.checked = MoveCenterTabController.heightToggle
+       summaryHeightToggleOffsetText.text = MoveCenterTabController.heightToggleOffset.toFixed(2)
+
+       summaryGravityToggleButton.checked = MoveCenterTabController.gravityActive
+       summaryGravityStrengthText.text = MoveCenterTabController.gravityStrength.toFixed(2)
+       summaryMomentumToggleButton.checked = MoveCenterTabController.momentumSave
+       summaryFlingStrengthText.text = MoveCenterTabController.flingStrength.toFixed(2)
+       summaryFrictionPercentText.text = MoveCenterTabController.frictionPercent + "%"
+
+       summaryPitchText.text = Math.round(MoveCenterTabController.offsetPitch) + "°"
+       summaryLockPitchToggle.checked = MoveCenterTabController.lockPitchToggle
+   }
    Connections {
        target: OverlayController
-       onNewVersionDetectedChanged: {
+       function onNewVersionDetectedChanged() {
            if (OverlayController.newVersionDetected)
            {
-               summaryVersionCheckTextRect.color = "#ff0000"
+               summaryVersionCheckTextRect.color = "#c4372d"
            } else {
-               summaryVersionCheckTextRect.color = "#2a2e35"
+               summaryVersionCheckTextRect.color = "transparent"
            }
        }
-       onVersionCheckTextChanged: {
-            summaryVersionCheckText.text = OverlayController.versionCheckText
-        }
-        onDisableVersionCheckChanged: {
-            if (OverlayController.disableVersionCheck)
-            {
-                summaryVersionCheckText.visible = false
-                summaryVersionCheckTextRect.color = "#2a2e35"
-            } else {
-                summaryVersionCheckText.visible = true
-                if (OverlayController.newVersionDetected)
-                {
-                    summaryVersionCheckTextRect.color = "#ff0000"
-                } else {
-                    summaryVersionCheckTextRect.color = "#2a2e35"
-                }
-            }
-        }
+       function onVersionCheckTextChanged() {
+           summaryVersionCheckText.text = OverlayController.versionCheckText
+       }
+       function onDisableVersionCheckChanged() {
+           if (OverlayController.disableVersionCheck)
+           {
+               summaryVersionCheckText.visible = false
+               summaryVersionCheckTextRect.color = "transparent"
+           } else {
+               summaryVersionCheckText.visible = true
+               if (OverlayController.newVersionDetected)
+               {
+                   summaryVersionCheckTextRect.color = "#c4372d"
+               } else {
+                   summaryVersionCheckTextRect.color = "transparent"
+               }
+           }
+       }
    }
 
    Connections {
        target: ChaperoneTabController
-       onChaperoneProfilesUpdated: {
+       function onChaperoneProfilesUpdated() {
            reloadChaperoneProfiles()
        }
    }
 
    Connections {
        target: VideoTabController
-       onVideoProfilesUpdated: {
+       function onVideoProfilesUpdated() {
            reloadVideoProfiles()
+       }
+       function onBrightnessOpacityValueChanged() {
+           var brightvalue = VideoTabController.brightnessOpacityValue
+           summaryBrightnessSlider.value = brightvalue
+           summaryBrightnessValueText.text = Math.round(brightvalue*100)+ "%"
+       }
+       function onBrightnessEnabledChanged() {
+           summaryBrightnessToggle.checked = VideoTabController.brightnessEnabled
        }
    }
 
    Connections {
        target: AudioTabController
-       onMicVolumeChanged: {
+       function onMicVolumeChanged() {
            summaryMicVolumeSlider.value = AudioTabController.micVolume
        }
-       onMicMutedChanged: {
+       function onMicMutedChanged() {
            summaryMicMuteToggle.checked = AudioTabController.micMuted
        }
-       onPttEnabledChanged: {
+       function onPttEnabledChanged() {
            summaryPttToggle.checked = AudioTabController.pttEnabled
        }
    }
 
    Connections {
        target: MoveCenterTabController
-       onTrackingUniverseChanged: {
+       function onTrackingUniverseChanged() {
            if (MoveCenterTabController.trackingUniverse === 0) {
-               summaryPlaySpaceModeText.text = "坐姿"
+               summaryPlaySpaceModeText.text = qsTr("Sitting")
            } else if (MoveCenterTabController.trackingUniverse === 1) {
-               summaryPlaySpaceModeText.text = "站姿"
+               summaryPlaySpaceModeText.text = qsTr("Standing")
            } else {
-               summaryPlaySpaceModeText.text = "未知(" + MoveCenterTabController.trackingUniverse + ")"
+               summaryPlaySpaceModeText.text = qsTr("Unknown(%1)").arg(MoveCenterTabController.trackingUniverse)
            }
+       }
+       function onHeightToggleChanged() {
+           summaryHeightToggleButton.checked = MoveCenterTabController.heightToggle
+       }
+       function onHeightToggleOffsetChanged() {
+           summaryHeightToggleOffsetText.text = MoveCenterTabController.heightToggleOffset.toFixed(2)
+       }
+       function onGravityActiveChanged() {
+           summaryGravityToggleButton.checked = MoveCenterTabController.gravityActive
+       }
+       function onGravityStrengthChanged() {
+           summaryGravityStrengthText.text = MoveCenterTabController.gravityStrength.toFixed(2)
+       }
+       function onMomentumSaveChanged() {
+           summaryMomentumToggleButton.checked = MoveCenterTabController.momentumSave
+       }
+       function onFlingStrengthChanged() {
+           summaryFlingStrengthText.text = MoveCenterTabController.flingStrength.toFixed(2)
+       }
+       function onFrictionPercentChanged() {
+           summaryFrictionPercentText.text = MoveCenterTabController.frictionPercent + "%"
+       }
+       function onOffsetPitchChanged() {
+           summaryPitchText.text = Math.round(MoveCenterTabController.offsetPitch) + "°"
+       }
+       function onRequireLockPitchChanged() {
+           summaryLockPitchToggle.checked = MoveCenterTabController.lockPitchToggle
        }
    }
 
@@ -709,9 +853,9 @@ MyStackViewPage {
    function updateStatistics() {
        var rotations = StatisticsTabController.hmdRotations
        if (rotations > 0) {
-           summaryHmdRotationsText.text = rotations.toFixed(2) + " CCW"
+           summaryHmdRotationsText.text = qsTr("%1 CCW").arg(rotations.toFixed(2))
        } else {
-           summaryHmdRotationsText.text = -rotations.toFixed(2) + " CW"
+           summaryHmdRotationsText.text = qsTr("%1 CW").arg(-rotations.toFixed(2))
        }
        summaryDroppedFramesText.text = StatisticsTabController.droppedFrames
        summaryReprojectedFramesText.text = StatisticsTabController.reprojectedFrames

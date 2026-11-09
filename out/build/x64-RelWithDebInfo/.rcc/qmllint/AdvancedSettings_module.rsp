@@ -1,0 +1,14 @@
+-I
+Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo
+-I
+C:/Qt/6.8.3/msvc2022_64/qml
+--resource
+Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/.qt/rcc/qmake_AdvancedSettings.qrc
+--resource
+Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/.qt/rcc/AdvancedSettings_raw_qml_0.qrc
+--resource
+Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/.qt/rcc/AdvancedSettings_raw_qml_0_extra_qmldirs.qrc
+--resource
+Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo/.qt/rcc/AdvancedSettings_translations.qrc
+--module
+AdvancedSettings

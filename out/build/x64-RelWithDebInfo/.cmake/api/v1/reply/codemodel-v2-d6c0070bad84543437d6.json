@@ -1,0 +1,241 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-RelWithDebInfo-812118cea2f32b9754fa.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "AdvancedSettings",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings-RelWithDebInfo-7838bc01a147d1151e98.json",
+					"name" : "AdvancedSettings",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_autogen-RelWithDebInfo-1607f771d1717cfe8802.json",
+					"name" : "AdvancedSettings_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_autogen_timestamp_deps-RelWithDebInfo-af7614be62fa3ccf72fa.json",
+					"name" : "AdvancedSettings_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_copy_qml::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_copy_qml-RelWithDebInfo-2bfd26ccca563b36eb06.json",
+					"name" : "AdvancedSettings_copy_qml",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_copy_res::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_copy_res-RelWithDebInfo-1e65a9a761aa42efbe91.json",
+					"name" : "AdvancedSettings_copy_res",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_lrelease::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_lrelease-RelWithDebInfo-a7708fe55e376f4540d0.json",
+					"name" : "AdvancedSettings_lrelease",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_lupdate::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_lupdate-RelWithDebInfo-0ac51fe42103fb3447ca.json",
+					"name" : "AdvancedSettings_lupdate",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_other_files::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_other_files-RelWithDebInfo-e674c5d01ffcef4c4de9.json",
+					"name" : "AdvancedSettings_other_files",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_qmlimportscan-RelWithDebInfo-19f606643486a91a5304.json",
+					"name" : "AdvancedSettings_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_qmllint-RelWithDebInfo-966c2cf43150f1d3c0e0.json",
+					"name" : "AdvancedSettings_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_qmllint_json-RelWithDebInfo-11ab1d1ab93134ecc725.json",
+					"name" : "AdvancedSettings_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_qmllint_module-RelWithDebInfo-4ef80984c140cf12338b.json",
+					"name" : "AdvancedSettings_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_qmltyperegistration-RelWithDebInfo-8cd77e2d6c23caf67474.json",
+					"name" : "AdvancedSettings_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-RelWithDebInfo-2128c81603c9a092018f.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-RelWithDebInfo-716536d48a75ab1c2dc7.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-RelWithDebInfo-3fd390a942ab16287575.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-RelWithDebInfo-b50f6094ade4d51cd768.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-RelWithDebInfo-c672e65e2e4343726c03.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_AdvancedSettings_aotstats_target::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_AdvancedSettings_aotstats_target-RelWithDebInfo-caf3244767f9592fa25f.json",
+					"name" : "module_AdvancedSettings_aotstats_target",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "release_translations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-release_translations-RelWithDebInfo-a4509dae788e3475d61a.json",
+					"name" : "release_translations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "update_translations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-update_translations-RelWithDebInfo-094b87f45cc38f1e5ecf.json",
+					"name" : "update_translations",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-RelWithDebInfo",
+		"source" : "Z:/OpenVR-AdvancedSettings-qt6"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

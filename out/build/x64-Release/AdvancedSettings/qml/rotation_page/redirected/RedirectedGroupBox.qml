@@ -1,0 +1,112 @@
+import QtQuick 2.7
+import QtQuick.Controls 2.0
+import QtQuick.Layouts 1.3
+import ovras.advsettings 1.0
+import "../../common"
+
+SettingsGroupBox {
+    id: redirectedGroupBox
+    Layout.fillWidth: true
+
+    title: qsTr("Continuous Redirected Walking")
+
+    ColumnLayout {
+        spacing: 0
+        anchors.fill: parent
+
+      RowLayout{
+            Layout.preferredHeight: rowHeight
+            MyToggleButton {
+                id: redirectedModeToggle
+                text: qsTr("On/Off")
+                Layout.preferredWidth: 225
+                onCheckedChanged: {
+                    RotationTabController.setVestibularMotionEnabled(this.checked, true);
+
+                }
+            }
+            Item{
+
+                Layout.fillWidth: true
+            }
+
+            MyPushButton {
+                id: imperceptableButton
+                Layout.preferredWidth: 180
+                text:qsTr("Imperceptable")
+                onClicked: {
+                    RotationTabController.setVestibularMotionRadius(22.0)
+                }
+           }
+            MyPushButton {
+                id: lightButton
+                Layout.preferredWidth: 125
+                text:qsTr("Light")
+                onClicked: {
+                    RotationTabController.setVestibularMotionRadius(11.0)
+                }
+           }
+            MyPushButton {
+                id: strongButton
+                Layout.preferredWidth: 125
+                text:qsTr("Strong")
+                onClicked: {
+                    RotationTabController.setVestibularMotionRadius(5.0)
+                }
+           }
+            MyPushButton {
+                id: extremeButton
+                Layout.preferredWidth: 125
+                text:qsTr("Extreme")
+                onClicked: {
+                    RotationTabController.setVestibularMotionRadius(1.0)
+                }
+           }
+
+            MyText{
+                text: qsTr("Radius ")
+                horizontalAlignment: Text.AlignRight
+                Layout.rightMargin: 4
+            }
+
+
+            MyTextField {
+                id: redirectedWalkingRadiusText
+                text: "11.0"
+                keyBoardUID: 1004
+                Layout.preferredWidth: 100
+                Layout.leftMargin: 10
+                horizontalAlignment: Text.AlignHCenter
+                function onInputEvent(input) {
+                    var val = parseFloat(input)
+                    if (!isNaN(val)) {
+                        if (val < 0.5) {
+                            val = 0.5
+                        } else if (val > 50) {
+                            val = 50
+                        }
+                            RotationTabController.setVestibularMotionRadius(val, true);
+                    }
+                }
+            }
+      }
+    }
+
+
+    Component.onCompleted: {
+        redirectedWalkingRadiusText.text = ((RotationTabController.vestibularMotionRadius).toFixed(2))
+        redirectedModeToggle.checked = RotationTabController.vestibularMotionEnabled
+    }
+
+    Connections {
+        target: RotationTabController
+
+        function onVestibularMotionEnabledChanged(){
+         redirectedModeToggle.checked = RotationTabController.vestibularMotionEnabled
+        }
+        function onVestibularMotionRadiusChanged(){
+            redirectedWalkingRadiusText.text =  ((RotationTabController.vestibularMotionRadius).toFixed(2))
+        }
+    }
+
+}

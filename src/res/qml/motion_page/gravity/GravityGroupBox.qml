@@ -4,59 +4,43 @@ import QtQuick.Layouts 1.3
 import ovras.advsettings 1.0
 import "../../common"
 
-GroupBox {
+SettingsGroupBox {
     id: gravityGroupBox
     Layout.fillWidth: true
 
-    label: MyText {
-        leftPadding: 10
-        text: "重力設定"
-        bottomPadding: -10
-    }
-    background: Rectangle {
-        color: "transparent"
-        border.color: "#d9dbe0"
-        radius: 8
-    }
+    title: qsTr("Gravity Settings")
 
     ColumnLayout {
         anchors.fill: parent
+        spacing: 0
 
-        Rectangle {
-            color: "#d9dbe0"
-            height: 1
+        MyToggleButton {
+            id: gravityToggleButton
+            Layout.preferredHeight: rowHeight
+            text: qsTr("Gravity")
             Layout.fillWidth: true
-            Layout.bottomMargin: 5
+            Layout.rightMargin: 0
+            onCheckedChanged: {
+                MoveCenterTabController.gravityActive = this.checked
+            }
         }
-
+        LineSeparator {
+        }
         RowLayout {
-            Layout.fillWidth: true
-
-            MyToggleButton {
-                id: gravityToggleButton
-                text: "開啟"
-                onCheckedChanged: {
-                    MoveCenterTabController.gravityActive = this.checked
-                }
-            }
-
-            Item {
-                Layout.fillWidth: true
-            }
+            Layout.preferredHeight: rowHeight
+            spacing: 16
+            Layout.leftMargin: 32
 
             MyText {
-                text: "重力強度 (+ 為向下)："
-                horizontalAlignment: Text.AlignRight
-                Layout.rightMargin: 2
+                text: qsTr("Gravity Strength (+ is down)")
+                Layout.fillWidth: true
+                horizontalAlignment: Text.AlignLeft
             }
-
             MyTextField {
                 id: gravityStrengthText
                 text: "9.80"
                 keyBoardUID: 152
                 Layout.preferredWidth: 120
-                Layout.leftMargin: 10
-                Layout.rightMargin: 10
                 horizontalAlignment: Text.AlignHCenter
                 function onInputEvent(input) {
                     var val = parseFloat(input)
@@ -64,71 +48,72 @@ GroupBox {
                         MoveCenterTabController.gravityStrength = val.toFixed(2)
                         text = MoveCenterTabController.gravityStrength.toFixed(2)
                     } else {
-                        text = MoveCenterTabController.gravityStrengtht.toFixed(2)
+                        text = MoveCenterTabController.gravityStrength.toFixed(2)
                     }
                 }
             }
-
             MyPushButton {
                 id: gravityMoonButton
                 Layout.preferredWidth: 110
-                text:"月球"
+                text: qsTr("Moon")
                 onClicked: {
                     MoveCenterTabController.gravityStrength = 1.62
                 }
-           }
+            }
             MyPushButton {
                 id: gravityMarsButton
                 Layout.preferredWidth: 110
-                text:"火星"
+                text: qsTr("Mars")
                 onClicked: {
                     MoveCenterTabController.gravityStrength = 3.71
                 }
-           }
+            }
             MyPushButton {
                 id: gravityEarthButton
                 Layout.preferredWidth: 110
-                text:"地球"
+                text: qsTr("Earth")
                 onClicked: {
                     MoveCenterTabController.gravityStrength = 9.80
                 }
-           }
+            }
             MyPushButton {
                 id: gravityJupiterButton
                 Layout.preferredWidth: 110
-                text:"木星"
+                text: qsTr("Jupiter")
                 onClicked: {
                     MoveCenterTabController.gravityStrength = 24.79
                 }
-           }
+            }
+        }
+        LineSeparator {
+        }
+        MyToggleButton {
+            id: momentumToggleButton
+            Layout.preferredHeight: rowHeight
+            text: qsTr("Save Momentum")
+            Layout.fillWidth: true
+            Layout.leftMargin: 32
+            Layout.rightMargin: 0
+            onCheckedChanged: {
+                MoveCenterTabController.momentumSave = this.checked
+            }
+        }
+        LineSeparator {
         }
         RowLayout {
-            Layout.fillWidth: true
-
-            MyToggleButton {
-                id: momentumToggleButton
-                text: "保留動量"
-                onCheckedChanged: {
-                    MoveCenterTabController.momentumSave = this.checked
-                }
-            }
-
-            Item {
-                Layout.preferredWidth: 40
-            }
+            Layout.preferredHeight: rowHeight
+            spacing: 16
+            Layout.leftMargin: 32
 
             MyText {
-                text: "摩擦力："
-                horizontalAlignment: Text.AlignRight
-                Layout.rightMargin: 2
+                text: qsTr("Friction")
+                horizontalAlignment: Text.AlignLeft
             }
-
             MyTextField {
                 id: frictionPercentText
                 text: "0%"
                 keyBoardUID: 156
-                Layout.preferredWidth: 130
-                Layout.leftMargin: 5
+                Layout.preferredWidth: 120
                 horizontalAlignment: Text.AlignHCenter
                 function onInputEvent(input) {
                     var val = parseInt(input)
@@ -149,24 +134,18 @@ GroupBox {
                     }
                 }
             }
-
             Item {
                 Layout.fillWidth: true
             }
-
             MyText {
-                text: "拋擲強度："
-                horizontalAlignment: Text.AlignRight
-                Layout.rightMargin: 2
+                text: qsTr("Fling Strength")
+                horizontalAlignment: Text.AlignLeft
             }
-
             MyTextField {
                 id: flingStrengthText
                 text: "1.0"
                 keyBoardUID: 153
                 Layout.preferredWidth: 120
-                Layout.leftMargin: 10
-                Layout.rightMargin: 10
                 horizontalAlignment: Text.AlignHCenter
                 function onInputEvent(input) {
                     var val = parseFloat(input)
@@ -178,7 +157,6 @@ GroupBox {
                     }
                 }
             }
-
             MyPushButton2 {
                 Layout.preferredWidth: 50
                 text: "1x"
@@ -186,7 +164,6 @@ GroupBox {
                     MoveCenterTabController.flingStrength = 1.0
                 }
             }
-
             MyPushButton2 {
                 Layout.preferredWidth: 50
                 text: "2x"
@@ -194,7 +171,6 @@ GroupBox {
                     MoveCenterTabController.flingStrength = 2.0
                 }
             }
-
             MyPushButton2 {
                 Layout.preferredWidth: 50
                 text: "3x"
@@ -202,8 +178,6 @@ GroupBox {
                     MoveCenterTabController.flingStrength = 3.0
                 }
             }
-
-
         }
     }
 
@@ -218,19 +192,19 @@ GroupBox {
     Connections {
         target: MoveCenterTabController
 
-        onGravityActiveChanged: {
+        function onGravityActiveChanged() {
             gravityToggleButton.checked = MoveCenterTabController.gravityActive
         }
-        onGravityStrengthChanged: {
+        function onGravityStrengthChanged() {
             gravityStrengthText.text = MoveCenterTabController.gravityStrength.toFixed(2)
         }
-        onMomentumSaveChanged: {
+        function onMomentumSaveChanged() {
             momentumToggleButton.checked = MoveCenterTabController.momentumSave
         }
-        onFlingStrengthChanged: {
+        function onFlingStrengthChanged() {
             flingStrengthText.text = MoveCenterTabController.flingStrength.toFixed(2)
         }
-        onFrictionPercentChanged: {
+        function onFrictionPercentChanged() {
             frictionPercentText.text = MoveCenterTabController.frictionPercent + "%"
         }
     }

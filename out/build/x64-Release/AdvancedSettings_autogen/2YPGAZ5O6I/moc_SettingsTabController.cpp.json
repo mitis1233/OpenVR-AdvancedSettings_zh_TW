@@ -1,0 +1,192 @@
+{
+    "classes": [
+        {
+            "className": "SettingsTabController",
+            "lineNumber": 15,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "autoStartEnabled",
+                    "notify": "autoStartEnabledChanged",
+                    "read": "autoStartEnabled",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setAutoStartEnabled"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "nativeChaperoneToggle",
+                    "notify": "nativeChaperoneToggleChanged",
+                    "read": "nativeChaperoneToggle",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setNativeChaperoneToggle"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "oculusSdkToggle",
+                    "notify": "oculusSdkToggleChanged",
+                    "read": "oculusSdkToggle",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setOculusSdkToggle"
+                }
+            ],
+            "qualifiedClassName": "advsettings::SettingsTabController",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "autoStartEnabledChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "nativeChaperoneToggleChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "oculusSdkToggleChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "setAutoStartEnabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 4,
+                    "isCloned": true,
+                    "name": "setAutoStartEnabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "setNativeChaperoneToggle",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 6,
+                    "isCloned": true,
+                    "name": "setNativeChaperoneToggle",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "setOculusSdkToggle",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 8,
+                    "isCloned": true,
+                    "name": "setOculusSdkToggle",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "SettingsTabController.h",
+    "outputRevision": 68
+}

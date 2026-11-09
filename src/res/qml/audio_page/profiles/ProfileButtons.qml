@@ -24,7 +24,7 @@ ColumnLayout {
 
         MyText {
             Layout.preferredWidth: 150
-            text: "音訊設定檔："
+            text: qsTr("Audio Profile")
             visible: false
         }
 
@@ -50,17 +50,13 @@ ColumnLayout {
             enabled: false
             visible: false
             Layout.preferredWidth: 150
-            text: "套用"
+            text: qsTr("Apply")
             onClicked: {
                 if (audioProfileComboBox.currentIndex > 0) {
                     AudioTabController.applyAudioProfile(
                                 audioProfileComboBox.currentIndex - 1)
                 }
             }
-        }
-        MyText {
-            // Text continues in next RowLayout.
-            text: "在 SteamVR 按鍵綁定選單中"
         }
     }
     RowLayout {
@@ -71,7 +67,7 @@ ColumnLayout {
             enabled: false
             visible: false
             Layout.preferredWidth: 200
-            text: "刪除設定檔"
+            text: qsTr("Delete Profile")
             onClicked: {
                 if (audioProfileComboBox.currentIndex > 0) {
                     audioDeleteProfileDialog.profileIndex = audioProfileComboBox.currentIndex - 1
@@ -83,14 +79,10 @@ ColumnLayout {
             enabled: false
             visible: false
             Layout.preferredWidth: 200
-            text: "新增設定檔"
+            text: qsTr("New Profile")
             onClicked: {
                 audioNewProfileDialog.openPopup()
             }
-        }
-        MyText {
-            // Text continues from RowLayout above.
-            text: "    更改按住通話設定"
         }
     }
     Component.onCompleted: {
@@ -98,13 +90,13 @@ ColumnLayout {
     }
     Connections {
         target: AudioTabController
-        onAudioProfilesUpdated: {
+        function onAudioProfilesUpdated() {
             reloadAudioProfiles()
         }
-        onAudioProfileAdded: {
+        function onAudioProfileAdded() {
             audioProfileComboBox.currentIndex = AudioTabController.getAudioProfileCount()
         }
-        onDefaultProfileDisplay: {
+        function onDefaultProfileDisplay() {
             audioProfileComboBox.currentIndex = AudioTabController.getDefaultAudioProfileIndex(
                         ) + 1
         }

@@ -1,0 +1,1026 @@
+{
+    "classes": [
+        {
+            "className": "OverlayController",
+            "lineNumber": 74,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 58,
+                    "name": "exitApp",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 59,
+                    "name": "setAutoChapProfileName",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 60,
+                    "name": "getVersionString",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "index": 61,
+                    "name": "getVRRuntimePathUrl",
+                    "returnType": "QUrl"
+                },
+                {
+                    "access": "public",
+                    "index": 62,
+                    "name": "soundDisabled",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "locale",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 63,
+                    "name": "isAiTranslated",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "locale",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 64,
+                    "name": "aiTranslationPromptSeen",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "locale",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 65,
+                    "name": "setAiTranslationPromptSeen",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 66,
+                    "name": "resetAiTranslationPrompts",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "m_desktopMode",
+                    "read": "isDesktopMode",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "crashRecoveryDisabled",
+                    "notify": "crashRecoveryDisabledChanged",
+                    "read": "crashRecoveryDisabled",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setCrashRecoveryDisabled"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "vsyncDisabled",
+                    "notify": "vsyncDisabledChanged",
+                    "read": "vsyncDisabled",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setVsyncDisabled"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "enableDebug",
+                    "notify": "enableDebugChanged",
+                    "read": "enableDebug",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setEnableDebug"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "disableVersionCheck",
+                    "notify": "disableVersionCheckChanged",
+                    "read": "disableVersionCheck",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setDisableVersionCheck"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "name": "newVersionDetected",
+                    "notify": "newVersionDetectedChanged",
+                    "read": "newVersionDetected",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setNewVersionDetected"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "name": "versionCheckText",
+                    "notify": "versionCheckTextChanged",
+                    "read": "versionCheckText",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setVersionCheckText"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "name": "customTickRateMs",
+                    "notify": "customTickRateMsChanged",
+                    "read": "customTickRateMs",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setCustomTickRateMs"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 8,
+                    "name": "exclusiveInputEnabled",
+                    "notify": "exclusiveInputEnabledChanged",
+                    "read": "exclusiveInputEnabled",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setExclusiveInputEnabled"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 9,
+                    "name": "autoApplyChaperoneEnabled",
+                    "notify": "autoApplyChaperoneEnabledChanged",
+                    "read": "autoApplyChaperoneEnabled",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setAutoApplyChaperoneEnabled"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 10,
+                    "name": "soundVolume",
+                    "notify": "soundVolumeChanged",
+                    "read": "soundVolume",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setSoundVolume"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 11,
+                    "name": "desktopModeToggle",
+                    "notify": "desktopModeToggleChanged",
+                    "read": "desktopModeToggle",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setDesktopModeToggle"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 12,
+                    "name": "hideSocials",
+                    "notify": "hideSocialsChanged",
+                    "read": "hideSocials",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setHideSocials"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 13,
+                    "name": "language",
+                    "notify": "languageChanged",
+                    "read": "language",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setLanguage"
+                }
+            ],
+            "qualifiedClassName": "advsettings::OverlayController",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "input",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "userValue",
+                            "type": "ulong"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "keyBoardInputSignal",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "input",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "isCloned": true,
+                    "name": "keyBoardInputSignal",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "crashRecoveryDisabledChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "exclusiveInputEnabledChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "enableDebugChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "disableVersionCheckChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 6,
+                    "name": "newVersionDetectedChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "versionCheckTextChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 8,
+                    "name": "vsyncDisabledChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 9,
+                    "name": "customTickRateMsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 10,
+                    "name": "autoApplyChaperoneEnabledChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 11,
+                    "name": "soundVolumeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 12,
+                    "name": "desktopModeToggleChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 13,
+                    "name": "hideSocialsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 14,
+                    "name": "languageChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "ulong"
+                        }
+                    ],
+                    "index": 15,
+                    "name": "submitLastTextField",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 16,
+                    "isCloned": true,
+                    "name": "submitLastTextField",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "index": 17,
+                    "name": "renderOverlay",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 18,
+                    "name": "OnRenderRequest",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 19,
+                    "name": "OnTimeoutPumpEvents",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "reply",
+                            "type": "QNetworkReply*"
+                        }
+                    ],
+                    "index": 20,
+                    "name": "OnNetworkReply",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "existingText",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "userValue",
+                            "type": "ulong"
+                        }
+                    ],
+                    "index": 21,
+                    "name": "showKeyboard",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "existingText",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 22,
+                    "isCloned": true,
+                    "name": "showKeyboard",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "userValue",
+                            "type": "ulong"
+                        }
+                    ],
+                    "index": 23,
+                    "name": "hideKeyboard",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 24,
+                    "isCloned": true,
+                    "name": "hideKeyboard",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 25,
+                    "name": "setKeyboardPos",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 26,
+                    "name": "playActivationSound",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 27,
+                    "name": "playFocusChangedSound",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "loop",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 28,
+                    "name": "playAlarm01Sound",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 29,
+                    "isCloned": true,
+                    "name": "playAlarm01Sound",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "vol",
+                            "type": "float"
+                        }
+                    ],
+                    "index": 30,
+                    "name": "setAlarm01SoundVolume",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 31,
+                    "name": "cancelAlarm01Sound",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 32,
+                    "name": "setCrashRecoveryDisabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 33,
+                    "isCloned": true,
+                    "name": "setCrashRecoveryDisabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 34,
+                    "name": "setExclusiveInputEnabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 35,
+                    "isCloned": true,
+                    "name": "setExclusiveInputEnabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 36,
+                    "name": "setEnableDebug",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 37,
+                    "isCloned": true,
+                    "name": "setEnableDebug",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 38,
+                    "name": "setDisableVersionCheck",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 39,
+                    "isCloned": true,
+                    "name": "setDisableVersionCheck",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 40,
+                    "name": "setNewVersionDetected",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 41,
+                    "isCloned": true,
+                    "name": "setNewVersionDetected",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 42,
+                    "name": "setVersionCheckText",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 43,
+                    "isCloned": true,
+                    "name": "setVersionCheckText",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 44,
+                    "name": "setVsyncDisabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 45,
+                    "isCloned": true,
+                    "name": "setVsyncDisabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "int"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 46,
+                    "name": "setCustomTickRateMs",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 47,
+                    "isCloned": true,
+                    "name": "setCustomTickRateMs",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 48,
+                    "name": "setAutoApplyChaperoneEnabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 49,
+                    "isCloned": true,
+                    "name": "setAutoApplyChaperoneEnabled",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "double"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 50,
+                    "name": "setSoundVolume",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 51,
+                    "isCloned": true,
+                    "name": "setSoundVolume",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 52,
+                    "name": "setDesktopModeToggle",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 53,
+                    "isCloned": true,
+                    "name": "setDesktopModeToggle",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 54,
+                    "name": "setHideSocials",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 55,
+                    "isCloned": true,
+                    "name": "setHideSocials",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 56,
+                    "name": "setLanguage",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 57,
+                    "isCloned": true,
+                    "name": "setLanguage",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "overlaycontroller.h",
+    "outputRevision": 68
+}

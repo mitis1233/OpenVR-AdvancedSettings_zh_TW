@@ -1,0 +1,121 @@
+{
+    "classes": [
+        {
+            "className": "VrAlarm",
+            "lineNumber": 11,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 3,
+                    "name": "setAlarmTimeToCurrentTime",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "hour",
+                            "type": "int"
+                        },
+                        {
+                            "name": "minute",
+                            "type": "int"
+                        },
+                        {
+                            "name": "second",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "setAlarmTime",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "hour",
+                            "type": "int"
+                        },
+                        {
+                            "name": "minute",
+                            "type": "int"
+                        },
+                        {
+                            "name": "second",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "modAlarmTime",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "name": "getAlarmHour",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "index": 7,
+                    "name": "getAlarmMinute",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "index": 8,
+                    "name": "getAlarmSecond",
+                    "returnType": "int"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "alarmEnabled",
+                    "notify": "alarmEnabledChanged",
+                    "read": "alarmEnabled",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setAlarmEnabled"
+                }
+            ],
+            "qualifiedClassName": "alarm_clock::VrAlarm",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "alarmEnabledChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "alarmTimeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "alarmFired",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "vr_alarm.h",
+    "outputRevision": 68
+}

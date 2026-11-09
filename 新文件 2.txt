@@ -1,0 +1,33 @@
+D:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\null\resources\settings
+        "enable": false,
+無VR啟動
+        "enable": true,		
+		
+Z:\OpenVR-AdvancedSettings-qt6\src
+        if ( commandLineArgs.desktopMode
+             || settings::getSetting(
+                 settings::BoolSetting::APPLICATION_desktopModeToggle ) )
+PC模式
+        if (true)
+		
+		
+
+Z:\OpenVR-AdvancedSettings-qt6
+qt_add_executable(AdvancedSettings WIN32
+    ${SRCS}
+    ${HEADERS}
+)
+顯示視窗
+qt_add_executable(AdvancedSettings
+    ${SRCS}
+    ${HEADERS}
+)
+		
+		
+		
+		
+Z:\OpenVR-AdvancedSettings-qt6\translations
+Z:\OpenVR-AdvancedSettings-qt6\src\res\qml
+Z:\OpenVR-AdvancedSettings-qt6
+Z:\OpenVR-AdvancedSettings-qt6\src\res\qml\common
+

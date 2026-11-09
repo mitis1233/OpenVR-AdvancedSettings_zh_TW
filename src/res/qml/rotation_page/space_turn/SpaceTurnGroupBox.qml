@@ -4,37 +4,23 @@ import QtQuick.Layouts 1.3
 import ovras.advsettings 1.0
 import "../../common"
 
-GroupBox {
+SettingsGroupBox {
     id: spaceTurnGroupBox
     Layout.fillWidth: true
 
-    label: MyText {
-        leftPadding: 10
-        text: "空間轉向 (用於手動重定向行走)"
-        bottomPadding: -12
-    }
-    background: Rectangle {
-        color: "transparent"
-        border.color: "#d9dbe0"
-        radius: 8
-    }
+    title: qsTr("Space Turn (for manual redirected walking)")
 
     ColumnLayout {
+        spacing: 0
         anchors.fill: parent
 
-        Rectangle {
-            color: "#d9dbe0"
-            height: 1
-            Layout.fillWidth: true
-            Layout.bottomMargin: 3
-        }
-
         RowLayout {
+            Layout.preferredHeight: rowHeight
             Layout.fillWidth: true
 
             MyToggleButton {
                 id: turnBindLeft
-                text: "左手"
+                text: qsTr("Left Hand")
                 onCheckedChanged: {
                     MoveCenterTabController.turnBindLeft = this.checked
                 }
@@ -42,7 +28,7 @@ GroupBox {
 
             MyToggleButton {
                 id: turnBindRight
-                text: "右手"
+                text: qsTr("Right Hand")
                 onCheckedChanged: {
                     MoveCenterTabController.turnBindRight = this.checked
                 }
@@ -53,7 +39,7 @@ GroupBox {
             }
 
             MyText {
-                text: "舒適模式："
+                text: qsTr("Comfort Mode")
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 10
             }
@@ -82,7 +68,7 @@ GroupBox {
 
             MyToggleButton {
                 id: turnBounds
-                text: "強制邊界"
+                text: qsTr("Force Bounds")
                 onCheckedChanged: {
                     MoveCenterTabController.turnBounds = this.checked
                 }
@@ -100,16 +86,16 @@ GroupBox {
     Connections {
         target: MoveCenterTabController
 
-        onTurnBindLeftChanged: {
+        function onTurnBindLeftChanged() {
             turnBindLeft.checked = MoveCenterTabController.turnBindLeft
         }
-        onTurnBindRightChanged: {
+        function onTurnBindRightChanged() {
             turnBindRight.checked = MoveCenterTabController.turnBindRight
         }
-        onTurnComfortFactorChanged: {
+        function onTurnComfortFactorChanged() {
             turnComfortSlider.value = MoveCenterTabController.turnComfortFactor
         }
-        onTurnBoundsChanged: {
+        function onTurnBoundsChanged() {
             turnBounds.checked = MoveCenterTabController.turnBounds
         }
     }

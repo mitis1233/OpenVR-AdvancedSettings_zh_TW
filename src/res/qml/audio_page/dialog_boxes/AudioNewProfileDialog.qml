@@ -6,7 +6,7 @@ import "../../common"
 
 MyDialogOkCancelPopup {
     id: audioNewProfileDialog
-    dialogTitle: "建立新的音訊設定檔"
+    dialogTitle: qsTr("Create New Audio Profile")
     dialogWidth: 600
     dialogHeight: 300
     y: -300
@@ -17,15 +17,15 @@ MyDialogOkCancelPopup {
             Layout.leftMargin: 16
             Layout.rightMargin: 16
             MyText {
-                text: "名稱："
+                text: qsTr("Name")
             }
             MyTextField {
                 id: audioNewProfileName
                 keyBoardUID: 590
-                color: "#cccccc"
+                color: "#ffffff"
                 text: ""
                 Layout.fillWidth: true
-                font.pointSize: 20
+                font.pointSize: 16
                 function onInputEvent(input) {
                     audioNewProfileName.text = input
                 }
@@ -39,7 +39,7 @@ MyDialogOkCancelPopup {
             MyToggleButton {
                 id: audioDefaultProfileToggle
                 Layout.preferredWidth: 250
-                text: "設為預設"
+                text: qsTr("Make Default")
                 onCheckedChanged: {
                     AudioTabController.setAudioProfileDefault(checked, false)
                 }
@@ -54,7 +54,7 @@ MyDialogOkCancelPopup {
             if (audioNewProfileName.text != "") {
                 AudioTabController.addAudioProfile(audioNewProfileName.text)
             } else {
-                audioMessageDialog.showMessage("建立新的設定檔", "錯誤：未提供名稱。")
+                audioMessageDialog.showMessage(qsTr("Create New Profile"), qsTr("ERROR: Empty profile name."))
             }
         }
     }

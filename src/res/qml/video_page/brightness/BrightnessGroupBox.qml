@@ -4,37 +4,23 @@ import QtQuick.Layouts 1.3
 import ovras.advsettings 1.0
 import "../../common"
 
-GroupBox {
+SettingsGroupBox {
     id: brightnessGroupBox
     Layout.fillWidth: true
 
-    label: MyText {
-        leftPadding: 10
-        text: "亮度"
-        bottomPadding: -10
-    }
-    background: Rectangle {
-        color: "transparent"
-        border.color: "#d9dbe0"
-        radius: 8
-    }
+    title: qsTr("Brightness")
 
     ColumnLayout {
+        spacing: 0
         anchors.fill: parent
 
-        Rectangle {
-            color: "#d9dbe0"
-            height: 1
-            Layout.fillWidth: true
-            Layout.bottomMargin: 5
-        }
-
         RowLayout {
+            Layout.preferredHeight: rowHeight
             Layout.fillWidth: true
 
             MyToggleButton {
                 id: brightnessToggle
-                text: "開啟/關閉"
+                text: qsTr("On/Off")
                 onCheckedChanged: {
                     VideoTabController.setBrightnessEnabled(this.checked, true)                }
             }
@@ -44,14 +30,14 @@ GroupBox {
             }
 
             MyText {
-                text: "亮度："
+                text: qsTr("Brightness")
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 10
             }
 
             MySlider {
                 id: brightnessSlider
-                from: 0.01
+                from: 0.2
                 to: 1.0
                 stepSize: 0.01
                 value: 1.0
@@ -71,8 +57,8 @@ GroupBox {
                 function onInputEvent(input) {
                     var val = parseFloat(input)
                     if (!isNaN(val)) {
-                        if (val < 1) {
-                            val = 1
+                        if (val < 3) {
+                            val = 3
                         } else if (val > 100.0) {
                             val = 100.0
                         }
@@ -95,12 +81,12 @@ GroupBox {
     Connections {
         target: VideoTabController
 
-        onBrightnessOpacityValueChanged: {
+        function onBrightnessOpacityValueChanged() {
             var brightvalue = VideoTabController.brightnessOpacityValue
             brightnessSlider.value = brightvalue
             brightnessValueText.text = Math.round(brightvalue*100)+ "%"
         }
-        onBrightnessEnabledChanged: {
+        function onBrightnessEnabledChanged() {
             brightnessToggle.checked = VideoTabController.brightnessEnabled
         }
     }

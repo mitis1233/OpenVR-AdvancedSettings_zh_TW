@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="/i18n">
+    <file alias="AdvancedSettings_de.qm">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/AdvancedSettings_de.qm</file>
+    <file alias="AdvancedSettings_es.qm">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/AdvancedSettings_es.qm</file>
+    <file alias="AdvancedSettings_pt.qm">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/AdvancedSettings_pt.qm</file>
+    <file alias="AdvancedSettings_ja.qm">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/AdvancedSettings_ja.qm</file>
+    <file alias="AdvancedSettings_zh_TW.qm">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/AdvancedSettings_zh_TW.qm</file>
+    <file alias="AdvancedSettings_zh_CN.qm">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/AdvancedSettings_zh_CN.qm</file>
+    <file alias="AdvancedSettings_en.qm">Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/AdvancedSettings_en.qm</file>
+  </qresource>
+</RCC>
+

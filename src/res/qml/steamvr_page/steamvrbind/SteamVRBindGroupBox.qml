@@ -4,72 +4,52 @@ import QtQuick.Layouts 1.3
 import ovras.advsettings 1.0
 import "../../common"
 
-GroupBox {
+SettingsGroupBox {
     id: steamVRBindGroupBox
     Layout.fillWidth: true
 
-    label:
-        MyText {
-        leftPadding: 10
-        text: "按鍵綁定："
-        bottomPadding: -10
-        }
-
-
-    background: Rectangle {
-        color: "transparent"
-        border.color: "#d9dbe0"
-        radius: 8
-    }
+    title: qsTr("Per-Game Bindings")
 
     ColumnLayout {
         anchors.fill: parent
+        spacing: 0
 
-        Rectangle {
-            color: "#d9dbe0"
-            height: 1
+        MyToggleButton {
+            id: steamvrBindingToggle
+            Layout.preferredHeight: rowHeight
+            text: qsTr("On/Off")
             Layout.fillWidth: true
-            Layout.bottomMargin: 5
-        }
-
-        RowLayout {
-            spacing: 16
-
-            MyToggleButton {
-                id: steamvrBindingToggle
-                text: "啟用個別應用程式設定"
-                Layout.preferredWidth: 250
-                onCheckedChanged: {
-                    SteamVRTabController.setPerAppBindEnabled(this.checked, false)
-                    if(!steamvrBindingToggle.checked){
-                        appSelect.enabled = false;
-                        setDefaultBtn.enabled = false;
-                        setBinding.enabled = false;
-                    }else{
-                        appSelect.enabled = true;
-                        setDefaultBtn.enabled = true;
-                        setBinding.enabled = true;
-                    }
+            Layout.rightMargin: 0
+            onCheckedChanged: {
+                SteamVRTabController.setPerAppBindEnabled(this.checked, false)
+                if(!steamvrBindingToggle.checked){
+                    appSelect.enabled = false;
+                    setDefaultBtn.enabled = false;
+                    setBinding.enabled = false;
+                }else{
+                    appSelect.enabled = true;
+                    setDefaultBtn.enabled = true;
+                    setBinding.enabled = true;
                 }
             }
-            MyText {
-                Layout.preferredWidth: 0
-                text: " "
-            }
+        }
+        LineSeparator {
+        }
+        RowLayout {
+            Layout.preferredHeight: rowHeight
+            spacing: 16
+            // Match the Enable toggle row height.
 
             MyText {
-                text: "應用程式："
-                Layout.preferredWidth: 150
-                horizontalAlignment: Text.AlignRight
-                Layout.rightMargin: 2
+                text: qsTr("Application")
+                horizontalAlignment: Text.AlignLeft
             }
             MyTextField {
                 id: appSelect
                 Layout.fillWidth: true
-                text: "steam.overlay.1009850"
+                text: qsTr("steam.overlay.1009850")
                 keyBoardUID: 201
-                Layout.leftMargin: 10
-                Layout.rightMargin: 10
+                Layout.fillHeight: true
                 horizontalAlignment: Text.AlignHCenter
                 function onInputEvent(input) {
                     this.text = input
@@ -77,42 +57,44 @@ GroupBox {
             }
             MyPushButton {
                 id: bindingsButton
+                Layout.fillHeight: true
                 activationSoundEnabled: false
-                text: "開啟按鍵綁定"
+                text: qsTr("Open Bindings")
                 Layout.preferredWidth: 180
                 onClicked: {
                      SteamVRTabController.launchBindingUI()
                 }
             }
         }
+        LineSeparator {
+        }
         RowLayout {
+            Layout.preferredHeight: rowHeight
             spacing: 16
+            // Match the Enable toggle row height.
+
             MyText {
-                text: "儲存所選應用程式的目前綁定："
-                Layout.preferredWidth: 500
+                text: qsTr("Save Current Binding")
+                Layout.fillWidth: true
                 horizontalAlignment: Text.AlignLeft
-                Layout.rightMargin: 2
             }
             MyPushButton {
-                    id: setBinding
-                    text:"用於目前遊戲"
-                    onClicked: {
-                        SteamVRTabController.setBindingQMLWrapper(appSelect.text)
-                    }
-            }
-            MyText {
-                Layout.preferredWidth: 50
-                text: " "
+                id: setBinding
+                Layout.fillHeight: true
+                text: qsTr("Game")
+                onClicked: {
+                    SteamVRTabController.setBindingQMLWrapper(appSelect.text)
+                }
             }
             MyPushButton {
-                    id: setDefaultBtn
-                    text:"設為預設"
-                    onClicked: {
-                        SteamVRTabController.setBindingQMLWrapper(appSelect.text,true)
-                    }
+                id: setDefaultBtn
+                Layout.fillHeight: true
+                text: qsTr("Default")
+                onClicked: {
+                    SteamVRTabController.setBindingQMLWrapper(appSelect.text,true)
+                }
             }
         }
-
     }
 
     Component.onCompleted: {
@@ -130,7 +112,7 @@ GroupBox {
 
     Connections {
         target: SteamVRTabController
-        onPerformanceGraphChanged:{
+        function onPerformanceGraphChanged() {
             steamvrBindingToggle.checked = SteamVRTabController.perAppBindEnabled
         }
 

@@ -1,0 +1,130 @@
+{
+    "classes": [
+        {
+            "className": "FixFloorTabController",
+            "lineNumber": 14,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 9,
+                    "name": "currentStatusMessage",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "index": 10,
+                    "name": "currentStatusMessageTimeout",
+                    "returnType": "float"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "canUndo",
+                    "notify": "canUndoChanged",
+                    "read": "canUndo",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setCanUndo"
+                }
+            ],
+            "qualifiedClassName": "advsettings::FixFloorTabController",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "statusMessageSignal",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "measureStartSignal",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "measureEndSignal",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "canUndoChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "index": 4,
+                    "name": "fixFloorClicked",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "name": "recenterClicked",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "name": "undoFixFloorClicked",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "notify",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 7,
+                    "name": "setCanUndo",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "value",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 8,
+                    "isCloned": true,
+                    "name": "setCanUndo",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "FixFloorTabController.h",
+    "outputRevision": 68
+}
