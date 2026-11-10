@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 184,
+                        "durationMicroseconds": 243,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 37
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 42
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 18,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 54
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 78
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 92
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 106
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 117
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 56,
                         "errorMessage": "Cannot retrieve a non-object type by ID: switchBeginnerToggle",
                         "functionName": "onCompleted",
                         "line": 175
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 128,
+                        "durationMicroseconds": 230,
                         "errorMessage": "Cannot access value for name ChaperoneTabController",
                         "functionName": "target",
                         "line": 186
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot retrieve a non-object type by ID: switchBeginnerToggle",
                         "functionName": "onChaperoneSwitchToBeginnerEnabledChanged",
                         "line": 187
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot retrieve a non-object type by ID: hapticFeedbackToggle",
                         "functionName": "onChaperoneHapticFeedbackEnabledChanged",
                         "line": 190
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot retrieve a non-object type by ID: audioWarningToggle",
                         "functionName": "onChaperoneAlarmSoundEnabledChanged",
                         "line": 193
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 18,
                         "errorMessage": "Cannot retrieve a non-object type by ID: audioWarningLoopingToggle",
                         "functionName": "onChaperoneAlarmSoundLoopingChanged",
                         "line": 196
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 18,
                         "errorMessage": "Cannot retrieve a non-object type by ID: openDashboardToggle",
                         "functionName": "onChaperoneShowDashboardEnabledChanged",
                         "line": 199
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 107,
+                        "durationMicroseconds": 179,
                         "errorMessage": "Cannot access value for name ChaperoneTabController",
                         "functionName": "onChaperoneSwitchToBeginnerDistanceChanged",
                         "line": 202

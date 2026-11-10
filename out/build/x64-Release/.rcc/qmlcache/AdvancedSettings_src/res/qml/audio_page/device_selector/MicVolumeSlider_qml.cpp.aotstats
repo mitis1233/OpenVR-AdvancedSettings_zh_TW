@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 33,
-                        "durationMicroseconds": 78,
+                        "durationMicroseconds": 137,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 14
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 33,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 20
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 25,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "source",
                         "line": 32
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 27,
-                        "durationMicroseconds": 202,
+                        "durationMicroseconds": 299,
                         "errorMessage": "Cannot access value for name Image",
                         "functionName": "fillMode",
                         "line": 35
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 34,
-                        "durationMicroseconds": 165,
+                        "durationMicroseconds": 230,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 80
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 278,
+                        "durationMicroseconds": 404,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "onCompleted",
                         "line": 83
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 131,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "target",
                         "line": 100
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 58,
+                        "durationMicroseconds": 95,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "onMicDeviceIndexChanged",
                         "line": 101
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot retrieve a non-object type by ID: audioMicVolumeSlider",
                         "functionName": "onMicVolumeChanged",
                         "line": 114
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot retrieve a non-object type by ID: audioMicMuteToggle",
                         "functionName": "onMicMutedChanged",
                         "line": 117
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 9,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 50,
                         "errorMessage": "",
                         "functionName": "onPlaybackDeviceListChanged",
                         "line": 120
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 483,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "onRecordingDeviceListChanged",
                         "line": 123

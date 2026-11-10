@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 416,
+                        "durationMicroseconds": 561,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "getAudioDeviceList",
                         "line": 42
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 15,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 44,
                         "errorMessage": "Cannot access value for name deviceText",
                         "functionName": "text",
                         "line": 18
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 47,
                         "errorMessage": "Cannot find name devices",
                         "functionName": "onCompleted",
                         "line": 61
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 110,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "target",
                         "line": 67
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 59,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "onMicDeviceIndexChanged",
                         "line": 68
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 90,
                         "errorMessage": "method getAudioDeviceList cannot be resolved.",
                         "functionName": "onRecordingDeviceListChanged",
                         "line": 71
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot retrieve a non-object type by ID: recordingOverrideToggle",
                         "functionName": "onRecordingOverrideChanged",
                         "line": 75

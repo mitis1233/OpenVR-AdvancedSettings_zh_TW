@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 114,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 24

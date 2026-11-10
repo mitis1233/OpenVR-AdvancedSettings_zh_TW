@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 392,
+                        "durationMicroseconds": 630,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "getAudioDeviceList",
                         "line": 51
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 15,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 42,
                         "errorMessage": "Cannot access value for name deviceText",
                         "functionName": "text",
                         "line": 19
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 60,
                         "errorMessage": "Type  stored as QQuickRowLayout does not have a property devices for writing",
                         "functionName": "onCompleted",
                         "line": 33
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 90,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "target",
                         "line": 42
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 61,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "onMirrorDeviceIndexChanged",
                         "line": 43
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 103,
                         "errorMessage": "method getAudioDeviceList cannot be resolved.",
                         "functionName": "onPlaybackDeviceListChanged",
                         "line": 46

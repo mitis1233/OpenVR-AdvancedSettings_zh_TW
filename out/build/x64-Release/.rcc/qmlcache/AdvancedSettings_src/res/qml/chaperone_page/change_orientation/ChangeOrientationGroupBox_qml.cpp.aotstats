@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 177,
+                        "durationMicroseconds": 223,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 16
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 41,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 65,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 21

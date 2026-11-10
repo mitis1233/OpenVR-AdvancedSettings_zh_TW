@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 409,
+                        "durationMicroseconds": 613,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "getAudioDeviceList",
                         "line": 60
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 15,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 127,
                         "errorMessage": "Cannot access value for name deviceText",
                         "functionName": "text",
                         "line": 15
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 63,
                         "errorMessage": "Type  stored as QQuickRowLayout does not have a property devices for writing",
                         "functionName": "onCompleted",
                         "line": 41
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 108,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "target",
                         "line": 48
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 51,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "onPlaybackDeviceIndexChanged",
                         "line": 49
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 152,
                         "errorMessage": "method getAudioDeviceList cannot be resolved.",
                         "functionName": "onPlaybackDeviceListChanged",
                         "line": 52
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 55,
                         "errorMessage": "Cannot retrieve a non-object type by ID: playbackOverrideToggle",
                         "functionName": "onPlaybackOverrideChanged",
                         "line": 56

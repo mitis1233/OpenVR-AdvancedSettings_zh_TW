@@ -2,6 +2,8 @@
 #include <QQuickWindow>
 #include <QtLogging>
 #include <QtDebug>
+#include <QTimer>
+#include <algorithm>
 #include "../overlaycontroller.h"
 #include "../quaternion/quaternion.h"
 #include "../settings/settings.h"
@@ -1039,6 +1041,121 @@ void MoveCenterTabController::modOffsetPitch( float value, bool notify )
         {
             emit offsetPitchChanged( m_pitch );
         }
+    }
+}
+
+namespace
+{
+// Reads the HMD's current forward vector in the active tracking universe
+// (i.e. including every offset currently applied). Returns false if the HMD
+// pose isn't usable right now.
+bool readHmdForward( int universe, double forward[3] )
+{
+    if ( !vr::VRSystem() )
+    {
+        return false;
+    }
+    vr::TrackedDevicePose_t poses[vr::k_unMaxTrackedDeviceCount];
+    vr::VRSystem()->GetDeviceToAbsoluteTrackingPose(
+        static_cast<vr::ETrackingUniverseOrigin>( universe ),
+        0.0f,
+        poses,
+        vr::k_unMaxTrackedDeviceCount );
+    const vr::TrackedDevicePose_t& hmd = poses[vr::k_unTrackedDeviceIndex_Hmd];
+    if ( !hmd.bPoseIsValid || !hmd.bDeviceIsConnected )
+    {
+        return false;
+    }
+    const auto& m = hmd.mDeviceToAbsoluteTracking.m;
+    // The HMD looks along its local -Z axis.
+    forward[0] = -static_cast<double>( m[0][2] );
+    forward[1] = -static_cast<double>( m[1][2] );
+    forward[2] = -static_cast<double>( m[2][2] );
+    return true;
+}
+
+// Elevation of a forward vector above the horizon in degrees
+// (negative = looking down).
+double elevationDegrees( const double forward[3] )
+{
+    double y = std::max( -1.0, std::min( 1.0, forward[1] ) );
+    return std::asin( y ) * 180.0 / M_PI;
+}
+} // namespace
+
+void MoveCenterTabController::calibrateFrontPitch()
+{
+    if ( lockPitchToggle() )
+    {
+        qInfo() << "Front calibrate ignored: pitch is locked";
+        return;
+    }
+
+    double f[3];
+    if ( !readHmdForward( m_trackingUniverse, f ) )
+    {
+        qWarning() << "Front calibrate: no valid HMD pose";
+        return;
+    }
+    const double elevationBefore = elevationDegrees( f );
+
+    // The HMD pose we read already includes the current roll/pitch offsets:
+    //   reported = Rz(-roll) * Rx(-pitch) * (rest)
+    // Changing the pitch by delta turns the reported forward vector f into
+    //   f' = Rz(-roll) * Rx(-delta) * Rz(roll) * f
+    // Solve f'.y == 0 (gaze becomes level) for delta. With roll == 0 and the
+    // user facing the pitch axis' normal this reduces to delta = elevation.
+    const double roll = static_cast<double>( m_roll ) * M_PI / 180.0;
+    const double hx = f[0] * std::cos( roll ) - f[1] * std::sin( roll );
+    const double hy = f[0] * std::sin( roll ) + f[1] * std::cos( roll );
+    const double hz = f[2];
+    const double a = hy;
+    const double b = hz;
+    const double c = std::tan( roll ) * hx;
+    const double r = std::hypot( a, b );
+    if ( r < 1e-6 || std::abs( c ) > r )
+    {
+        qWarning() << "Front calibrate: cannot level the current view";
+        return;
+    }
+    const double base = std::atan2( b, a );
+    const double spread = std::acos( c / r );
+    auto wrapRad = []( double v ) {
+        while ( v > M_PI )
+            v -= 2.0 * M_PI;
+        while ( v <= -M_PI )
+            v += 2.0 * M_PI;
+        return v;
+    };
+    const double d1 = wrapRad( base + spread );
+    const double d2 = wrapRad( base - spread );
+    const double deltaRad = std::abs( d1 ) <= std::abs( d2 ) ? d1 : d2;
+    const float deltaDeg = static_cast<float>( deltaRad * 180.0 / M_PI );
+
+    qInfo() << "Front calibrate: HMD pitch" << elevationBefore
+            << "deg, changing pitch offset by" << deltaDeg << "deg";
+    modOffsetPitch( deltaDeg );
+
+    // Safety net: the sign convention of the applied transform can't be
+    // checked without the runtime. Re-read the pose shortly after; if the
+    // view got worse instead of level, apply the opposite correction.
+    if ( std::abs( deltaDeg ) > 1.0f )
+    {
+        QTimer::singleShot( 800, this, [this, elevationBefore, deltaDeg]() {
+            double g[3];
+            if ( !readHmdForward( m_trackingUniverse, g ) )
+            {
+                return;
+            }
+            const double after = elevationDegrees( g );
+            if ( std::abs( after ) > 2.0
+                 && std::abs( after ) > 1.5 * std::abs( elevationBefore ) )
+            {
+                qInfo() << "Front calibrate: wrong direction (" << after
+                        << "deg), correcting";
+                modOffsetPitch( -2.0f * deltaDeg );
+            }
+        } );
     }
 }
 

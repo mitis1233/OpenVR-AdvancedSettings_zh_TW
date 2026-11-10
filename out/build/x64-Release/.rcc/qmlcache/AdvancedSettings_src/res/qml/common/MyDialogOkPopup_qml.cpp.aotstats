@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 15,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 108,
                         "errorMessage": "Cannot access value for name dialogText",
                         "functionName": "text",
                         "line": 18
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 30,
-                        "durationMicroseconds": 211,
+                        "durationMicroseconds": 307,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "horizontalAlignment",
                         "line": 19
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 169,
+                        "durationMicroseconds": 251,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "verticalAlignment",
                         "line": 20
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot access value for name dialogWidth",
                         "functionName": "implicitWidth",
                         "line": 35
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 29,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name dialogHeight",
                         "functionName": "implicitHeight",
                         "line": 36
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "centerIn",
                         "line": 37
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 6,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "fill",
                         "line": 43
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 27,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot access value for name dialogTitle",
                         "functionName": "text",
                         "line": 49
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 59,
                         "errorMessage": "Cannot access value for name dialogContent",
                         "functionName": "onCompleted",
                         "line": 94

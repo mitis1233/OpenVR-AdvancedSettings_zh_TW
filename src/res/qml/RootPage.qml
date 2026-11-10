@@ -249,7 +249,7 @@ MyStackViewPage {
 
                     MySlider {
                         id: summaryBrightnessSlider
-                        from: 0.2
+                        from: 0.01
                         to: 1.0
                         stepSize: 0.01
                         value: 1.0
@@ -269,8 +269,8 @@ MyStackViewPage {
                         function onInputEvent(input) {
                             var val = parseFloat(input)
                             if (!isNaN(val)) {
-                                if (val < 3) {
-                                    val = 3
+                                if (val < 1) {
+                                    val = 1
                                 } else if (val > 100.0) {
                                     val = 100.0
                                 }
@@ -321,7 +321,7 @@ MyStackViewPage {
                             if (!isNaN(val)) {
                                 MoveCenterTabController.offsetPitch = val
                             }
-                            text = Math.round(MoveCenterTabController.offsetPitch) + "°"
+                            text = parseFloat(MoveCenterTabController.offsetPitch.toFixed(2)) + "°"
                         }
                     }
 
@@ -339,7 +339,7 @@ MyStackViewPage {
                         Layout.leftMargin: 12
                         text: qsTr("Front Calibrate")
                         onClicked: {
-                            MoveCenterTabController.offsetPitch = -MoveCenterTabController.offsetPitch
+                            MoveCenterTabController.calibrateFrontPitch()
                         }
                     }
 
@@ -741,7 +741,7 @@ MyStackViewPage {
        summaryFlingStrengthText.text = MoveCenterTabController.flingStrength.toFixed(2)
        summaryFrictionPercentText.text = MoveCenterTabController.frictionPercent + "%"
 
-       summaryPitchText.text = Math.round(MoveCenterTabController.offsetPitch) + "°"
+       summaryPitchText.text = parseFloat(MoveCenterTabController.offsetPitch.toFixed(2)) + "°"
        summaryLockPitchToggle.checked = MoveCenterTabController.lockPitchToggle
    }
    Connections {
@@ -842,7 +842,7 @@ MyStackViewPage {
            summaryFrictionPercentText.text = MoveCenterTabController.frictionPercent + "%"
        }
        function onOffsetPitchChanged() {
-           summaryPitchText.text = Math.round(MoveCenterTabController.offsetPitch) + "°"
+           summaryPitchText.text = parseFloat(MoveCenterTabController.offsetPitch.toFixed(2)) + "°"
        }
        function onRequireLockPitchChanged() {
            summaryLockPitchToggle.checked = MoveCenterTabController.lockPitchToggle

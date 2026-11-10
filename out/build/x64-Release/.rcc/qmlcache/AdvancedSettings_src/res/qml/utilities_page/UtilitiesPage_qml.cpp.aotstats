@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 130,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 23
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 28
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 33
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 18,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 38
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 43

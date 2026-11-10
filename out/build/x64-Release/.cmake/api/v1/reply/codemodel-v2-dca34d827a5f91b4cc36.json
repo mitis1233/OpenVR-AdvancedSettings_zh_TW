@@ -1,0 +1,241 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-449a2bfdf709f5c403af.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "AdvancedSettings",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings-Release-4dcae9220debd37ba1a1.json",
+					"name" : "AdvancedSettings",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_autogen-Release-6ac11cec4d7b758d55be.json",
+					"name" : "AdvancedSettings_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_autogen_timestamp_deps-Release-773b42edf703a0a2f925.json",
+					"name" : "AdvancedSettings_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_copy_qml::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_copy_qml-Release-134cb9c0dda3bc247833.json",
+					"name" : "AdvancedSettings_copy_qml",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_copy_res::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_copy_res-Release-5be937f4db689ce9cb51.json",
+					"name" : "AdvancedSettings_copy_res",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_lrelease::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_lrelease-Release-6c55b335ef0f9b4562e4.json",
+					"name" : "AdvancedSettings_lrelease",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_lupdate::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_lupdate-Release-bf1d13b4d227c8eed419.json",
+					"name" : "AdvancedSettings_lupdate",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_other_files::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_other_files-Release-0659b8ac8b47be1972e4.json",
+					"name" : "AdvancedSettings_other_files",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_qmlimportscan-Release-7c2b7fdd75c239126699.json",
+					"name" : "AdvancedSettings_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_qmllint-Release-e5ed596f63a3ecf1724a.json",
+					"name" : "AdvancedSettings_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_qmllint_json-Release-16158e48f8143163b351.json",
+					"name" : "AdvancedSettings_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_qmllint_module-Release-5750d28b8218d04a84da.json",
+					"name" : "AdvancedSettings_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettings_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettings_qmltyperegistration-Release-155a52f2003045d52acd.json",
+					"name" : "AdvancedSettings_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Release-f6e20ae371d253ab0af0.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Release-716536d48a75ab1c2dc7.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Release-3fd390a942ab16287575.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Release-b50f6094ade4d51cd768.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Release-c672e65e2e4343726c03.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_AdvancedSettings_aotstats_target::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_AdvancedSettings_aotstats_target-Release-8f8192c7d327747226b8.json",
+					"name" : "module_AdvancedSettings_aotstats_target",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "release_translations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-release_translations-Release-a4509dae788e3475d61a.json",
+					"name" : "release_translations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "update_translations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-update_translations-Release-094b87f45cc38f1e5ecf.json",
+					"name" : "update_translations",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release",
+		"source" : "Z:/OpenVR-AdvancedSettings-qt6"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

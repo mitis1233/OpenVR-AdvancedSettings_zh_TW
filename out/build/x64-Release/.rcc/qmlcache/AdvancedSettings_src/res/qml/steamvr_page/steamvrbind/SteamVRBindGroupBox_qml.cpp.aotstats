@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 174,
+                        "durationMicroseconds": 265,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 14
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 56,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 19
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 39
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 38,
-                        "durationMicroseconds": 93,
+                        "durationMicroseconds": 164,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 45
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 40,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 72
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 38,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 117,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 79
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot retrieve a non-object type by ID: steamvrBindingToggle",
                         "functionName": "onCompleted",
                         "line": 100
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 137,
                         "errorMessage": "Cannot access value for name SteamVRTabController",
                         "functionName": "target",
                         "line": 114
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot retrieve a non-object type by ID: steamvrBindingToggle",
                         "functionName": "onPerformanceGraphChanged",
                         "line": 115

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 183,
+                        "durationMicroseconds": 271,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 21
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 67,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 24
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 42,
-                        "durationMicroseconds": 93,
+                        "durationMicroseconds": 156,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 54
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 58,
+                        "durationMicroseconds": 100,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 55
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 27,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 55,
                         "errorMessage": "Cannot access value for name leftOverrideDevice",
                         "functionName": "text",
                         "line": 56
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 65
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 42,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 124,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 95
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 96
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 27,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 58,
                         "errorMessage": "Cannot access value for name rightOverrideDevice",
                         "functionName": "text",
                         "line": 97
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 106
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 42,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 173,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 136
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 127,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 137
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 27,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 51,
                         "errorMessage": "Cannot access value for name customOverrideDevice",
                         "functionName": "text",
                         "line": 138

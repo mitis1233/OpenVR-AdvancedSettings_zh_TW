@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 180,
+                        "durationMicroseconds": 296,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 15
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 68,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 18
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 38,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 148,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 23
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 37,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 106,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 80
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 32,
+                        "durationMicroseconds": 67,
                         "errorMessage": "Cannot retrieve a non-object type by ID: snapTurnAngleText",
                         "functionName": "onCompleted",
                         "line": 122
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 114,
+                        "durationMicroseconds": 145,
                         "errorMessage": "Cannot access value for name MoveCenterTabController",
                         "functionName": "target",
                         "line": 128
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot retrieve a non-object type by ID: snapTurnAngleText",
                         "functionName": "onSnapTurnAngleChanged",
                         "line": 130
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot retrieve a non-object type by ID: smoothTurnRateText",
                         "functionName": "onSmoothTurnRateChanged",
                         "line": 133

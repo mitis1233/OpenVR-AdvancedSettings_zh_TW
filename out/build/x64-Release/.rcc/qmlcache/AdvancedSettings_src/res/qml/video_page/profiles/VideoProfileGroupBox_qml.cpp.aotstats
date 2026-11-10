@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 33,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 264,
                         "errorMessage": "Cannot retrieve a non-object type by ID: videoProfileGroupBox",
                         "functionName": "dialogParent",
                         "line": 12
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 133,
                         "errorMessage": "Cannot access value for name VideoTabController",
                         "functionName": "reloadVideoProfiles",
                         "line": 115
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 201,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 31
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 40,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 34
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 74
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 107,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 102
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 104,
                         "errorMessage": "Cannot access value for name VideoTabController",
                         "functionName": "target",
                         "line": 106
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 97,
                         "errorMessage": "method reloadVideoProfiles cannot be resolved.",
                         "functionName": "onVideoProfilesUpdated",
                         "line": 107
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot retrieve a non-object type by ID: videoProfileComboBox",
                         "functionName": "onVideoProfileAdded",
                         "line": 110

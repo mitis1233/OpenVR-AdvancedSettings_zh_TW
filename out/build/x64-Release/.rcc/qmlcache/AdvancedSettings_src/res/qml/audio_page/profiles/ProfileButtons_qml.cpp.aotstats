@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 357,
+                        "durationMicroseconds": 583,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "reloadAudioProfiles",
                         "line": 104
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 116,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 88
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 112,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "target",
                         "line": 92
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 102,
                         "errorMessage": "method reloadAudioProfiles cannot be resolved.",
                         "functionName": "onAudioProfilesUpdated",
                         "line": 93
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot retrieve a non-object type by ID: audioProfileComboBox",
                         "functionName": "onAudioProfileAdded",
                         "line": 96
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot retrieve a non-object type by ID: audioProfileComboBox",
                         "functionName": "onDefaultProfileDisplay",
                         "line": 99

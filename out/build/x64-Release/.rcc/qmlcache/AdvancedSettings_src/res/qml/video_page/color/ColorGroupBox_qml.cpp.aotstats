@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 178,
+                        "durationMicroseconds": 242,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 15
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 63,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 18
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 38,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 154,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 23
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 38,
-                        "durationMicroseconds": 103,
+                        "durationMicroseconds": 127,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 71
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 42,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 116,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 120
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 79,
                         "errorMessage": "Cannot access value for name VideoTabController",
                         "functionName": "onCompleted",
                         "line": 171
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 94,
                         "errorMessage": "Cannot access value for name VideoTabController",
                         "functionName": "target",
                         "line": 185
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 95,
                         "errorMessage": "Cannot access value for name VideoTabController",
                         "functionName": "onColorRedChanged",
                         "line": 186
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 118,
                         "errorMessage": "Cannot access value for name VideoTabController",
                         "functionName": "onColorGreenChanged",
                         "line": 191
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 116,
                         "errorMessage": "Cannot access value for name VideoTabController",
                         "functionName": "onColorBlueChanged",
                         "line": 196

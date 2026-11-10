@@ -814,12 +814,18 @@ bool OverlayController::pollNextEvent( vr::VROverlayHandle_t ulOverlayHandle,
 
 QPointF OverlayController::getMousePositionForEvent( vr::VREvent_Mouse_t mouse )
 {
-    float y = m_window.height() - mouse.y;
-//10/15/26 I think that this isn't required my testing shows inverting of mouse when not necessary
-//#ifdef __linux__
-//    float h = static_cast<float>( m_window.height() );
-//    y = h - y;
-//#endif
+    // OpenVR reports overlay mouse coordinates scaled to the size set via
+    // SetOverlayMouseScale (== window size). The original behaviour of this
+    // project flips Y (bottom-left origin) and that is kept as the default.
+    // Set the environment variable OVRAS_FLIP_MOUSE_Y=0 to disable the flip
+    // at runtime (no rebuild needed) if a setup reports a top-left origin.
+    static const int flipSetting
+        = qEnvironmentVariableIsSet( "OVRAS_FLIP_MOUSE_Y" )
+              ? qEnvironmentVariableIntValue( "OVRAS_FLIP_MOUSE_Y" )
+              : 1;
+    float y = mouse.y;
+    if ( flipSetting != 0 )
+        y = static_cast<float>( m_window.height() ) - y;
     return { mouse.x, y };
 }
 
@@ -832,11 +838,19 @@ void OverlayController::sendMouseEvent( QEvent::Type type,
                                         const QPointF& pos,
                                         Qt::MouseButton button )
 {
+    // QWindowSystemInterface::handleMouseEvent() interprets its positions as
+    // *native* pixels and divides them by the window's device pixel ratio
+    // (QHighDpi::fromNativeLocalPosition). Our `pos` is already in the
+    // window's logical coordinates (the same space as the QML scene and the
+    // SetOverlayMouseScale size), so on a display scaled to e.g. 125%/150% the
+    // pointer landed at pos/dpr: the whole UI's hit area was shifted towards
+    // the top-left. Pre-multiply by the DPR so it cancels out exactly.
+    const qreal dpr = m_window.QWindow::devicePixelRatio();
     QWindowSystemInterface::handleMouseEvent<
         QWindowSystemInterface::SynchronousDelivery>(
         &m_window,
-        pos,
-        m_window.mapToGlobal( pos ),
+        pos * dpr,
+        m_window.mapToGlobal( pos ) * dpr,
         m_lastMouseButtons,
         button,
         type );

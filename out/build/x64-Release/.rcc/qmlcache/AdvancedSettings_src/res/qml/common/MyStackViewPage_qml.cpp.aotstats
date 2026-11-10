@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 41,
-                        "durationMicroseconds": 396,
+                        "durationMicroseconds": 574,
                         "errorMessage": "",
                         "functionName": "headerShowBackButton",
                         "line": 19
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 35,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "fill",
                         "line": 35
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 12,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "opacity",
                         "line": 38
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 36,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 7,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "fill",
                         "line": 41
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 23,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 46,
                         "errorMessage": "Cannot access value for name headerText",
                         "functionName": "text",
                         "line": 57
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 74
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 159,
+                        "durationMicroseconds": 231,
                         "errorMessage": "",
                         "functionName": "contentWidth",
                         "line": 85
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 29,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 107,
                         "errorMessage": "",
                         "functionName": "flickableDirection",
                         "line": 86
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 67,
                         "errorMessage": "Cannot access value for name content",
                         "functionName": "contentHeight",
                         "line": 87
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 147,
                         "errorMessage": "",
                         "functionName": "interactive",
                         "line": 88
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 25,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 100,
                         "errorMessage": "",
                         "functionName": "boundsBehavior",
                         "line": 89
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 8,
+                        "durationMicroseconds": 12,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "color",
                         "line": 98
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 899,
+                        "durationMicroseconds": 1475,
                         "errorMessage": "Cannot generate efficient code for LoadClosure",
                         "functionName": "onCompleted",
                         "line": 103
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 105,
                         "errorMessage": "Cannot access value for name OverlayController",
                         "functionName": "target",
                         "line": 114

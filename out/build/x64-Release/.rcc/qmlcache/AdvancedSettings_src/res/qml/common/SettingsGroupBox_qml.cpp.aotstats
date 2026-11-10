@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 41,
-                        "durationMicroseconds": 378,
+                        "durationMicroseconds": 551,
                         "errorMessage": "",
                         "functionName": "edgePadding",
                         "line": 17
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 49,
                         "errorMessage": "Cannot access value for name settingsGroupBox",
                         "functionName": "width",
                         "line": 27
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 15,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name settingsGroupBox",
                         "functionName": "text",
                         "line": 28
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 18,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name settingsGroupBox",
                         "functionName": "visible",
                         "line": 29
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 246,
+                        "durationMicroseconds": 319,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "elide",
                         "line": 33
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 12,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name settingsGroupBox",
                         "functionName": "y",
                         "line": 37
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 7,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "width",
                         "line": 38
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 8,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "height",
                         "line": 39

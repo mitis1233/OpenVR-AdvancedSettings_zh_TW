@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 80,
+                        "durationMicroseconds": 136,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 21
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 138,
+                        "durationMicroseconds": 211,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 24
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 24,
+                        "durationMicroseconds": 52,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 28
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 32,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 34
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 40
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 47,
+                        "durationMicroseconds": 89,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 43
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 32,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 47
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 53
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 17,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 59
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 62
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 32,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 66

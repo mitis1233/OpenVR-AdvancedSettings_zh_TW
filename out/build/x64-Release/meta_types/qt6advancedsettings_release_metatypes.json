@@ -2712,7 +2712,7 @@
                 "methods": [
                     {
                         "access": "public",
-                        "index": 128,
+                        "index": 129,
                         "name": "getOffsetProfileCount",
                         "returnType": "uint"
                     },
@@ -2724,13 +2724,13 @@
                                 "type": "uint"
                             }
                         ],
-                        "index": 129,
+                        "index": 130,
                         "name": "getOffsetProfileName",
                         "returnType": "QString"
                     },
                     {
                         "access": "public",
-                        "index": 130,
+                        "index": 131,
                         "name": "getTrackedDeviceList",
                         "returnType": "QStringList"
                     }
@@ -4629,6 +4629,12 @@
                     },
                     {
                         "access": "public",
+                        "index": 101,
+                        "name": "calibrateFrontPitch",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
                         "arguments": [
                             {
                                 "name": "value",
@@ -4639,7 +4645,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "index": 101,
+                        "index": 102,
                         "name": "modOffsetYaw",
                         "returnType": "void"
                     },
@@ -4651,7 +4657,7 @@
                                 "type": "float"
                             }
                         ],
-                        "index": 102,
+                        "index": 103,
                         "isCloned": true,
                         "name": "modOffsetYaw",
                         "returnType": "void"
@@ -4665,22 +4671,22 @@
                             },
                             {
                                 "name": "notify",
-                                "type": "bool"
-                            }
-                        ],
-                        "index": 103,
-                        "name": "setLockX",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "name": "value",
                                 "type": "bool"
                             }
                         ],
                         "index": 104,
+                        "name": "setLockX",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "value",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 105,
                         "isCloned": true,
                         "name": "setLockX",
                         "returnType": "void"
@@ -4697,20 +4703,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "index": 105,
-                        "name": "setLockY",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "name": "value",
-                                "type": "bool"
-                            }
-                        ],
                         "index": 106,
-                        "isCloned": true,
                         "name": "setLockY",
                         "returnType": "void"
                     },
@@ -4719,15 +4712,12 @@
                         "arguments": [
                             {
                                 "name": "value",
-                                "type": "bool"
-                            },
-                            {
-                                "name": "notify",
                                 "type": "bool"
                             }
                         ],
                         "index": 107,
-                        "name": "setLockZ",
+                        "isCloned": true,
+                        "name": "setLockY",
                         "returnType": "void"
                     },
                     {
@@ -4735,10 +4725,26 @@
                         "arguments": [
                             {
                                 "name": "value",
+                                "type": "bool"
+                            },
+                            {
+                                "name": "notify",
                                 "type": "bool"
                             }
                         ],
                         "index": 108,
+                        "name": "setLockZ",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "value",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 109,
                         "isCloned": true,
                         "name": "setLockZ",
                         "returnType": "void"
@@ -4755,20 +4761,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "index": 109,
-                        "name": "setLockRoll",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "name": "value",
-                                "type": "bool"
-                            }
-                        ],
                         "index": 110,
-                        "isCloned": true,
                         "name": "setLockRoll",
                         "returnType": "void"
                     },
@@ -4777,15 +4770,12 @@
                         "arguments": [
                             {
                                 "name": "value",
-                                "type": "bool"
-                            },
-                            {
-                                "name": "notify",
                                 "type": "bool"
                             }
                         ],
                         "index": 111,
-                        "name": "setLockPitch",
+                        "isCloned": true,
+                        "name": "setLockRoll",
                         "returnType": "void"
                     },
                     {
@@ -4793,10 +4783,26 @@
                         "arguments": [
                             {
                                 "name": "value",
+                                "type": "bool"
+                            },
+                            {
+                                "name": "notify",
                                 "type": "bool"
                             }
                         ],
                         "index": 112,
+                        "name": "setLockPitch",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "value",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 113,
                         "isCloned": true,
                         "name": "setLockPitch",
                         "returnType": "void"
@@ -4813,20 +4819,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "index": 113,
-                        "name": "setLockYaw",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "public",
-                        "arguments": [
-                            {
-                                "name": "value",
-                                "type": "bool"
-                            }
-                        ],
                         "index": 114,
-                        "isCloned": true,
                         "name": "setLockYaw",
                         "returnType": "void"
                     },
@@ -4835,14 +4828,27 @@
                         "arguments": [
                             {
                                 "name": "value",
-                                "type": "bool"
-                            },
-                            {
-                                "name": "notify",
                                 "type": "bool"
                             }
                         ],
                         "index": 115,
+                        "isCloned": true,
+                        "name": "setLockYaw",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "value",
+                                "type": "bool"
+                            },
+                            {
+                                "name": "notify",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 116,
                         "name": "setShowLogMatricesButton",
                         "returnType": "void"
                     },
@@ -4854,7 +4860,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "index": 116,
+                        "index": 117,
                         "isCloned": true,
                         "name": "setShowLogMatricesButton",
                         "returnType": "void"
@@ -4871,7 +4877,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "index": 117,
+                        "index": 118,
                         "name": "setUniverseCenteredRotation",
                         "returnType": "void"
                     },
@@ -4883,38 +4889,38 @@
                                 "type": "bool"
                             }
                         ],
-                        "index": 118,
+                        "index": 119,
                         "isCloned": true,
                         "name": "setUniverseCenteredRotation",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "public",
-                        "index": 119,
-                        "name": "shutdown",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 120,
-                        "name": "reset",
+                        "name": "shutdown",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 121,
-                        "name": "outputLogPoses",
+                        "name": "reset",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 122,
-                        "name": "zeroOffsets",
+                        "name": "outputLogPoses",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 123,
+                        "name": "zeroOffsets",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 124,
                         "name": "sendSeatedRecenter",
                         "returnType": "void"
                     },
@@ -4926,7 +4932,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 124,
+                        "index": 125,
                         "name": "addOffsetProfile",
                         "returnType": "void"
                     },
@@ -4938,7 +4944,7 @@
                                 "type": "uint"
                             }
                         ],
-                        "index": 125,
+                        "index": 126,
                         "name": "applyOffsetProfile",
                         "returnType": "void"
                     },
@@ -4950,13 +4956,13 @@
                                 "type": "uint"
                             }
                         ],
-                        "index": 126,
+                        "index": 127,
                         "name": "deleteOffsetProfile",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 127,
+                        "index": 128,
                         "name": "addCurOffsetAsCenter",
                         "returnType": "void"
                     }

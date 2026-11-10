@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 183,
+                        "durationMicroseconds": 277,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 14
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 33,
+                        "durationMicroseconds": 55,
                         "errorMessage": "Cannot retrieve a non-object type by ID: spaceMoveXText",
                         "functionName": "onCompleted",
                         "line": 237
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 111,
+                        "durationMicroseconds": 156,
                         "errorMessage": "Cannot access value for name MoveCenterTabController",
                         "functionName": "target",
                         "line": 247
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot retrieve a non-object type by ID: spaceMoveXText",
                         "functionName": "onOffsetXChanged",
                         "line": 248
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot retrieve a non-object type by ID: spaceMoveYText",
                         "functionName": "onOffsetYChanged",
                         "line": 251
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot retrieve a non-object type by ID: spaceMoveZText",
                         "functionName": "onOffsetZChanged",
                         "line": 254
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot retrieve a non-object type by ID: lockXToggle",
                         "functionName": "onLockXToggleChanged",
                         "line": 257
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot retrieve a non-object type by ID: lockYToggle",
                         "functionName": "onLockYToggleChanged",
                         "line": 260
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot retrieve a non-object type by ID: lockZToggle",
                         "functionName": "onLockZToggleChanged",
                         "line": 263

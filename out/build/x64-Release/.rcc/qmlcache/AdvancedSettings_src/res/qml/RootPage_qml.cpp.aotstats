@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 265,
+                        "durationMicroseconds": 423,
                         "errorMessage": "Cannot access value for name mainView",
                         "functionName": "stackView",
                         "line": 18
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 4,
-                        "durationMicroseconds": 368,
+                        "durationMicroseconds": 541,
                         "errorMessage": "Cannot access value for name StatisticsTabController",
                         "functionName": "updateStatistics",
                         "line": 853
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 304,
+                        "durationMicroseconds": 515,
                         "errorMessage": "",
                         "functionName": "onVisibleChanged",
                         "line": 875
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 368,
+                        "durationMicroseconds": 596,
                         "errorMessage": "Cannot access value for name ChaperoneTabController",
                         "functionName": "reloadChaperoneProfiles",
                         "line": 885
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 335,
+                        "durationMicroseconds": 515,
                         "errorMessage": "Cannot access value for name VideoTabController",
                         "functionName": "reloadVideoProfiles",
                         "line": 896
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 24
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 126,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 27
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 31
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 67
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 103
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 81,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 106
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 110
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 50,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 119,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 122
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 50,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 138
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 148
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 50,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 80,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 160
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 50,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 79,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 176
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 186
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 50,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 198
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 50,
-                        "durationMicroseconds": 104,
+                        "durationMicroseconds": 75,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 214
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 223
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 226
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 230
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 46,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 94,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 246
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 288
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 76,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 291
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 295
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 364
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 367
@@ -374,7 +374,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 40,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 371
@@ -390,7 +390,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 46,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 126,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 387
@@ -422,7 +422,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 423
@@ -430,7 +430,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 426
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 431
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 47,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 442
@@ -462,7 +462,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 46,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 104,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 449
@@ -534,7 +534,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 516
@@ -542,7 +542,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 46,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 141,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 522
@@ -566,7 +566,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 46,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 87,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 554
@@ -614,7 +614,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 598
@@ -622,7 +622,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 84,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 601
@@ -630,7 +630,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 605
@@ -646,7 +646,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 14,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "source",
                         "line": 613
@@ -654,7 +654,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 39,
-                        "durationMicroseconds": 194,
+                        "durationMicroseconds": 340,
                         "errorMessage": "Cannot access value for name Image",
                         "functionName": "fillMode",
                         "line": 616
@@ -678,7 +678,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 46,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 150,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 641
@@ -702,7 +702,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 650
@@ -710,7 +710,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 116,
                         "errorMessage": "",
                         "functionName": "fontSizeMode",
                         "line": 680
@@ -718,7 +718,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 42,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 683
@@ -726,7 +726,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 117,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 684
@@ -734,7 +734,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
                         "functionName": "wrapMode",
                         "line": 685
@@ -742,7 +742,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 45,
-                        "durationMicroseconds": 96,
+                        "durationMicroseconds": 133,
                         "errorMessage": "",
                         "functionName": "verticalCenter",
                         "line": 675
@@ -750,7 +750,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 38,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 696
@@ -758,7 +758,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 27,
-                        "durationMicroseconds": 344,
+                        "durationMicroseconds": 535,
                         "errorMessage": "Cannot access value for name applicationVersion",
                         "functionName": "onCompleted",
                         "line": 701
@@ -766,7 +766,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 93,
                         "errorMessage": "Cannot access value for name OverlayController",
                         "functionName": "target",
                         "line": 748
@@ -774,7 +774,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 89,
                         "errorMessage": "Cannot access value for name OverlayController",
                         "functionName": "onNewVersionDetectedChanged",
                         "line": 749
@@ -782,7 +782,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 98,
                         "errorMessage": "Cannot access value for name OverlayController",
                         "functionName": "onVersionCheckTextChanged",
                         "line": 757
@@ -790,7 +790,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 84,
                         "errorMessage": "Cannot access value for name OverlayController",
                         "functionName": "onDisableVersionCheckChanged",
                         "line": 760
@@ -798,7 +798,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 86,
                         "errorMessage": "Cannot access value for name ChaperoneTabController",
                         "functionName": "target",
                         "line": 778
@@ -806,7 +806,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 99,
                         "errorMessage": "method reloadChaperoneProfiles cannot be resolved.",
                         "functionName": "onChaperoneProfilesUpdated",
                         "line": 779
@@ -814,7 +814,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 96,
                         "errorMessage": "Cannot access value for name VideoTabController",
                         "functionName": "target",
                         "line": 785
@@ -822,7 +822,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 98,
                         "errorMessage": "method reloadVideoProfiles cannot be resolved.",
                         "functionName": "onVideoProfilesUpdated",
                         "line": 786
@@ -830,7 +830,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 101,
                         "errorMessage": "Cannot access value for name VideoTabController",
                         "functionName": "onBrightnessOpacityValueChanged",
                         "line": 789
@@ -838,7 +838,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot retrieve a non-object type by ID: summaryBrightnessToggle",
                         "functionName": "onBrightnessEnabledChanged",
                         "line": 794
@@ -846,7 +846,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 94,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "target",
                         "line": 800
@@ -854,7 +854,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot retrieve a non-object type by ID: summaryMicVolumeSlider",
                         "functionName": "onMicVolumeChanged",
                         "line": 801
@@ -862,7 +862,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot retrieve a non-object type by ID: summaryMicMuteToggle",
                         "functionName": "onMicMutedChanged",
                         "line": 804
@@ -870,7 +870,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot retrieve a non-object type by ID: summaryPttToggle",
                         "functionName": "onPttEnabledChanged",
                         "line": 807
@@ -878,7 +878,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 171,
                         "errorMessage": "Cannot access value for name MoveCenterTabController",
                         "functionName": "target",
                         "line": 813
@@ -886,7 +886,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 123,
+                        "durationMicroseconds": 175,
                         "errorMessage": "Cannot access value for name MoveCenterTabController",
                         "functionName": "onTrackingUniverseChanged",
                         "line": 814
@@ -894,7 +894,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot retrieve a non-object type by ID: summaryHeightToggleButton",
                         "functionName": "onHeightToggleChanged",
                         "line": 823
@@ -902,7 +902,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot retrieve a non-object type by ID: summaryHeightToggleOffsetText",
                         "functionName": "onHeightToggleOffsetChanged",
                         "line": 826
@@ -910,7 +910,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot retrieve a non-object type by ID: summaryGravityToggleButton",
                         "functionName": "onGravityActiveChanged",
                         "line": 829
@@ -918,7 +918,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot retrieve a non-object type by ID: summaryGravityStrengthText",
                         "functionName": "onGravityStrengthChanged",
                         "line": 832
@@ -926,7 +926,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 18,
                         "errorMessage": "Cannot retrieve a non-object type by ID: summaryMomentumToggleButton",
                         "functionName": "onMomentumSaveChanged",
                         "line": 835
@@ -934,7 +934,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot retrieve a non-object type by ID: summaryFlingStrengthText",
                         "functionName": "onFlingStrengthChanged",
                         "line": 838
@@ -942,7 +942,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot retrieve a non-object type by ID: summaryFrictionPercentText",
                         "functionName": "onFrictionPercentChanged",
                         "line": 841
@@ -950,7 +950,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot retrieve a non-object type by ID: summaryPitchText",
                         "functionName": "onOffsetPitchChanged",
                         "line": 844
@@ -958,7 +958,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 8,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot retrieve a non-object type by ID: summaryLockPitchToggle",
                         "functionName": "onRequireLockPitchChanged",
                         "line": 847
@@ -966,7 +966,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 21,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 83,
                         "errorMessage": "Type (component in Z:/OpenVR-AdvancedSettings-qt6/src/res/qml/RootPage.qml)::parent with type QObject does not have a property updateStatistics for calling",
                         "functionName": "onTriggered",
                         "line": 870

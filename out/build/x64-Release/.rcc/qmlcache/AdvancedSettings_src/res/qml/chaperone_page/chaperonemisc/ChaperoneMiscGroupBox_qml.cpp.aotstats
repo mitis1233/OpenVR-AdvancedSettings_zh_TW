@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 118,
+                        "durationMicroseconds": 176,
                         "errorMessage": "Cannot access value for name ChaperoneTabController",
                         "functionName": "setCollisionBoundStyleRadio",
                         "line": 217
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 136,
+                        "durationMicroseconds": 236,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 14
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 19
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 31
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 42
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 38,
-                        "durationMicroseconds": 109,
+                        "durationMicroseconds": 148,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 48
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 61
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 38,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 101,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 67
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 43,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 138
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 38,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 129,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 144
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 53,
                         "errorMessage": "Cannot retrieve a non-object type by ID: chaperoneFloorToggleBtn",
                         "functionName": "onCompleted",
                         "line": 208
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 145,
                         "errorMessage": "Cannot access value for name ChaperoneTabController",
                         "functionName": "target",
                         "line": 228
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot retrieve a non-object type by ID: chaperoneFloorToggleBtn",
                         "functionName": "onChaperoneFloorToggleChanged",
                         "line": 229
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot retrieve a non-object type by ID: legacyCenterMarkerbtn",
                         "functionName": "onCenterMarkerChanged",
                         "line": 232
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 92,
+                        "durationMicroseconds": 142,
                         "errorMessage": "Cannot access value for name ChaperoneTabController",
                         "functionName": "onChaperoneDimHeightChanged",
                         "line": 235
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 180,
+                        "durationMicroseconds": 155,
                         "errorMessage": "method setCollisionBoundStyleRadio cannot be resolved.",
                         "functionName": "onCollisionBoundStyleChanged",
                         "line": 242

@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 78,
+                        "durationMicroseconds": 115,
                         "errorMessage": "Cannot access value for name audioNewProfileName",
                         "functionName": "openPopup",
                         "line": 62
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 36,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot access value for name audioDefaultProfileToggle",
                         "functionName": "onCompleted",
                         "line": 47

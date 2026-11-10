@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 446,
+                        "durationMicroseconds": 661,
                         "errorMessage": "Cannot access value for name SteamVRTabController",
                         "functionName": "getRXTX",
                         "line": 204
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 128,
+                        "durationMicroseconds": 184,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 24
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 32,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 145,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 35
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 112,
                         "errorMessage": "",
                         "functionName": "wrapMode",
                         "line": 69
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 111,
                         "errorMessage": "",
                         "functionName": "model",
                         "line": 77
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 46,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 162,
                         "errorMessage": "",
                         "functionName": "halfWidth",
                         "line": 89
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 47,
-                        "durationMicroseconds": 127,
+                        "durationMicroseconds": 211,
                         "errorMessage": "",
                         "functionName": "valueWidth",
                         "line": 91
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 84
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 52,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 118,
                         "errorMessage": "",
                         "functionName": "preferredWidth",
                         "line": 99
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 50,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 97,
                         "errorMessage": "",
                         "functionName": "maximumWidth",
                         "line": 100
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 56,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 103,
                         "errorMessage": "",
                         "functionName": "preferredWidth",
                         "line": 103
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 39,
-                        "durationMicroseconds": 175,
+                        "durationMicroseconds": 264,
                         "errorMessage": "Cannot access value for name TX",
                         "functionName": "text",
                         "line": 106
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 40,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 115,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 107
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 56,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "preferredWidth",
                         "line": 108
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 54,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 90,
                         "errorMessage": "",
                         "functionName": "maximumWidth",
                         "line": 109
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 52,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
                         "functionName": "preferredWidth",
                         "line": 118
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 50,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "maximumWidth",
                         "line": 119
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 56,
-                        "durationMicroseconds": 104,
+                        "durationMicroseconds": 90,
                         "errorMessage": "",
                         "functionName": "preferredWidth",
                         "line": 122
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 39,
-                        "durationMicroseconds": 188,
+                        "durationMicroseconds": 239,
                         "errorMessage": "Cannot access value for name RX",
                         "functionName": "text",
                         "line": 125
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 40,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 118,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 126
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 56,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 98,
                         "errorMessage": "",
                         "functionName": "preferredWidth",
                         "line": 127
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 54,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 94,
                         "errorMessage": "",
                         "functionName": "maximumWidth",
                         "line": 128
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 52,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 107,
                         "errorMessage": "",
                         "functionName": "preferredWidth",
                         "line": 142
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 50,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 89,
                         "errorMessage": "",
                         "functionName": "maximumWidth",
                         "line": 143
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 56,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "preferredWidth",
                         "line": 146
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 39,
-                        "durationMicroseconds": 171,
+                        "durationMicroseconds": 247,
                         "errorMessage": "Cannot access value for name DT",
                         "functionName": "text",
                         "line": 149
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 40,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "elide",
                         "line": 150
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 56,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 108,
                         "errorMessage": "",
                         "functionName": "preferredWidth",
                         "line": 151
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 54,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 141,
                         "errorMessage": "",
                         "functionName": "maximumWidth",
                         "line": 152
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 131,
+                        "durationMicroseconds": 180,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 178
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 120,
+                        "durationMicroseconds": 196,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 189
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 78,
+                        "durationMicroseconds": 123,
                         "errorMessage": "Cannot access value for name SteamVRTabController",
                         "functionName": "target",
                         "line": 194
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 46,
+                        "durationMicroseconds": 74,
                         "errorMessage": "method getRXTX cannot be resolved.",
                         "functionName": "onUpdateRXTX",
                         "line": 199

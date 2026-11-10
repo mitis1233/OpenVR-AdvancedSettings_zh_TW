@@ -404,6 +404,9 @@ public slots:
 
     void modOffsetRoll( float value, bool notify = true );
     void modOffsetPitch( float value, bool notify = true );
+    // Sets the pitch offset so that the direction the HMD is currently looking
+    // at becomes level (0 degrees pitch). Uses the live HMD pose.
+    void calibrateFrontPitch();
     void modOffsetYaw( float value, bool notify = true );
 
     void setLockX( bool value, bool notify = true );

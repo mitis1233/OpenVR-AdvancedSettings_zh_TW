@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 176,
+                        "durationMicroseconds": 278,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 15
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 32,
-                        "durationMicroseconds": 99,
+                        "durationMicroseconds": 162,
                         "errorMessage": "",
                         "functionName": "verticalAlignment",
                         "line": 19
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 103,
                         "errorMessage": "",
                         "functionName": "wrapMode",
                         "line": 21
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 35,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 59,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "minimumHeight",
                         "line": 18
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 108,
                         "errorMessage": "",
                         "functionName": "wrapMode",
                         "line": 29
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 111,
+                        "durationMicroseconds": 190,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 37
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 46
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 59
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot retrieve a non-object type by ID: undoFixButton",
                         "functionName": "visible",
                         "line": 68
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 73
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 89
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 102
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 74,
                         "errorMessage": "Cannot retrieve a non-object type by ID: fixButton",
                         "functionName": "onCompleted",
                         "line": 111
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 109,
+                        "durationMicroseconds": 201,
                         "errorMessage": "",
                         "functionName": "onTriggered",
                         "line": 129
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 91,
+                        "durationMicroseconds": 139,
                         "errorMessage": "Cannot access value for name FixFloorTabController",
                         "functionName": "target",
                         "line": 135
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 141,
+                        "durationMicroseconds": 246,
                         "errorMessage": "Cannot access value for name FixFloorTabController",
                         "functionName": "onStatusMessageSignal",
                         "line": 136
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot retrieve a non-object type by ID: fixButton",
                         "functionName": "onMeasureStartSignal",
                         "line": 144
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot retrieve a non-object type by ID: fixButton",
                         "functionName": "onMeasureEndSignal",
                         "line": 148
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot retrieve a non-object type by ID: undoFixButton",
                         "functionName": "onCanUndoChanged",
                         "line": 152
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 113,
                         "errorMessage": "Cannot access value for name MoveCenterTabController",
                         "functionName": "target",
                         "line": 160

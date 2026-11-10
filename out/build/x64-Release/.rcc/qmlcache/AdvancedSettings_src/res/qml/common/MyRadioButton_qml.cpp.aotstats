@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 12,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 90,
                         "errorMessage": "Cannot access value for name myRadioButton",
                         "functionName": "x",
                         "line": 13
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 12,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name myRadioButton",
                         "functionName": "y",
                         "line": 14
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name myRadioButton",
                         "functionName": "color",
                         "line": 16
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 23,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name myRadioButton",
                         "functionName": "width",
                         "line": 17
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 20,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name myRadioButton",
                         "functionName": "color",
                         "line": 24
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 9,
+                        "durationMicroseconds": 16,
                         "errorMessage": "Cannot access value for name myRadioButton",
                         "functionName": "visible",
                         "line": 25
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "centerIn",
                         "line": 20
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 30,
-                        "durationMicroseconds": 211,
+                        "durationMicroseconds": 303,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "horizontalAlignment",
                         "line": 29
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 179,
+                        "durationMicroseconds": 275,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "verticalAlignment",
                         "line": 30
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 26,
                         "errorMessage": "Cannot access value for name myRadioButton",
                         "functionName": "leftPadding",
                         "line": 31
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 15,
-                        "durationMicroseconds": 4,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "text",
                         "line": 32
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 5,
+                        "durationMicroseconds": 9,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "color",
                         "line": 33
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 88,
                         "errorMessage": "Cannot access value for name OverlayController",
                         "functionName": "target",
                         "line": 47

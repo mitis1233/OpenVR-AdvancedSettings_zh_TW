@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 118,
+                        "durationMicroseconds": 177,
                         "errorMessage": "Cannot access value for name MoveCenterTabController",
                         "functionName": "updateTrackingUniverseText",
                         "line": 106
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 96,
                         "errorMessage": "Cannot access value for name MoveCenterTabController",
                         "functionName": "reloadOffsetProfiles",
                         "line": 116
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 125,
+                        "durationMicroseconds": 184,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 19
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 21
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 41,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 40
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 41,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 79
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 80,
+                        "durationMicroseconds": 135,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 126
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 120,
                         "errorMessage": "Cannot access value for name MoveCenterTabController",
                         "functionName": "target",
                         "line": 132
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 102,
                         "errorMessage": "method updateTrackingUniverseText cannot be resolved.",
                         "functionName": "onTrackingUniverseChanged",
                         "line": 133
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 93,
                         "errorMessage": "method reloadOffsetProfiles cannot be resolved.",
                         "functionName": "onOffsetProfilesUpdated",
                         "line": 136

@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 5,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 177,
                         "errorMessage": "",
                         "functionName": "onComponentComplete",
                         "line": 21
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 98,
+                        "durationMicroseconds": 179,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 35
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 50,
                         "errorMessage": "Cannot retrieve a non-object type by ID: sliderBox",
                         "functionName": "onCompleted",
                         "line": 77

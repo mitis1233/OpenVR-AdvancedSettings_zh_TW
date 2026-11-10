@@ -110,6 +110,7 @@ static constexpr auto qt_meta_stringdata_ZN11advsettings23MoveCenterTabControlle
     "modOffsetZ",
     "modOffsetRoll",
     "modOffsetPitch",
+    "calibrateFrontPitch",
     "modOffsetYaw",
     "setLockX",
     "setLockY",
@@ -178,149 +179,150 @@ Q_CONSTINIT static const uint qt_meta_data_ZN11advsettings23MoveCenterTabControl
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-     131,   14, // methods
-      35, 1255, // properties
+     132,   14, // methods
+      35, 1262, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
       36,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,  800,    2, 0x06,   36 /* Public */,
-       4,    1,  803,    2, 0x06,   38 /* Public */,
-       5,    1,  806,    2, 0x06,   40 /* Public */,
-       6,    1,  809,    2, 0x06,   42 /* Public */,
-       7,    1,  812,    2, 0x06,   44 /* Public */,
-       8,    1,  815,    2, 0x06,   46 /* Public */,
-       9,    1,  818,    2, 0x06,   48 /* Public */,
-      10,    1,  821,    2, 0x06,   50 /* Public */,
-      11,    1,  824,    2, 0x06,   52 /* Public */,
-      12,    1,  827,    2, 0x06,   54 /* Public */,
-      13,    1,  830,    2, 0x06,   56 /* Public */,
-      14,    1,  833,    2, 0x06,   58 /* Public */,
-      15,    1,  836,    2, 0x06,   60 /* Public */,
-      16,    1,  839,    2, 0x06,   62 /* Public */,
-      17,    1,  842,    2, 0x06,   64 /* Public */,
-      18,    1,  845,    2, 0x06,   66 /* Public */,
-      19,    1,  848,    2, 0x06,   68 /* Public */,
-      20,    1,  851,    2, 0x06,   70 /* Public */,
-      21,    1,  854,    2, 0x06,   72 /* Public */,
-      22,    1,  857,    2, 0x06,   74 /* Public */,
-      23,    1,  860,    2, 0x06,   76 /* Public */,
-      24,    1,  863,    2, 0x06,   78 /* Public */,
-      25,    1,  866,    2, 0x06,   80 /* Public */,
-      26,    1,  869,    2, 0x06,   82 /* Public */,
-      27,    1,  872,    2, 0x06,   84 /* Public */,
-      28,    1,  875,    2, 0x06,   86 /* Public */,
-      29,    1,  878,    2, 0x06,   88 /* Public */,
-      30,    1,  881,    2, 0x06,   90 /* Public */,
-      31,    1,  884,    2, 0x06,   92 /* Public */,
-      32,    1,  887,    2, 0x06,   94 /* Public */,
-      33,    1,  890,    2, 0x06,   96 /* Public */,
-      34,    1,  893,    2, 0x06,   98 /* Public */,
-      35,    1,  896,    2, 0x06,  100 /* Public */,
-      36,    1,  899,    2, 0x06,  102 /* Public */,
-      37,    1,  902,    2, 0x06,  104 /* Public */,
-      38,    0,  905,    2, 0x06,  106 /* Public */,
+       1,    1,  806,    2, 0x06,   36 /* Public */,
+       4,    1,  809,    2, 0x06,   38 /* Public */,
+       5,    1,  812,    2, 0x06,   40 /* Public */,
+       6,    1,  815,    2, 0x06,   42 /* Public */,
+       7,    1,  818,    2, 0x06,   44 /* Public */,
+       8,    1,  821,    2, 0x06,   46 /* Public */,
+       9,    1,  824,    2, 0x06,   48 /* Public */,
+      10,    1,  827,    2, 0x06,   50 /* Public */,
+      11,    1,  830,    2, 0x06,   52 /* Public */,
+      12,    1,  833,    2, 0x06,   54 /* Public */,
+      13,    1,  836,    2, 0x06,   56 /* Public */,
+      14,    1,  839,    2, 0x06,   58 /* Public */,
+      15,    1,  842,    2, 0x06,   60 /* Public */,
+      16,    1,  845,    2, 0x06,   62 /* Public */,
+      17,    1,  848,    2, 0x06,   64 /* Public */,
+      18,    1,  851,    2, 0x06,   66 /* Public */,
+      19,    1,  854,    2, 0x06,   68 /* Public */,
+      20,    1,  857,    2, 0x06,   70 /* Public */,
+      21,    1,  860,    2, 0x06,   72 /* Public */,
+      22,    1,  863,    2, 0x06,   74 /* Public */,
+      23,    1,  866,    2, 0x06,   76 /* Public */,
+      24,    1,  869,    2, 0x06,   78 /* Public */,
+      25,    1,  872,    2, 0x06,   80 /* Public */,
+      26,    1,  875,    2, 0x06,   82 /* Public */,
+      27,    1,  878,    2, 0x06,   84 /* Public */,
+      28,    1,  881,    2, 0x06,   86 /* Public */,
+      29,    1,  884,    2, 0x06,   88 /* Public */,
+      30,    1,  887,    2, 0x06,   90 /* Public */,
+      31,    1,  890,    2, 0x06,   92 /* Public */,
+      32,    1,  893,    2, 0x06,   94 /* Public */,
+      33,    1,  896,    2, 0x06,   96 /* Public */,
+      34,    1,  899,    2, 0x06,   98 /* Public */,
+      35,    1,  902,    2, 0x06,  100 /* Public */,
+      36,    1,  905,    2, 0x06,  102 /* Public */,
+      37,    1,  908,    2, 0x06,  104 /* Public */,
+      38,    0,  911,    2, 0x06,  106 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-      39,    0,  906,    2, 0x10a,  107 /* Public | MethodIsConst  */,
-      40,    2,  907,    2, 0x0a,  108 /* Public */,
-      40,    1,  912,    2, 0x2a,  111 /* Public | MethodCloned */,
-      42,    2,  915,    2, 0x0a,  113 /* Public */,
-      42,    1,  920,    2, 0x2a,  116 /* Public | MethodCloned */,
-      43,    2,  923,    2, 0x0a,  118 /* Public */,
-      43,    1,  928,    2, 0x2a,  121 /* Public | MethodCloned */,
-      44,    2,  931,    2, 0x0a,  123 /* Public */,
-      44,    1,  936,    2, 0x2a,  126 /* Public | MethodCloned */,
-      45,    2,  939,    2, 0x0a,  128 /* Public */,
-      45,    1,  944,    2, 0x2a,  131 /* Public | MethodCloned */,
-      46,    2,  947,    2, 0x0a,  133 /* Public */,
-      46,    1,  952,    2, 0x2a,  136 /* Public | MethodCloned */,
-      47,    2,  955,    2, 0x0a,  138 /* Public */,
-      47,    1,  960,    2, 0x2a,  141 /* Public | MethodCloned */,
-      48,    2,  963,    2, 0x0a,  143 /* Public */,
-      48,    1,  968,    2, 0x2a,  146 /* Public | MethodCloned */,
-      49,    2,  971,    2, 0x0a,  148 /* Public */,
-      49,    1,  976,    2, 0x2a,  151 /* Public | MethodCloned */,
-      50,    2,  979,    2, 0x0a,  153 /* Public */,
-      50,    1,  984,    2, 0x2a,  156 /* Public | MethodCloned */,
-      51,    2,  987,    2, 0x0a,  158 /* Public */,
-      51,    1,  992,    2, 0x2a,  161 /* Public | MethodCloned */,
-      52,    2,  995,    2, 0x0a,  163 /* Public */,
-      52,    1, 1000,    2, 0x2a,  166 /* Public | MethodCloned */,
-      53,    2, 1003,    2, 0x0a,  168 /* Public */,
-      53,    1, 1008,    2, 0x2a,  171 /* Public | MethodCloned */,
-      54,    2, 1011,    2, 0x0a,  173 /* Public */,
-      54,    1, 1016,    2, 0x2a,  176 /* Public | MethodCloned */,
-      55,    2, 1019,    2, 0x0a,  178 /* Public */,
-      55,    1, 1024,    2, 0x2a,  181 /* Public | MethodCloned */,
-      56,    2, 1027,    2, 0x0a,  183 /* Public */,
-      56,    1, 1032,    2, 0x2a,  186 /* Public | MethodCloned */,
-      57,    2, 1035,    2, 0x0a,  188 /* Public */,
-      57,    1, 1040,    2, 0x2a,  191 /* Public | MethodCloned */,
-      58,    2, 1043,    2, 0x0a,  193 /* Public */,
-      58,    1, 1048,    2, 0x2a,  196 /* Public | MethodCloned */,
-      59,    2, 1051,    2, 0x0a,  198 /* Public */,
-      59,    1, 1056,    2, 0x2a,  201 /* Public | MethodCloned */,
-      60,    2, 1059,    2, 0x0a,  203 /* Public */,
-      60,    1, 1064,    2, 0x2a,  206 /* Public | MethodCloned */,
-      61,    2, 1067,    2, 0x0a,  208 /* Public */,
-      61,    1, 1072,    2, 0x2a,  211 /* Public | MethodCloned */,
-      62,    2, 1075,    2, 0x0a,  213 /* Public */,
-      62,    1, 1080,    2, 0x2a,  216 /* Public | MethodCloned */,
-      63,    2, 1083,    2, 0x0a,  218 /* Public */,
-      63,    1, 1088,    2, 0x2a,  221 /* Public | MethodCloned */,
-      64,    2, 1091,    2, 0x0a,  223 /* Public */,
-      64,    1, 1096,    2, 0x2a,  226 /* Public | MethodCloned */,
-      65,    2, 1099,    2, 0x0a,  228 /* Public */,
-      65,    1, 1104,    2, 0x2a,  231 /* Public | MethodCloned */,
-      66,    2, 1107,    2, 0x0a,  233 /* Public */,
-      66,    1, 1112,    2, 0x2a,  236 /* Public | MethodCloned */,
-      67,    2, 1115,    2, 0x0a,  238 /* Public */,
-      67,    1, 1120,    2, 0x2a,  241 /* Public | MethodCloned */,
-      68,    2, 1123,    2, 0x0a,  243 /* Public */,
-      68,    1, 1128,    2, 0x2a,  246 /* Public | MethodCloned */,
-      69,    2, 1131,    2, 0x0a,  248 /* Public */,
-      69,    1, 1136,    2, 0x2a,  251 /* Public | MethodCloned */,
-      70,    2, 1139,    2, 0x0a,  253 /* Public */,
-      70,    1, 1144,    2, 0x2a,  256 /* Public | MethodCloned */,
-      71,    2, 1147,    2, 0x0a,  258 /* Public */,
-      71,    1, 1152,    2, 0x2a,  261 /* Public | MethodCloned */,
-      72,    2, 1155,    2, 0x0a,  263 /* Public */,
-      72,    1, 1160,    2, 0x2a,  266 /* Public | MethodCloned */,
-      73,    2, 1163,    2, 0x0a,  268 /* Public */,
-      73,    1, 1168,    2, 0x2a,  271 /* Public | MethodCloned */,
-      74,    2, 1171,    2, 0x0a,  273 /* Public */,
-      74,    1, 1176,    2, 0x2a,  276 /* Public | MethodCloned */,
-      75,    2, 1179,    2, 0x0a,  278 /* Public */,
-      75,    1, 1184,    2, 0x2a,  281 /* Public | MethodCloned */,
-      76,    2, 1187,    2, 0x0a,  283 /* Public */,
-      76,    1, 1192,    2, 0x2a,  286 /* Public | MethodCloned */,
-      77,    2, 1195,    2, 0x0a,  288 /* Public */,
-      77,    1, 1200,    2, 0x2a,  291 /* Public | MethodCloned */,
-      78,    2, 1203,    2, 0x0a,  293 /* Public */,
-      78,    1, 1208,    2, 0x2a,  296 /* Public | MethodCloned */,
-      79,    2, 1211,    2, 0x0a,  298 /* Public */,
-      79,    1, 1216,    2, 0x2a,  301 /* Public | MethodCloned */,
-      80,    2, 1219,    2, 0x0a,  303 /* Public */,
-      80,    1, 1224,    2, 0x2a,  306 /* Public | MethodCloned */,
-      81,    2, 1227,    2, 0x0a,  308 /* Public */,
-      81,    1, 1232,    2, 0x2a,  311 /* Public | MethodCloned */,
-      82,    0, 1235,    2, 0x0a,  313 /* Public */,
-      83,    0, 1236,    2, 0x0a,  314 /* Public */,
-      84,    0, 1237,    2, 0x0a,  315 /* Public */,
-      85,    0, 1238,    2, 0x0a,  316 /* Public */,
-      86,    0, 1239,    2, 0x0a,  317 /* Public */,
-      87,    1, 1240,    2, 0x0a,  318 /* Public */,
-      89,    1, 1243,    2, 0x0a,  320 /* Public */,
-      91,    1, 1246,    2, 0x0a,  322 /* Public */,
-      92,    0, 1249,    2, 0x0a,  324 /* Public */,
+      39,    0,  912,    2, 0x10a,  107 /* Public | MethodIsConst  */,
+      40,    2,  913,    2, 0x0a,  108 /* Public */,
+      40,    1,  918,    2, 0x2a,  111 /* Public | MethodCloned */,
+      42,    2,  921,    2, 0x0a,  113 /* Public */,
+      42,    1,  926,    2, 0x2a,  116 /* Public | MethodCloned */,
+      43,    2,  929,    2, 0x0a,  118 /* Public */,
+      43,    1,  934,    2, 0x2a,  121 /* Public | MethodCloned */,
+      44,    2,  937,    2, 0x0a,  123 /* Public */,
+      44,    1,  942,    2, 0x2a,  126 /* Public | MethodCloned */,
+      45,    2,  945,    2, 0x0a,  128 /* Public */,
+      45,    1,  950,    2, 0x2a,  131 /* Public | MethodCloned */,
+      46,    2,  953,    2, 0x0a,  133 /* Public */,
+      46,    1,  958,    2, 0x2a,  136 /* Public | MethodCloned */,
+      47,    2,  961,    2, 0x0a,  138 /* Public */,
+      47,    1,  966,    2, 0x2a,  141 /* Public | MethodCloned */,
+      48,    2,  969,    2, 0x0a,  143 /* Public */,
+      48,    1,  974,    2, 0x2a,  146 /* Public | MethodCloned */,
+      49,    2,  977,    2, 0x0a,  148 /* Public */,
+      49,    1,  982,    2, 0x2a,  151 /* Public | MethodCloned */,
+      50,    2,  985,    2, 0x0a,  153 /* Public */,
+      50,    1,  990,    2, 0x2a,  156 /* Public | MethodCloned */,
+      51,    2,  993,    2, 0x0a,  158 /* Public */,
+      51,    1,  998,    2, 0x2a,  161 /* Public | MethodCloned */,
+      52,    2, 1001,    2, 0x0a,  163 /* Public */,
+      52,    1, 1006,    2, 0x2a,  166 /* Public | MethodCloned */,
+      53,    2, 1009,    2, 0x0a,  168 /* Public */,
+      53,    1, 1014,    2, 0x2a,  171 /* Public | MethodCloned */,
+      54,    2, 1017,    2, 0x0a,  173 /* Public */,
+      54,    1, 1022,    2, 0x2a,  176 /* Public | MethodCloned */,
+      55,    2, 1025,    2, 0x0a,  178 /* Public */,
+      55,    1, 1030,    2, 0x2a,  181 /* Public | MethodCloned */,
+      56,    2, 1033,    2, 0x0a,  183 /* Public */,
+      56,    1, 1038,    2, 0x2a,  186 /* Public | MethodCloned */,
+      57,    2, 1041,    2, 0x0a,  188 /* Public */,
+      57,    1, 1046,    2, 0x2a,  191 /* Public | MethodCloned */,
+      58,    2, 1049,    2, 0x0a,  193 /* Public */,
+      58,    1, 1054,    2, 0x2a,  196 /* Public | MethodCloned */,
+      59,    2, 1057,    2, 0x0a,  198 /* Public */,
+      59,    1, 1062,    2, 0x2a,  201 /* Public | MethodCloned */,
+      60,    2, 1065,    2, 0x0a,  203 /* Public */,
+      60,    1, 1070,    2, 0x2a,  206 /* Public | MethodCloned */,
+      61,    2, 1073,    2, 0x0a,  208 /* Public */,
+      61,    1, 1078,    2, 0x2a,  211 /* Public | MethodCloned */,
+      62,    2, 1081,    2, 0x0a,  213 /* Public */,
+      62,    1, 1086,    2, 0x2a,  216 /* Public | MethodCloned */,
+      63,    2, 1089,    2, 0x0a,  218 /* Public */,
+      63,    1, 1094,    2, 0x2a,  221 /* Public | MethodCloned */,
+      64,    2, 1097,    2, 0x0a,  223 /* Public */,
+      64,    1, 1102,    2, 0x2a,  226 /* Public | MethodCloned */,
+      65,    2, 1105,    2, 0x0a,  228 /* Public */,
+      65,    1, 1110,    2, 0x2a,  231 /* Public | MethodCloned */,
+      66,    2, 1113,    2, 0x0a,  233 /* Public */,
+      66,    1, 1118,    2, 0x2a,  236 /* Public | MethodCloned */,
+      67,    2, 1121,    2, 0x0a,  238 /* Public */,
+      67,    1, 1126,    2, 0x2a,  241 /* Public | MethodCloned */,
+      68,    2, 1129,    2, 0x0a,  243 /* Public */,
+      68,    1, 1134,    2, 0x2a,  246 /* Public | MethodCloned */,
+      69,    2, 1137,    2, 0x0a,  248 /* Public */,
+      69,    1, 1142,    2, 0x2a,  251 /* Public | MethodCloned */,
+      70,    2, 1145,    2, 0x0a,  253 /* Public */,
+      70,    1, 1150,    2, 0x2a,  256 /* Public | MethodCloned */,
+      71,    2, 1153,    2, 0x0a,  258 /* Public */,
+      71,    1, 1158,    2, 0x2a,  261 /* Public | MethodCloned */,
+      72,    2, 1161,    2, 0x0a,  263 /* Public */,
+      72,    1, 1166,    2, 0x2a,  266 /* Public | MethodCloned */,
+      73,    0, 1169,    2, 0x0a,  268 /* Public */,
+      74,    2, 1170,    2, 0x0a,  269 /* Public */,
+      74,    1, 1175,    2, 0x2a,  272 /* Public | MethodCloned */,
+      75,    2, 1178,    2, 0x0a,  274 /* Public */,
+      75,    1, 1183,    2, 0x2a,  277 /* Public | MethodCloned */,
+      76,    2, 1186,    2, 0x0a,  279 /* Public */,
+      76,    1, 1191,    2, 0x2a,  282 /* Public | MethodCloned */,
+      77,    2, 1194,    2, 0x0a,  284 /* Public */,
+      77,    1, 1199,    2, 0x2a,  287 /* Public | MethodCloned */,
+      78,    2, 1202,    2, 0x0a,  289 /* Public */,
+      78,    1, 1207,    2, 0x2a,  292 /* Public | MethodCloned */,
+      79,    2, 1210,    2, 0x0a,  294 /* Public */,
+      79,    1, 1215,    2, 0x2a,  297 /* Public | MethodCloned */,
+      80,    2, 1218,    2, 0x0a,  299 /* Public */,
+      80,    1, 1223,    2, 0x2a,  302 /* Public | MethodCloned */,
+      81,    2, 1226,    2, 0x0a,  304 /* Public */,
+      81,    1, 1231,    2, 0x2a,  307 /* Public | MethodCloned */,
+      82,    2, 1234,    2, 0x0a,  309 /* Public */,
+      82,    1, 1239,    2, 0x2a,  312 /* Public | MethodCloned */,
+      83,    0, 1242,    2, 0x0a,  314 /* Public */,
+      84,    0, 1243,    2, 0x0a,  315 /* Public */,
+      85,    0, 1244,    2, 0x0a,  316 /* Public */,
+      86,    0, 1245,    2, 0x0a,  317 /* Public */,
+      87,    0, 1246,    2, 0x0a,  318 /* Public */,
+      88,    1, 1247,    2, 0x0a,  319 /* Public */,
+      90,    1, 1250,    2, 0x0a,  321 /* Public */,
+      92,    1, 1253,    2, 0x0a,  323 /* Public */,
+      93,    0, 1256,    2, 0x0a,  325 /* Public */,
 
  // methods: name, argc, parameters, tag, flags, initial metatype offsets
-      93,    0, 1250,    2, 0x02,  325 /* Public */,
-      94,    1, 1251,    2, 0x02,  326 /* Public */,
-      95,    0, 1254,    2, 0x02,  328 /* Public */,
+      94,    0, 1257,    2, 0x02,  326 /* Public */,
+      95,    1, 1258,    2, 0x02,  327 /* Public */,
+      96,    0, 1261,    2, 0x02,  329 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    3,
@@ -426,6 +428,7 @@ Q_CONSTINIT static const uint qt_meta_data_ZN11advsettings23MoveCenterTabControl
     QMetaType::Void, QMetaType::Float,    3,
     QMetaType::Void, QMetaType::Float, QMetaType::Bool,    3,   41,
     QMetaType::Void, QMetaType::Float,    3,
+    QMetaType::Void,
     QMetaType::Void, QMetaType::Float, QMetaType::Bool,    3,   41,
     QMetaType::Void, QMetaType::Float,    3,
     QMetaType::Void, QMetaType::Bool, QMetaType::Bool,    3,   41,
@@ -449,52 +452,52 @@ Q_CONSTINIT static const uint qt_meta_data_ZN11advsettings23MoveCenterTabControl
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   88,
-    QMetaType::Void, QMetaType::UInt,   90,
-    QMetaType::Void, QMetaType::UInt,   90,
+    QMetaType::Void, QMetaType::QString,   89,
+    QMetaType::Void, QMetaType::UInt,   91,
+    QMetaType::Void, QMetaType::UInt,   91,
     QMetaType::Void,
 
  // methods: parameters
     QMetaType::UInt,
-    QMetaType::QString, QMetaType::UInt,   90,
+    QMetaType::QString, QMetaType::UInt,   91,
     QMetaType::QStringList,
 
  // properties: name, type, flags, notifyId, revision
       39, QMetaType::Int, 0x00015103, uint(0), 0,
-      96, QMetaType::Float, 0x00015103, uint(1), 0,
-      97, QMetaType::Float, 0x00015103, uint(2), 0,
-      98, QMetaType::Float, 0x00015103, uint(3), 0,
-      99, QMetaType::Float, 0x00015103, uint(4), 0,
-     100, QMetaType::Float, 0x00015103, uint(5), 0,
-     101, QMetaType::Float, 0x00015103, uint(6), 0,
-     102, QMetaType::Int, 0x00015103, uint(7), 0,
-     103, QMetaType::Int, 0x00015103, uint(8), 0,
-     104, QMetaType::Int, 0x00015103, uint(9), 0,
-     105, QMetaType::Int, 0x00015103, uint(10), 0,
-     106, QMetaType::Int, 0x00015103, uint(11), 0,
-     107, QMetaType::Bool, 0x00015103, uint(12), 0,
-     108, QMetaType::Bool, 0x00015103, uint(13), 0,
-     109, QMetaType::Bool, 0x00015103, uint(15), 0,
-     110, QMetaType::Bool, 0x00015103, uint(14), 0,
-     111, QMetaType::Bool, 0x00015103, uint(16), 0,
-     112, QMetaType::Bool, 0x00015103, uint(17), 0,
-     113, QMetaType::UInt, 0x00015103, uint(18), 0,
-     114, QMetaType::UInt, 0x00015103, uint(19), 0,
-     115, QMetaType::Bool, 0x00015103, uint(20), 0,
-     116, QMetaType::Float, 0x00015103, uint(21), 0,
-     117, QMetaType::Float, 0x00015103, uint(22), 0,
-     118, QMetaType::Float, 0x00015103, uint(23), 0,
-     119, QMetaType::Bool, 0x00015103, uint(25), 0,
-     120, QMetaType::Bool, 0x00015103, uint(26), 0,
-     121, QMetaType::Bool, 0x00015003, uint(27), 0,
-     122, QMetaType::Bool, 0x00015003, uint(28), 0,
-     123, QMetaType::Bool, 0x00015003, uint(29), 0,
-     124, QMetaType::Bool, 0x00015003, uint(30), 0,
-     125, QMetaType::Bool, 0x00015003, uint(31), 0,
-     126, QMetaType::Bool, 0x00015003, uint(32), 0,
-     127, QMetaType::Bool, 0x00015103, uint(33), 0,
-     128, QMetaType::Bool, 0x00015103, uint(34), 0,
-     129, QMetaType::Float, 0x00015103, uint(24), 0,
+      97, QMetaType::Float, 0x00015103, uint(1), 0,
+      98, QMetaType::Float, 0x00015103, uint(2), 0,
+      99, QMetaType::Float, 0x00015103, uint(3), 0,
+     100, QMetaType::Float, 0x00015103, uint(4), 0,
+     101, QMetaType::Float, 0x00015103, uint(5), 0,
+     102, QMetaType::Float, 0x00015103, uint(6), 0,
+     103, QMetaType::Int, 0x00015103, uint(7), 0,
+     104, QMetaType::Int, 0x00015103, uint(8), 0,
+     105, QMetaType::Int, 0x00015103, uint(9), 0,
+     106, QMetaType::Int, 0x00015103, uint(10), 0,
+     107, QMetaType::Int, 0x00015103, uint(11), 0,
+     108, QMetaType::Bool, 0x00015103, uint(12), 0,
+     109, QMetaType::Bool, 0x00015103, uint(13), 0,
+     110, QMetaType::Bool, 0x00015103, uint(15), 0,
+     111, QMetaType::Bool, 0x00015103, uint(14), 0,
+     112, QMetaType::Bool, 0x00015103, uint(16), 0,
+     113, QMetaType::Bool, 0x00015103, uint(17), 0,
+     114, QMetaType::UInt, 0x00015103, uint(18), 0,
+     115, QMetaType::UInt, 0x00015103, uint(19), 0,
+     116, QMetaType::Bool, 0x00015103, uint(20), 0,
+     117, QMetaType::Float, 0x00015103, uint(21), 0,
+     118, QMetaType::Float, 0x00015103, uint(22), 0,
+     119, QMetaType::Float, 0x00015103, uint(23), 0,
+     120, QMetaType::Bool, 0x00015103, uint(25), 0,
+     121, QMetaType::Bool, 0x00015103, uint(26), 0,
+     122, QMetaType::Bool, 0x00015003, uint(27), 0,
+     123, QMetaType::Bool, 0x00015003, uint(28), 0,
+     124, QMetaType::Bool, 0x00015003, uint(29), 0,
+     125, QMetaType::Bool, 0x00015003, uint(30), 0,
+     126, QMetaType::Bool, 0x00015003, uint(31), 0,
+     127, QMetaType::Bool, 0x00015003, uint(32), 0,
+     128, QMetaType::Bool, 0x00015103, uint(33), 0,
+     129, QMetaType::Bool, 0x00015103, uint(34), 0,
+     130, QMetaType::Float, 0x00015103, uint(24), 0,
 
        0        // eod
 };
@@ -911,6 +914,8 @@ Q_CONSTINIT const QMetaObject advsettings::MoveCenterTabController::staticMetaOb
         // method 'modOffsetPitch'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<float, std::false_type>,
+        // method 'calibrateFrontPitch'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'modOffsetYaw'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<float, std::false_type>,
@@ -1113,38 +1118,39 @@ void advsettings::MoveCenterTabController::qt_static_metacall(QObject *_o, QMeta
         case 98: _t->modOffsetRoll((*reinterpret_cast< std::add_pointer_t<float>>(_a[1]))); break;
         case 99: _t->modOffsetPitch((*reinterpret_cast< std::add_pointer_t<float>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
         case 100: _t->modOffsetPitch((*reinterpret_cast< std::add_pointer_t<float>>(_a[1]))); break;
-        case 101: _t->modOffsetYaw((*reinterpret_cast< std::add_pointer_t<float>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
-        case 102: _t->modOffsetYaw((*reinterpret_cast< std::add_pointer_t<float>>(_a[1]))); break;
-        case 103: _t->setLockX((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
-        case 104: _t->setLockX((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 105: _t->setLockY((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
-        case 106: _t->setLockY((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 107: _t->setLockZ((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
-        case 108: _t->setLockZ((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 109: _t->setLockRoll((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
-        case 110: _t->setLockRoll((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 111: _t->setLockPitch((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
-        case 112: _t->setLockPitch((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 113: _t->setLockYaw((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
-        case 114: _t->setLockYaw((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 115: _t->setShowLogMatricesButton((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
-        case 116: _t->setShowLogMatricesButton((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 117: _t->setUniverseCenteredRotation((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
-        case 118: _t->setUniverseCenteredRotation((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 119: _t->shutdown(); break;
-        case 120: _t->reset(); break;
-        case 121: _t->outputLogPoses(); break;
-        case 122: _t->zeroOffsets(); break;
-        case 123: _t->sendSeatedRecenter(); break;
-        case 124: _t->addOffsetProfile((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 125: _t->applyOffsetProfile((*reinterpret_cast< std::add_pointer_t<uint>>(_a[1]))); break;
-        case 126: _t->deleteOffsetProfile((*reinterpret_cast< std::add_pointer_t<uint>>(_a[1]))); break;
-        case 127: _t->addCurOffsetAsCenter(); break;
-        case 128: { uint _r = _t->getOffsetProfileCount();
+        case 101: _t->calibrateFrontPitch(); break;
+        case 102: _t->modOffsetYaw((*reinterpret_cast< std::add_pointer_t<float>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
+        case 103: _t->modOffsetYaw((*reinterpret_cast< std::add_pointer_t<float>>(_a[1]))); break;
+        case 104: _t->setLockX((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
+        case 105: _t->setLockX((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 106: _t->setLockY((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
+        case 107: _t->setLockY((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 108: _t->setLockZ((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
+        case 109: _t->setLockZ((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 110: _t->setLockRoll((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
+        case 111: _t->setLockRoll((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 112: _t->setLockPitch((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
+        case 113: _t->setLockPitch((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 114: _t->setLockYaw((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
+        case 115: _t->setLockYaw((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 116: _t->setShowLogMatricesButton((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
+        case 117: _t->setShowLogMatricesButton((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 118: _t->setUniverseCenteredRotation((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
+        case 119: _t->setUniverseCenteredRotation((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 120: _t->shutdown(); break;
+        case 121: _t->reset(); break;
+        case 122: _t->outputLogPoses(); break;
+        case 123: _t->zeroOffsets(); break;
+        case 124: _t->sendSeatedRecenter(); break;
+        case 125: _t->addOffsetProfile((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 126: _t->applyOffsetProfile((*reinterpret_cast< std::add_pointer_t<uint>>(_a[1]))); break;
+        case 127: _t->deleteOffsetProfile((*reinterpret_cast< std::add_pointer_t<uint>>(_a[1]))); break;
+        case 128: _t->addCurOffsetAsCenter(); break;
+        case 129: { uint _r = _t->getOffsetProfileCount();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = std::move(_r); }  break;
-        case 129: { QString _r = _t->getOffsetProfileName((*reinterpret_cast< std::add_pointer_t<uint>>(_a[1])));
+        case 130: { QString _r = _t->getOffsetProfileName((*reinterpret_cast< std::add_pointer_t<uint>>(_a[1])));
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
-        case 130: { QStringList _r = _t->getTrackedDeviceList();
+        case 131: { QStringList _r = _t->getTrackedDeviceList();
             if (_a[0]) *reinterpret_cast< QStringList*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
@@ -1507,14 +1513,14 @@ int advsettings::MoveCenterTabController::qt_metacall(QMetaObject::Call _c, int 
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 131)
+        if (_id < 132)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 131;
+        _id -= 132;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 131)
+        if (_id < 132)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 131;
+        _id -= 132;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty

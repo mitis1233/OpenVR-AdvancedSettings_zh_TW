@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 206,
+                        "durationMicroseconds": 262,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 15
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 60,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 18
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 38,
-                        "durationMicroseconds": 101,
+                        "durationMicroseconds": 148,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 34
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 94,
                         "errorMessage": "Cannot access value for name VideoTabController",
                         "functionName": "onCompleted",
                         "line": 74
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 102,
                         "errorMessage": "Cannot access value for name VideoTabController",
                         "functionName": "target",
                         "line": 82
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 80,
+                        "durationMicroseconds": 105,
                         "errorMessage": "Cannot access value for name VideoTabController",
                         "functionName": "onBrightnessOpacityValueChanged",
                         "line": 84
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot retrieve a non-object type by ID: brightnessToggle",
                         "functionName": "onBrightnessEnabledChanged",
                         "line": 89

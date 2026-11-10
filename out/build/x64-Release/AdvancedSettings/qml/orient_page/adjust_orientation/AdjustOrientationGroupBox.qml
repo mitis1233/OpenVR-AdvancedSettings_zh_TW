@@ -17,7 +17,8 @@ SettingsGroupBox {
                                                      lockYawToggle.implicitWidth)
 
     function formatDegrees(val) {
-        return Math.round(val) + "°"
+        // show up to 2 decimals (e.g. 2.5°), without trailing zeros
+        return parseFloat(val.toFixed(2)) + "°"
     }
 
     ColumnLayout {
@@ -163,7 +164,7 @@ SettingsGroupBox {
                 Layout.leftMargin: 10
                 text: qsTr("Front Calibrate")
                 onClicked: {
-                    MoveCenterTabController.offsetPitch = -MoveCenterTabController.offsetPitch
+                    MoveCenterTabController.calibrateFrontPitch()
                 }
             }
 

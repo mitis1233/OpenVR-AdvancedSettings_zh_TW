@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 237,
+                        "durationMicroseconds": 276,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 15
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 59,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 18
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 26,
+                        "durationMicroseconds": 42,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 38
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 86
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 38,
-                        "durationMicroseconds": 100,
+                        "durationMicroseconds": 182,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 93
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 20,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 141
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 38,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 106,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 148
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 196
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 38,
-                        "durationMicroseconds": 114,
+                        "durationMicroseconds": 97,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 204
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 256
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 42,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 106,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 267
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 42,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 206,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 301
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 74,
                         "errorMessage": "Cannot retrieve a non-object type by ID: activationSlider",
                         "functionName": "onCompleted",
                         "line": 327
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 140,
+                        "durationMicroseconds": 211,
                         "errorMessage": "Cannot access value for name RotationTabController",
                         "functionName": "target",
                         "line": 340
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot retrieve a non-object type by ID: autoTurn",
                         "functionName": "onAutoTurnEnabledChanged",
                         "line": 342
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot retrieve a non-object type by ID: activationSlider",
                         "functionName": "onAutoTurnActivationDistanceChanged",
                         "line": 345
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot retrieve a non-object type by ID: deactivationSlider",
                         "functionName": "onAutoTurnDeactivationDistanceChanged",
                         "line": 348
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot retrieve a non-object type by ID: cornerAngle",
                         "functionName": "onAutoTurnUseCornerAngleChanged",
                         "line": 351
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 109,
+                        "durationMicroseconds": 169,
                         "errorMessage": "Cannot access value for name RotationTabController",
                         "functionName": "onAutoTurnSpeedChanged",
                         "line": 354
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot retrieve a non-object type by ID: autoTurnModeToggle",
                         "functionName": "onAutoTurnModeChanged",
                         "line": 358
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 36,
                         "errorMessage": "Cannot retrieve a non-object type by ID: detangleAngleStartText",
                         "functionName": "onMinCordTangleChanged",
                         "line": 361
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot retrieve a non-object type by ID: detangleAngleAssistText",
                         "functionName": "onCordDetangleAngleChanged",
                         "line": 364
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot retrieve a non-object type by ID: autoTurnNotificationToggle",
                         "functionName": "onAutoTurnShowNotificationChanged",
                         "line": 367

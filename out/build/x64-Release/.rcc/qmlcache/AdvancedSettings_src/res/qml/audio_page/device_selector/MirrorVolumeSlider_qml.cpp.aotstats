@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 33,
-                        "durationMicroseconds": 87,
+                        "durationMicroseconds": 139,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 15
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 33,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 21
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 25,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "source",
                         "line": 33
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 27,
-                        "durationMicroseconds": 209,
+                        "durationMicroseconds": 373,
                         "errorMessage": "Cannot access value for name Image",
                         "functionName": "fillMode",
                         "line": 36
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 34,
-                        "durationMicroseconds": 162,
+                        "durationMicroseconds": 286,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 81
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 413,
+                        "durationMicroseconds": 406,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "onCompleted",
                         "line": 84
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 122,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "target",
                         "line": 100
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 81,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "onMirrorDeviceIndexChanged",
                         "line": 101
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 23,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot retrieve a non-object type by ID: audioMirrorVolumeSlider",
                         "functionName": "onMirrorVolumeChanged",
                         "line": 116
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot retrieve a non-object type by ID: audioMirrorMuteToggle",
                         "functionName": "onMirrorMutedChanged",
                         "line": 119
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 70,
+                        "durationMicroseconds": 106,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "onPlaybackDeviceListChanged",
                         "line": 122

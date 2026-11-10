@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 171,
+                        "durationMicroseconds": 281,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 14
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 59,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 17
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 32,
-                        "durationMicroseconds": 166,
+                        "durationMicroseconds": 245,
                         "errorMessage": "Cannot access value for name VrAlarm",
                         "functionName": "onTimeChanged",
                         "line": 31
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 43
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 56,
                         "errorMessage": "Cannot retrieve a non-object type by ID: alarmClockToggle",
                         "functionName": "onCompleted",
                         "line": 97
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 61,
                         "errorMessage": "Cannot access value for name VrAlarm",
                         "functionName": "target",
                         "line": 104
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot retrieve a non-object type by ID: alarmClockToggle",
                         "functionName": "onAlarmEnabledChanged",
                         "line": 105
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 75,
                         "errorMessage": "Cannot access value for name VrAlarm",
                         "functionName": "onAlarmTimeChanged",
                         "line": 108

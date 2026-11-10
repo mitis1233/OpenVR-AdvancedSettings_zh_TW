@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 74,
+                        "durationMicroseconds": 100,
                         "errorMessage": "Cannot access value for name videoNewProfileName",
                         "functionName": "openPopup",
                         "line": 44

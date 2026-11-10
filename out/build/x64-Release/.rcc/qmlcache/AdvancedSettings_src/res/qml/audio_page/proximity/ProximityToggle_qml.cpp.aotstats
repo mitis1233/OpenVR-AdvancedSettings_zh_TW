@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 78,
+                        "durationMicroseconds": 127,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "onCompleted",
                         "line": 15
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 106,
                         "errorMessage": "Cannot access value for name AudioTabController",
                         "functionName": "target",
                         "line": 24
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot retrieve a non-object type by ID: audioMuteProximitySensorToggle",
                         "functionName": "onMicProximitySensorCanMuteChanged",
                         "line": 25

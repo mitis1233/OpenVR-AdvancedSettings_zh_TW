@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 195,
+                        "durationMicroseconds": 252,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 13
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 37,
-                        "durationMicroseconds": 47,
+                        "durationMicroseconds": 62,
                         "errorMessage": "Cannot access value for name rowHeight",
                         "functionName": "preferredHeight",
                         "line": 16
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 31,
+                        "durationMicroseconds": 54,
                         "errorMessage": "Cannot retrieve a non-object type by ID: viewRatchetToggleBtn",
                         "functionName": "onCompleted",
                         "line": 71
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 158,
                         "errorMessage": "Cannot access value for name RotationTabController",
                         "functionName": "target",
                         "line": 79
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot retrieve a non-object type by ID: viewRatchetToggleBtn",
                         "functionName": "onViewRatchettingEnabledChanged",
                         "line": 81
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 120,
                         "errorMessage": "Cannot access value for name RotationTabController",
                         "functionName": "onViewRatchettingPercentChanged",
                         "line": 84

@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 475,
+                        "durationMicroseconds": 685,
                         "errorMessage": "Cannot access value for name ChaperoneTabController",
                         "functionName": "reloadChaperoneProfiles",
                         "line": 438
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 18
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 41,
-                        "durationMicroseconds": 19,
+                        "durationMicroseconds": 33,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 21
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 176,
+                        "durationMicroseconds": 192,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 22
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 28,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 92
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 85,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 95
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 27,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 100
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 112
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 124
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 136
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 148
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 160
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 70,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 172
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 41,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 183
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 199
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 202
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 37,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 207
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 218
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 11,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "rowHeight",
                         "line": 263
@@ -310,7 +310,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 47,
+                        "durationMicroseconds": 97,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 266
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 44,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 271
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot access value for name groupBoxRowHeight",
                         "functionName": "preferredHeight",
                         "line": 282
@@ -358,7 +358,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 47,
-                        "durationMicroseconds": 18,
+                        "durationMicroseconds": 45,
                         "errorMessage": "Cannot retrieve a non-object type by ID: oculusSdkToggleButton",
                         "functionName": "maximumHeight",
                         "line": 296
@@ -366,7 +366,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 46,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 256,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 312
@@ -398,7 +398,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 36,
-                        "durationMicroseconds": 22,
+                        "durationMicroseconds": 64,
                         "errorMessage": "Cannot retrieve a non-object type by ID: settingsAutoStartToggle",
                         "functionName": "onCompleted",
                         "line": 360
@@ -406,7 +406,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 21,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 148,
                         "errorMessage": "Cannot access value for name SettingsTabController",
                         "functionName": "target",
                         "line": 380
@@ -414,7 +414,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot retrieve a non-object type by ID: settingsAutoStartToggle",
                         "functionName": "onAutoStartEnabledChanged",
                         "line": 381
@@ -422,7 +422,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot retrieve a non-object type by ID: nativeChaperoneToggleButton",
                         "functionName": "onNativeChaperoneToggleChanged",
                         "line": 384
@@ -430,7 +430,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot retrieve a non-object type by ID: oculusSdkToggleButton",
                         "functionName": "onOculusSdkToggleChanged",
                         "line": 387
@@ -438,7 +438,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 21,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 109,
                         "errorMessage": "Cannot access value for name MoveCenterTabController",
                         "functionName": "target",
                         "line": 393
@@ -446,7 +446,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot retrieve a non-object type by ID: universeCenteredRotationToggle",
                         "functionName": "onUniverseCenteredRotationChanged",
                         "line": 394
@@ -454,7 +454,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 21,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 147,
                         "errorMessage": "Cannot access value for name OverlayController",
                         "functionName": "target",
                         "line": 400
@@ -462,7 +462,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot retrieve a non-object type by ID: vsyncDisabledToggle",
                         "functionName": "onVsyncDisabledChanged",
                         "line": 401
@@ -470,7 +470,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot retrieve a non-object type by ID: disableCrashRecoveryToggle",
                         "functionName": "onCrashRecoveryDisabledChanged",
                         "line": 404
@@ -478,7 +478,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 21,
                         "errorMessage": "Cannot retrieve a non-object type by ID: customTickRateText",
                         "functionName": "onCustomTickRateMsChanged",
                         "line": 408
@@ -486,7 +486,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot retrieve a non-object type by ID: disableVersionCheckToggle",
                         "functionName": "onDisableVersionCheckChanged",
                         "line": 412
@@ -494,7 +494,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot retrieve a non-object type by ID: exclusiveInputToggleButton",
                         "functionName": "onExclusiveInputEnabledChanged",
                         "line": 415
@@ -502,7 +502,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot retrieve a non-object type by ID: autoApplyChaperoneToggleButton",
                         "functionName": "onAutoApplyChaperoneEnabledChanged",
                         "line": 418
@@ -510,7 +510,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 74,
                         "errorMessage": "Cannot retrieve a non-object type by ID: volumeSlider",
                         "functionName": "onSoundVolumeChanged",
                         "line": 421
@@ -518,7 +518,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 24,
                         "errorMessage": "Cannot retrieve a non-object type by ID: desktopModeToggleButton",
                         "functionName": "onDesktopModeToggleChanged",
                         "line": 424
@@ -526,7 +526,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot retrieve a non-object type by ID: hideSocialsToggleButton",
                         "functionName": "onHideSocialsChanged",
                         "line": 427
@@ -534,7 +534,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 21,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 125,
                         "errorMessage": "Cannot access value for name ChaperoneTabController",
                         "functionName": "target",
                         "line": 432
@@ -542,7 +542,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 13,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 111,
                         "errorMessage": "method reloadChaperoneProfiles cannot be resolved.",
                         "functionName": "onChaperoneProfilesUpdated",
                         "line": 433

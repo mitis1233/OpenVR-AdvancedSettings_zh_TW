@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 45,
-                        "durationMicroseconds": 89,
+                        "durationMicroseconds": 134,
                         "errorMessage": "Cannot retrieve a non-object type by ID: lockRollToggle",
                         "functionName": "lockToggleWidth",
                         "line": 15
@@ -22,10 +22,10 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 127,
+                        "durationMicroseconds": 196,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 24
+                        "line": 25
                     },
                     {
                         "codegenSuccessfull": false,
@@ -33,7 +33,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 41
+                        "line": 42
                     },
                     {
                         "codegenSuccessfull": false,
@@ -41,7 +41,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 51
+                        "line": 52
                     },
                     {
                         "codegenSuccessfull": false,
@@ -49,23 +49,23 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"horizontalAlignment\".",
                         "functionName": "horizontalAlignment",
-                        "line": 65
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 17,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Functions without type annotations won't be compiled",
-                        "functionName": "onInputEvent",
                         "line": 66
                     },
                     {
                         "codegenSuccessfull": false,
+                        "column": 17,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "onInputEvent",
+                        "line": 67
+                    },
+                    {
+                        "codegenSuccessfull": false,
                         "column": 28,
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 80
+                        "line": 81
                     },
                     {
                         "codegenSuccessfull": false,
@@ -73,15 +73,15 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"checkedChanged\".",
                         "functionName": "onCheckedChanged",
-                        "line": 97
+                        "line": 98
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 40,
-                        "durationMicroseconds": 29,
+                        "durationMicroseconds": 74,
                         "errorMessage": "Cannot access value for name lockToggleWidth",
                         "functionName": "preferredWidth",
-                        "line": 94
+                        "line": 95
                     },
                     {
                         "codegenSuccessfull": false,
@@ -89,7 +89,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 115
+                        "line": 116
                     },
                     {
                         "codegenSuccessfull": false,
@@ -97,7 +97,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 125
+                        "line": 126
                     },
                     {
                         "codegenSuccessfull": false,
@@ -105,23 +105,15 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"horizontalAlignment\".",
                         "functionName": "horizontalAlignment",
-                        "line": 139
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 17,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Functions without type annotations won't be compiled",
-                        "functionName": "onInputEvent",
                         "line": 140
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 28,
+                        "column": 17,
                         "durationMicroseconds": 0,
-                        "errorMessage": "Could not find signal \"clicked\".",
-                        "functionName": "onClicked",
-                        "line": 154
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "onInputEvent",
+                        "line": 141
                     },
                     {
                         "codegenSuccessfull": false,
@@ -129,7 +121,15 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 165
+                        "line": 155
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 28,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 166
                     },
                     {
                         "codegenSuccessfull": false,
@@ -137,15 +137,15 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"checkedChanged\".",
                         "functionName": "onCheckedChanged",
-                        "line": 177
+                        "line": 178
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 40,
-                        "durationMicroseconds": 15,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot access value for name lockToggleWidth",
                         "functionName": "preferredWidth",
-                        "line": 174
+                        "line": 175
                     },
                     {
                         "codegenSuccessfull": false,
@@ -153,7 +153,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 195
+                        "line": 196
                     },
                     {
                         "codegenSuccessfull": false,
@@ -161,7 +161,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 205
+                        "line": 206
                     },
                     {
                         "codegenSuccessfull": false,
@@ -169,7 +169,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"horizontalAlignment\".",
                         "functionName": "horizontalAlignment",
-                        "line": 219
+                        "line": 220
                     },
                     {
                         "codegenSuccessfull": false,
@@ -177,7 +177,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "onInputEvent",
-                        "line": 220
+                        "line": 221
                     },
                     {
                         "codegenSuccessfull": false,
@@ -185,7 +185,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 234
+                        "line": 235
                     },
                     {
                         "codegenSuccessfull": false,
@@ -193,79 +193,79 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"checkedChanged\".",
                         "functionName": "onCheckedChanged",
-                        "line": 251
+                        "line": 252
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 40,
-                        "durationMicroseconds": 17,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name lockToggleWidth",
                         "functionName": "preferredWidth",
-                        "line": 248
+                        "line": 249
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 21,
+                        "durationMicroseconds": 47,
                         "errorMessage": "Cannot retrieve a non-object type by ID: orientRollText",
                         "functionName": "onCompleted",
-                        "line": 261
+                        "line": 262
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 176,
                         "errorMessage": "Cannot access value for name MoveCenterTabController",
                         "functionName": "target",
-                        "line": 271
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 9,
-                        "durationMicroseconds": 17,
-                        "errorMessage": "Cannot retrieve a non-object type by ID: orientRollText",
-                        "functionName": "onOffsetRollChanged",
                         "line": 272
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 14,
+                        "durationMicroseconds": 28,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: orientRollText",
+                        "functionName": "onOffsetRollChanged",
+                        "line": 273
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 9,
+                        "durationMicroseconds": 23,
                         "errorMessage": "Cannot retrieve a non-object type by ID: orientPitchText",
                         "functionName": "onOffsetPitchChanged",
-                        "line": 275
+                        "line": 276
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 30,
                         "errorMessage": "Cannot retrieve a non-object type by ID: orientYawText",
                         "functionName": "onOffsetYawChanged",
-                        "line": 278
+                        "line": 279
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot retrieve a non-object type by ID: lockRollToggle",
                         "functionName": "onRequireLockRollChanged",
-                        "line": 281
+                        "line": 282
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot retrieve a non-object type by ID: lockPitchToggle",
                         "functionName": "onRequireLockPitchChanged",
-                        "line": 284
+                        "line": 285
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 19,
                         "errorMessage": "Cannot retrieve a non-object type by ID: lockYawToggle",
                         "functionName": "onRequireLockYawChanged",
-                        "line": 287
+                        "line": 288
                     }
                 ],
                 "filepath": "Z:/OpenVR-AdvancedSettings-qt6/src/res/qml/orient_page/adjust_orientation/AdjustOrientationGroupBox.qml"

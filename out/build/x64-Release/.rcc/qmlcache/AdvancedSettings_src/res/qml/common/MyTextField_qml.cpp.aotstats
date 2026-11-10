@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 20,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 88,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "color",
                         "line": 20
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 27,
-                        "durationMicroseconds": 16,
+                        "durationMicroseconds": 29,
                         "errorMessage": "Cannot access value for name myTextField",
                         "functionName": "color",
                         "line": 22
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 80,
+                        "durationMicroseconds": 118,
                         "errorMessage": "Cannot access value for name OverlayController",
                         "functionName": "target",
                         "line": 55
