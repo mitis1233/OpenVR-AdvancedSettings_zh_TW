@@ -37,6 +37,18 @@
             <source>Lock Yaw</source>
             <translation>鎖定偏航</translation>
         </message>
+        <message>
+            <source>Front Calibrate</source>
+            <translation>正前方校正</translation>
+        </message>
+        <message>
+            <source>VRC Calibrate</source>
+            <translation>VRC校正</translation>
+        </message>
+        <message>
+            <source>Reset</source>
+            <translation>重製</translation>
+        </message>
     </context>
     <context>
         <name>AiTranslationPopup</name>
@@ -1305,6 +1317,10 @@
             <translation>正前方校正</translation>
         </message>
         <message>
+            <source>VRC Calibrate</source>
+            <translation>VRC校正</translation>
+        </message>
+        <message>
             <location filename="../src/res/qml/RootPage.qml" line="344" />
             <source>Lock Pitch</source>
             <translation>鎖定俯仰</translation>
@@ -1416,6 +1432,10 @@
             <location filename="../src/res/qml/RootPage.qml" line="855" />
             <source>%1 CW</source>
             <translation>%1° 順時針</translation>
+        </message>
+        <message>
+            <source>Reset</source>
+            <translation>重製</translation>
         </message>
     </context>
     <context>

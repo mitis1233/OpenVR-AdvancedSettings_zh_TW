@@ -31,7 +31,7 @@ SettingsGroupBox {
 
             MyText {
                 text: qsTr("Roll")
-                Layout.preferredWidth: 340
+                Layout.preferredWidth: 180
             }
 
             MyPushButton2 {
@@ -84,7 +84,7 @@ SettingsGroupBox {
             }
 
             Item {
-                Layout.preferredWidth: 100
+                Layout.preferredWidth: calibrateButtons.implicitWidth
                 Layout.leftMargin: 10
             }
 
@@ -105,7 +105,7 @@ SettingsGroupBox {
 
             MyText {
                 text: qsTr("Pitch")
-                Layout.preferredWidth: 340
+                Layout.preferredWidth: 180
             }
 
             MyPushButton2 {
@@ -157,14 +157,39 @@ SettingsGroupBox {
                 }
             }
 
-            MyPushButton2 {
-                topPadding: 4
-                bottomPadding: 4
-                Layout.preferredWidth: 100
+            // The three calibration buttons share one grid cell so the grid
+            // keeps its 8 columns. Buttons size to their text (the font is
+            // large and the text depends on the language).
+            RowLayout {
+                id: calibrateButtons
                 Layout.leftMargin: 10
-                text: qsTr("Front Calibrate")
-                onClicked: {
-                    MoveCenterTabController.calibrateFrontPitch()
+                spacing: 6
+
+                MyPushButton2 {
+                    topPadding: 4
+                    bottomPadding: 4
+                    text: qsTr("Front Calibrate")
+                    onClicked: {
+                        MoveCenterTabController.calibrateFrontPitch()
+                    }
+                }
+
+                MyPushButton2 {
+                    topPadding: 4
+                    bottomPadding: 4
+                    text: qsTr("VRC Calibrate")
+                    onClicked: {
+                        MoveCenterTabController.calibrateVrc()
+                    }
+                }
+
+                MyPushButton2 {
+                    topPadding: 4
+                    bottomPadding: 4
+                    text: qsTr("Reset")
+                    onClicked: {
+                        MoveCenterTabController.resetFrontCalibration()
+                    }
                 }
             }
 
@@ -185,7 +210,7 @@ SettingsGroupBox {
 
             MyText {
                 text: qsTr("Yaw")
-                Layout.preferredWidth: 340
+                Layout.preferredWidth: 180
             }
 
             MyPushButton2 {
@@ -238,7 +263,7 @@ SettingsGroupBox {
             }
 
             Item {
-                Layout.preferredWidth: 100
+                Layout.preferredWidth: calibrateButtons.implicitWidth
                 Layout.leftMargin: 10
             }
 

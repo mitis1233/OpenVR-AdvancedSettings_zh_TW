@@ -1046,10 +1046,99 @@ void MoveCenterTabController::modOffsetPitch( float value, bool notify )
 
 namespace
 {
-// Reads the HMD's current forward vector in the active tracking universe
-// (i.e. including every offset currently applied). Returns false if the HMD
-// pose isn't usable right now.
-bool readHmdForward( int universe, double forward[3] )
+struct Vec3d
+{
+    double v[3] = { 0.0, 0.0, 0.0 };
+};
+
+struct Mat3d
+{
+    double m[3][3] = { { 1, 0, 0 }, { 0, 1, 0 }, { 0, 0, 1 } };
+};
+
+Mat3d rotationOf( const vr::HmdMatrix34_t& pose )
+{
+    Mat3d r;
+    for ( int i = 0; i < 3; i++ )
+        for ( int j = 0; j < 3; j++ )
+            r.m[i][j] = static_cast<double>( pose.m[i][j] );
+    return r;
+}
+
+Mat3d rotationOf( const vr::HmdMatrix33_t& rot )
+{
+    Mat3d r;
+    for ( int i = 0; i < 3; i++ )
+        for ( int j = 0; j < 3; j++ )
+            r.m[i][j] = static_cast<double>( rot.m[i][j] );
+    return r;
+}
+
+Mat3d mul( const Mat3d& a, const Mat3d& b )
+{
+    Mat3d r;
+    for ( int i = 0; i < 3; i++ )
+        for ( int j = 0; j < 3; j++ )
+        {
+            r.m[i][j] = 0.0;
+            for ( int k = 0; k < 3; k++ )
+                r.m[i][j] += a.m[i][k] * b.m[k][j];
+        }
+    return r;
+}
+
+Vec3d mul( const Mat3d& a, const Vec3d& b )
+{
+    Vec3d r;
+    for ( int i = 0; i < 3; i++ )
+    {
+        r.v[i] = 0.0;
+        for ( int k = 0; k < 3; k++ )
+            r.v[i] += a.m[i][k] * b.v[k];
+    }
+    return r;
+}
+
+// a^T * b (matrices)
+Mat3d mulTM( const Mat3d& a, const Mat3d& b )
+{
+    Mat3d r;
+    for ( int i = 0; i < 3; i++ )
+        for ( int j = 0; j < 3; j++ )
+        {
+            r.m[i][j] = 0.0;
+            for ( int k = 0; k < 3; k++ )
+                r.m[i][j] += a.m[k][i] * b.m[k][j];
+        }
+    return r;
+}
+
+// a^T * b
+Vec3d mulT( const Mat3d& a, const Vec3d& b )
+{
+    Vec3d r;
+    for ( int i = 0; i < 3; i++ )
+    {
+        r.v[i] = 0.0;
+        for ( int k = 0; k < 3; k++ )
+            r.v[i] += a.m[k][i] * b.v[k];
+    }
+    return r;
+}
+
+double wrapRadians( double v )
+{
+    while ( v > M_PI )
+        v -= 2.0 * M_PI;
+    while ( v <= -M_PI )
+        v += 2.0 * M_PI;
+    return v;
+}
+
+// Reads the HMD's *raw* pose (RawAndUncalibrated universe). The raw pose never
+// depends on the offsets / tilt this program applies, so there is no feedback
+// or one-frame lag between what we write and what we read.
+bool readHmdRawPose( vr::HmdMatrix34_t& pose )
 {
     if ( !vr::VRSystem() )
     {
@@ -1057,106 +1146,265 @@ bool readHmdForward( int universe, double forward[3] )
     }
     vr::TrackedDevicePose_t poses[vr::k_unMaxTrackedDeviceCount];
     vr::VRSystem()->GetDeviceToAbsoluteTrackingPose(
-        static_cast<vr::ETrackingUniverseOrigin>( universe ),
+        vr::TrackingUniverseRawAndUncalibrated,
         0.0f,
         poses,
         vr::k_unMaxTrackedDeviceCount );
     const vr::TrackedDevicePose_t& hmd = poses[vr::k_unTrackedDeviceIndex_Hmd];
-    if ( !hmd.bPoseIsValid || !hmd.bDeviceIsConnected )
+    if ( !hmd.bPoseIsValid || !hmd.bDeviceIsConnected
+         || hmd.eTrackingResult != vr::TrackingResult_Running_OK )
     {
         return false;
     }
-    const auto& m = hmd.mDeviceToAbsoluteTracking.m;
-    // The HMD looks along its local -Z axis.
-    forward[0] = -static_cast<double>( m[0][2] );
-    forward[1] = -static_cast<double>( m[1][2] );
-    forward[2] = -static_cast<double>( m[2][2] );
+    pose = hmd.mDeviceToAbsoluteTracking;
     return true;
 }
 
-// Elevation of a forward vector above the horizon in degrees
-// (negative = looking down).
-double elevationDegrees( const double forward[3] )
+Mat3d orientationRotation( double rollDeg, double pitchDeg, double yawDeg )
 {
-    double y = std::max( -1.0, std::min( 1.0, forward[1] ) );
-    return std::asin( y ) * 180.0 / M_PI;
+    return rotationOf( quaternion::toHmdMatrix33( quaternion::fromEulerAngles(
+        rollDeg * M_PI / 180.0, pitchDeg * M_PI / 180.0, yawDeg * M_PI / 180.0 ) ) );
 }
 } // namespace
 
 void MoveCenterTabController::calibrateFrontPitch()
 {
+    calibrateFront( false );
+}
+
+void MoveCenterTabController::calibrateVrc()
+{
+    calibrateFront( true );
+}
+
+void MoveCenterTabController::calibrateFront( bool alsoYaw )
+{
     if ( lockPitchToggle() )
     {
-        qInfo() << "Front calibrate ignored: pitch is locked";
         return;
     }
-
-    double f[3];
-    if ( !readHmdForward( m_trackingUniverse, f ) )
+    if ( !chaperoneTransformsValid() )
     {
-        qWarning() << "Front calibrate: no valid HMD pose";
         return;
     }
-    const double elevationBefore = elevationDegrees( f );
 
-    // The HMD pose we read already includes the current roll/pitch offsets:
-    //   reported = Rz(-roll) * Rx(-pitch) * (rest)
-    // Changing the pitch by delta turns the reported forward vector f into
-    //   f' = Rz(-roll) * Rx(-delta) * Rz(roll) * f
-    // Solve f'.y == 0 (gaze becomes level) for delta. With roll == 0 and the
-    // user facing the pitch axis' normal this reduces to delta = elevation.
-    const double roll = static_cast<double>( m_roll ) * M_PI / 180.0;
-    const double hx = f[0] * std::cos( roll ) - f[1] * std::sin( roll );
-    const double hy = f[0] * std::sin( roll ) + f[1] * std::cos( roll );
-    const double hz = f[2];
-    const double a = hy;
-    const double b = hz;
-    const double c = std::tan( roll ) * hx;
-    const double r = std::hypot( a, b );
-    if ( r < 1e-6 || std::abs( c ) > r )
+    vr::HmdMatrix34_t hmd;
+    if ( !readHmdRawPose( hmd ) )
     {
-        qWarning() << "Front calibrate: cannot level the current view";
         return;
     }
-    const double base = std::atan2( b, a );
-    const double spread = std::acos( c / r );
-    auto wrapRad = []( double v ) {
-        while ( v > M_PI )
-            v -= 2.0 * M_PI;
-        while ( v <= -M_PI )
-            v += 2.0 * M_PI;
-        return v;
-    };
-    const double d1 = wrapRad( base + spread );
-    const double d2 = wrapRad( base - spread );
-    const double deltaRad = std::abs( d1 ) <= std::abs( d2 ) ? d1 : d2;
-    const float deltaDeg = static_cast<float>( deltaRad * 180.0 / M_PI );
 
-    qInfo() << "Front calibrate: HMD pitch" << elevationBefore
-            << "deg, changing pitch offset by" << deltaDeg << "deg";
+    // Everything below is computed from the raw pose and our own offset
+    // state, so it does not depend on what the runtime has applied so far.
+    //
+    // Zero pose (raw -> universe is its inverse):
+    //   Z = [ B * O(roll,pitch,yaw) | t ]
+    //   B = Rrot(space rotation) * Rc     t = t0 + Rc * offsets
+    const vr::HmdMatrix34_t& center
+        = ( m_trackingUniverse == vr::TrackingUniverseSeated )
+              ? m_seatedCenterForReset
+              : m_universeCenterForReset;
+    const Mat3d Rc = rotationOf( center );
+    vr::HmdMatrix34_t spinMatrix;
+    utils::initRotationMatrix(
+        spinMatrix,
+        1,
+        static_cast<float>( m_rotation * k_centidegreesToRadians ) );
+    const Mat3d B = mul( rotationOf( spinMatrix ), Rc );
+
+    Vec3d hmdRaw;
+    Vec3d forwardRaw;
+    for ( int i = 0; i < 3; i++ )
+    {
+        hmdRaw.v[i] = static_cast<double>( hmd.m[i][3] );
+        // The HMD looks along its local -Z axis.
+        forwardRaw.v[i] = -static_cast<double>( hmd.m[i][2] );
+    }
+
+    // --- 1) find the pitch (and yaw) that make the current gaze level ------
+    // forward in universe = O^T * g, with g independent of pitch/yaw.
+    const Vec3d g = mulT( B, forwardRaw );
+    const double rollDeg = static_cast<double>( m_roll );
+    const double yawDeg = static_cast<double>( m_yaw );
+    const double currentPitchRad = static_cast<double>( m_pitch ) * M_PI / 180.0;
+    const bool solveYaw = alsoYaw && !lockYawToggle();
+    const bool solveRoll = solveYaw && !lockRollToggle();
+    double newPitchRad = currentPitchRad;
+    double newYawDeg = yawDeg;
+    double newRollDeg = rollDeg;
+    if ( solveYaw )
+    {
+        // Align the HMD with the play space axes: the universe orientation of
+        // the HMD is  O^T * B^T * H  and we want it to be the identity (looking
+        // straight ahead along -Z, head not tilted to either side). So
+        //   O = B^T * H = Ry(yaw) * Rx(pitch) * Rz(roll)
+        // and the three angles are read back out of O. Without the roll
+        // (locked) only the viewing direction is aligned, which does not
+        // depend on the roll at all.
+        const Mat3d Ot = mulTM( B, rotationOf( hmd ) );
+        newPitchRad = std::asin( std::max( -1.0, std::min( 1.0, -Ot.m[1][2] ) ) );
+        if ( std::cos( newPitchRad ) > 1e-3 )
+        {
+            newYawDeg = std::atan2( Ot.m[0][2], Ot.m[2][2] ) * 180.0 / M_PI;
+            if ( solveRoll )
+            {
+                newRollDeg = std::atan2( Ot.m[1][0], Ot.m[1][1] ) * 180.0 / M_PI;
+            }
+        }
+    }
+    else
+    {
+        auto levelError = [&]( double pitchRad ) {
+            const Mat3d O = orientationRotation(
+                rollDeg, pitchRad * 180.0 / M_PI, yawDeg );
+            return mulT( O, g ).v[1];
+        };
+        // levelError(p) = a*cos(p) + b*sin(p) + c
+        const double e0 = levelError( 0.0 );
+        const double e90 = levelError( M_PI / 2.0 );
+        const double e180 = levelError( M_PI );
+        const double c = ( e0 + e180 ) / 2.0;
+        const double a = ( e0 - e180 ) / 2.0;
+        const double b = e90 - c;
+        const double r = std::hypot( a, b );
+        if ( r < 1e-6 || std::abs( c ) > r )
+        {
+            return;
+        }
+        const double phi = std::atan2( b, a );
+        const double spread = std::acos( -c / r );
+        const double p1 = wrapRadians( phi + spread );
+        const double p2 = wrapRadians( phi - spread );
+        // take the solution that needs the smallest change from now
+        newPitchRad
+            = std::abs( wrapRadians( p1 - currentPitchRad ) )
+                      <= std::abs( wrapRadians( p2 - currentPitchRad ) )
+                  ? p1
+                  : p2;
+    }
+    const float deltaDeg = static_cast<float>(
+        wrapRadians( newPitchRad - currentPitchRad ) * 180.0 / M_PI );
+    const float deltaYawDeg = static_cast<float>(
+        wrapRadians( ( newYawDeg - yawDeg ) * M_PI / 180.0 ) * 180.0 / M_PI );
+    const float deltaRollDeg = static_cast<float>(
+        wrapRadians( ( newRollDeg - rollDeg ) * M_PI / 180.0 ) * 180.0 / M_PI );
+
+    // --- 2) keep the HMD where it is (rotate around the HMD, not the floor
+    // origin), otherwise the height changes with the pitch -----------------
+    const Vec3d offsetsNow = { { static_cast<double>( m_offsetX ),
+                                 static_cast<double>( m_offsetY ),
+                                 static_cast<double>( m_offsetZ ) } };
+    const Vec3d t0 = { { static_cast<double>( center.m[0][3] ),
+                         static_cast<double>( center.m[1][3] ),
+                         static_cast<double>( center.m[2][3] ) } };
+    const Vec3d RcOff = mul( Rc, offsetsNow );
+    Vec3d tNow;
+    for ( int i = 0; i < 3; i++ )
+    {
+        tNow.v[i] = t0.v[i] + RcOff.v[i];
+    }
+    // HMD position in universe coordinates before the change
+    Vec3d rel;
+    for ( int i = 0; i < 3; i++ )
+    {
+        rel.v[i] = hmdRaw.v[i] - tNow.v[i];
+    }
+    const Mat3d Onow = orientationRotation( rollDeg, m_pitch, yawDeg );
+    const Vec3d u = mulT( Onow, mulT( B, rel ) );
+
+    const Mat3d Onew = orientationRotation(
+        newRollDeg, newPitchRad * 180.0 / M_PI, newYawDeg );
+    const Vec3d placed = mul( B, mul( Onew, u ) );
+    Vec3d tNew;
+    for ( int i = 0; i < 3; i++ )
+    {
+        tNew.v[i] = hmdRaw.v[i] - placed.v[i] - t0.v[i];
+    }
+    const Vec3d offsetsNew = mulT( Rc, tNew );
+
+    // remember what we are about to change so it can be undone
+    m_calibrationUndo.pitch = m_pitch;
+    m_calibrationUndo.yaw = m_yaw;
+    m_calibrationUndo.offsetX = m_offsetX;
+    m_calibrationUndo.offsetY = m_offsetY;
+    m_calibrationUndo.offsetZ = m_offsetZ;
+    m_calibrationUndo.roll = m_roll;
+    m_calibrationUndo.rollTouched = solveRoll;
+    m_calibrationUndo.yawTouched = solveYaw;
+    m_calibrationUndo.xTouched = !lockXToggle();
+    m_calibrationUndo.yTouched = !lockYToggle();
+    m_calibrationUndo.zTouched = !lockZToggle();
+    m_calibrationUndoValid = true;
+
+    if ( !lockXToggle() )
+    {
+        m_offsetX = static_cast<float>( offsetsNew.v[0] );
+        emit offsetXChanged( m_offsetX );
+    }
+    if ( !lockYToggle() )
+    {
+        m_offsetY = static_cast<float>( offsetsNew.v[1] );
+        emit offsetYChanged( m_offsetY );
+    }
+    if ( !lockZToggle() )
+    {
+        m_offsetZ = static_cast<float>( offsetsNew.v[2] );
+        emit offsetZChanged( m_offsetZ );
+    }
     modOffsetPitch( deltaDeg );
-
-    // Safety net: the sign convention of the applied transform can't be
-    // checked without the runtime. Re-read the pose shortly after; if the
-    // view got worse instead of level, apply the opposite correction.
-    if ( std::abs( deltaDeg ) > 1.0f )
+    if ( solveYaw )
     {
-        QTimer::singleShot( 800, this, [this, elevationBefore, deltaDeg]() {
-            double g[3];
-            if ( !readHmdForward( m_trackingUniverse, g ) )
-            {
-                return;
-            }
-            const double after = elevationDegrees( g );
-            if ( std::abs( after ) > 2.0
-                 && std::abs( after ) > 1.5 * std::abs( elevationBefore ) )
-            {
-                qInfo() << "Front calibrate: wrong direction (" << after
-                        << "deg), correcting";
-                modOffsetPitch( -2.0f * deltaDeg );
-            }
-        } );
+        modOffsetYaw( deltaYawDeg );
     }
+    if ( solveRoll )
+    {
+        modOffsetRoll( deltaRollDeg );
+    }
+
+    // Any residual velocity (gravity / fling) would move the HMD again
+    m_velocity[0] = 0.0;
+    m_velocity[1] = 0.0;
+    m_velocity[2] = 0.0;
+}
+
+void MoveCenterTabController::resetFrontCalibration()
+{
+    if ( !m_calibrationUndoValid )
+    {
+        return;
+    }
+    m_calibrationUndoValid = false;
+
+    m_pitch = m_calibrationUndo.pitch;
+    emit offsetPitchChanged( m_pitch );
+    if ( m_calibrationUndo.rollTouched )
+    {
+        m_roll = m_calibrationUndo.roll;
+        emit offsetRollChanged( m_roll );
+    }
+    if ( m_calibrationUndo.yawTouched )
+    {
+        m_yaw = m_calibrationUndo.yaw;
+        emit offsetYawChanged( m_yaw );
+    }
+    if ( m_calibrationUndo.xTouched )
+    {
+        m_offsetX = m_calibrationUndo.offsetX;
+        emit offsetXChanged( m_offsetX );
+    }
+    if ( m_calibrationUndo.yTouched )
+    {
+        m_offsetY = m_calibrationUndo.offsetY;
+        emit offsetYChanged( m_offsetY );
+    }
+    if ( m_calibrationUndo.zTouched )
+    {
+        m_offsetZ = m_calibrationUndo.offsetZ;
+        emit offsetZChanged( m_offsetZ );
+    }
+    m_velocity[0] = 0.0;
+    m_velocity[1] = 0.0;
+    m_velocity[2] = 0.0;
 }
 
 void MoveCenterTabController::modOffsetYaw( float value, bool notify )
@@ -1208,6 +1456,7 @@ void MoveCenterTabController::incomingZeroReset()
 //zerooffsets....
 void MoveCenterTabController::reset()
 {
+    m_calibrationUndoValid = false;
     // DO NOT attempt to apply autosaved profile on reset, as it is triggered by
     // the apply chaperone profile Side effects are bad!
     //auto calState = vr::VRChaperone()->GetCalibrationState();
@@ -1283,6 +1532,7 @@ void MoveCenterTabController::reset()
 //TODO This needs to be renamed, it's mainly for initilization reasons
 void MoveCenterTabController::zeroOffsets()
 {
+    m_calibrationUndoValid = false;
     // first we'll check if we're outside the max commit distance
 
     vr::HmdMatrix34_t currentCenter;
@@ -2166,6 +2416,7 @@ void MoveCenterTabController::resetOffsets( bool resetOffsetsJustPressed )
     // of keyboard input.
     if ( resetOffsetsJustPressed )
     {
+        m_calibrationUndoValid = false;
         m_offsetX = 0.0f;
         m_offsetY = 0.0f;
         m_offsetZ = 0.0f;
@@ -2482,20 +2733,66 @@ void MoveCenterTabController::updateHandDrag(
         return;
     }
 
-    double relativeControllerPosition[] = {
-        static_cast<double>( movePose->mDeviceToAbsoluteTracking.m[0][3] ),
-        static_cast<double>( movePose->mDeviceToAbsoluteTracking.m[1][3] ),
-        static_cast<double>( movePose->mDeviceToAbsoluteTracking.m[2][3] )
-    };
+    // With a pitch/roll offset active the poses of the active universe are
+    // tilted by the transform we write ourselves, which arrives with a delay.
+    // Mixing those poses with the offsets we just changed makes the drag
+    // feed back into itself (jitter, or being flung away). Use the raw
+    // tracking pose instead: it is independent of every offset, and a hand
+    // that stays fixed in the universe moves the offsets by Rc^T * rawDelta.
+    // yaw counts too: absolute = universe pose + offsets is only valid when the
+    // orientation offset is the identity
+    const bool useRawDrag = hasTiltOffset() || m_yaw != 0.0f;
+    float absoluteControllerPosition[3];
+    if ( useRawDrag )
+    {
+        vr::TrackedDevicePose_t rawPoses[vr::k_unMaxTrackedDeviceCount];
+        vr::VRSystem()->GetDeviceToAbsoluteTrackingPose(
+            vr::TrackingUniverseRawAndUncalibrated,
+            0.0f,
+            rawPoses,
+            vr::k_unMaxTrackedDeviceCount );
+        const vr::TrackedDevicePose_t& rawPose = rawPoses[moveHandId];
+        if ( !rawPose.bPoseIsValid || !rawPose.bDeviceIsConnected
+             || rawPose.eTrackingResult != vr::TrackingResult_Running_OK )
+        {
+            m_lastMoveHand = m_activeDragHand;
+            return;
+        }
+        const vr::HmdMatrix34_t& dragCenter
+            = ( m_trackingUniverse == vr::TrackingUniverseSeated )
+                  ? m_seatedCenterForReset
+                  : m_universeCenterForReset;
+        for ( unsigned i = 0; i < 3; i++ )
+        {
+            double sum = 0.0;
+            for ( unsigned k = 0; k < 3; k++ )
+            {
+                sum += static_cast<double>( dragCenter.m[k][i] )
+                       * static_cast<double>(
+                           rawPose.mDeviceToAbsoluteTracking.m[k][3] );
+            }
+            absoluteControllerPosition[i] = static_cast<float>( sum );
+        }
+    }
+    else
+    {
+        double relativeControllerPosition[] = {
+            static_cast<double>( movePose->mDeviceToAbsoluteTracking.m[0][3] ),
+            static_cast<double>( movePose->mDeviceToAbsoluteTracking.m[1][3] ),
+            static_cast<double>( movePose->mDeviceToAbsoluteTracking.m[2][3] )
+        };
 
-    rotateCoordinates( relativeControllerPosition, -angle );
-    float absoluteControllerPosition[] = {
-        static_cast<float>( relativeControllerPosition[0] ) + m_offsetX,
-        static_cast<float>( relativeControllerPosition[1] ) + m_offsetY,
-        static_cast<float>( relativeControllerPosition[2] ) + m_offsetZ,
-    };
+        rotateCoordinates( relativeControllerPosition, -angle );
+        absoluteControllerPosition[0]
+            = static_cast<float>( relativeControllerPosition[0] ) + m_offsetX;
+        absoluteControllerPosition[1]
+            = static_cast<float>( relativeControllerPosition[1] ) + m_offsetY;
+        absoluteControllerPosition[2]
+            = static_cast<float>( relativeControllerPosition[2] ) + m_offsetZ;
+    }
 
-    if ( m_lastMoveHand == m_activeDragHand )
+    // the two position spaces differ, so never diff across a mode change
+    if ( m_lastMoveHand == m_activeDragHand && m_lastDragUsedRaw == useRawDrag )
     {
         double diff[3] = {
             static_cast<double>( absoluteControllerPosition[0]
@@ -2535,10 +2832,13 @@ void MoveCenterTabController::updateHandDrag(
             m_offsetZ += static_cast<float>( diff[2] );
         }
 
-        double secondsSinceLastDragUpdate
-            = std::chrono::duration<double>( std::chrono::steady_clock::now()
-                                             - m_lastDragUpdateTimePoint )
-                  .count();
+        // a (near) zero frame time would turn a tiny hand delta into a huge
+        // fling velocity
+        double secondsSinceLastDragUpdate = std::max(
+            0.004,
+            std::chrono::duration<double>( std::chrono::steady_clock::now()
+                                           - m_lastDragUpdateTimePoint )
+                .count() );
 
         m_velocity[0] = ( diff[0] / secondsSinceLastDragUpdate )
                         * static_cast<double>( flingStrength() );
@@ -2551,6 +2851,7 @@ void MoveCenterTabController::updateHandDrag(
     m_lastControllerPosition[1] = absoluteControllerPosition[1];
     m_lastControllerPosition[2] = absoluteControllerPosition[2];
     m_lastMoveHand = m_activeDragHand;
+    m_lastDragUsedRaw = useRawDrag;
 }
 
 void MoveCenterTabController::updateHandTurn(

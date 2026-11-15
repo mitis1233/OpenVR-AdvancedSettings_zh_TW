@@ -170,6 +170,26 @@ private:
     bool m_moveShortcutLeftPressed = false;
     vr::TrackedDeviceIndex_t m_activeMoveController;
     float m_lastControllerPosition[3];
+    // true when m_lastControllerPosition was captured from the raw pose
+    bool m_lastDragUsedRaw = false;
+
+    // State saved right before the last front / VRC calibration
+    struct CalibrationUndo
+    {
+        float pitch = 0.0f;
+        float yaw = 0.0f;
+        float roll = 0.0f;
+        float offsetX = 0.0f;
+        float offsetY = 0.0f;
+        float offsetZ = 0.0f;
+        bool yawTouched = false;
+        bool rollTouched = false;
+        bool xTouched = false;
+        bool yTouched = false;
+        bool zTouched = false;
+    };
+    CalibrationUndo m_calibrationUndo;
+    bool m_calibrationUndoValid = false;
     bool m_heightToggle = false;
     float m_gravityFloor = 0.0f;
     bool m_ignoreChaperoneState = false;
@@ -407,6 +427,15 @@ public slots:
     // Sets the pitch offset so that the direction the HMD is currently looking
     // at becomes level (0 degrees pitch). Uses the live HMD pose.
     void calibrateFrontPitch();
+    // Same as calibrateFrontPitch(), and additionally turns the yaw offset so
+    // the direction the HMD is looking at becomes the straight-ahead (-Z)
+    // direction of the play space (VRChat style forward calibration).
+    void calibrateVrc();
+    void calibrateFront( bool alsoYaw );
+    // Undoes the last calibrateFrontPitch() / calibrateVrc(): restores the
+    // pitch, yaw and offsets it changed. Does nothing if there is nothing to
+    // undo (or the offsets were reset in the meantime).
+    void resetFrontCalibration();
     void modOffsetYaw( float value, bool notify = true );
 
     void setLockX( bool value, bool notify = true );

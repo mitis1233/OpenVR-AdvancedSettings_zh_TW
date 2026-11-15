@@ -31,6 +31,10 @@
         <translation>正前方校正</translation>
     </message>
     <message>
+        <source>VRC Calibrate</source>
+        <translation>VRC校正</translation>
+    </message>
+    <message>
         <location filename="../src/res/qml/orient_page/adjust_orientation/AdjustOrientationGroupBox.qml" line="160"/>
         <location filename="../src/res/qml/RootPage.qml" line="350"/>
         <source>Lock Pitch</source>
@@ -45,6 +49,10 @@
         <location filename="../src/res/qml/orient_page/adjust_orientation/AdjustOrientationGroupBox.qml" line="229"/>
         <source>Lock Yaw</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>重製</translation>
     </message>
 </context>
 <context>
@@ -1350,6 +1358,18 @@
         <location filename="../src/res/qml/RootPage.qml" line="429"/>
         <source>%1 CW</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Front Calibrate</source>
+        <translation>正前方校正</translation>
+    </message>
+    <message>
+        <source>VRC Calibrate</source>
+        <translation>VRC校正</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>重製</translation>
     </message>
 </context>
 <context>

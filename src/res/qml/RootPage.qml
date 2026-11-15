@@ -333,13 +333,27 @@ MyStackViewPage {
                         }
                     }
 
-                    // 這裡改成 MyPushButton 就會有跟其他按鈕一樣的深灰底框，且寬度加寬到 280 更好按
+                    // Buttons size to their text (large font, language dependent)
+                    // instead of a fixed width, so nothing gets cut off.
                     MyPushButton {
-                        Layout.preferredWidth: 280
                         Layout.leftMargin: 12
                         text: qsTr("Front Calibrate")
                         onClicked: {
                             MoveCenterTabController.calibrateFrontPitch()
+                        }
+                    }
+
+                    MyPushButton {
+                        text: qsTr("VRC Calibrate")
+                        onClicked: {
+                            MoveCenterTabController.calibrateVrc()
+                        }
+                    }
+
+                    MyPushButton {
+                        text: qsTr("Reset")
+                        onClicked: {
+                            MoveCenterTabController.resetFrontCalibration()
                         }
                     }
 
