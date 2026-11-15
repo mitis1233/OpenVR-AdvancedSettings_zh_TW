@@ -10,7 +10,7 @@
 # OpenVR Advanced Settings Overlay
 Adds an overlay to the OpenVR dashboard that allows access to advanced settings and useful utilities.
 
-![Example Screenshot](docs/screenshots/InVRScreenshot.png)
+![Example Screenshot](/圖片.png)
 
 * [Features](#features)
 * [Usage](#usage)
