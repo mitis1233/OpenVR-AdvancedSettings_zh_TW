@@ -80,18 +80,23 @@ Rectangle {
         Layout.fillHeight: true
         Layout.fillWidth: true
         Layout.topMargin: 4
-        Layout.bottomMargin: 24
+        Layout.bottomMargin: 8
         clip: true
         contentWidth: width - leftMargin - rightMargin
         flickableDirection: Flickable.VerticalFlick
-        contentHeight: Math.max(height, content.implicitHeight)
-        interactive: contentHeight > height
+        // Only treat the content as overflowing when it is clearly taller than
+        // the page; a few pixels of rounding/spacing must not trigger a
+        // scrollbar when everything is already visible.
+        readonly property bool overflowing: content.implicitHeight - height > 6
+        contentHeight: overflowing ? content.implicitHeight : height
+        interactive: overflowing
         boundsBehavior: Flickable.StopAtBounds
         leftMargin: 28
         rightMargin: 28
 
         ScrollBar.vertical: ScrollBar {
-            policy: contentFlickable.interactive ? ScrollBar.AsNeeded : ScrollBar.AlwaysOff
+            policy: contentFlickable.overflowing ? ScrollBar.AsNeeded : ScrollBar.AlwaysOff
+            visible: contentFlickable.overflowing
             contentItem: Rectangle {
                 implicitWidth: 6
                 radius: 3

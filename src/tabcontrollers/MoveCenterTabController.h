@@ -192,6 +192,7 @@ private:
     bool m_calibrationUndoValid = false;
     bool m_heightToggle = false;
     float m_gravityFloor = 0.0f;
+    float m_lastCalibrationFloor = 0.0f;
     bool m_ignoreChaperoneState = false;
     // Set lastHandQuaternion.w to -1000.0 when last hand is invalid.
     vr::HmdQuaternion_t m_lastHandQuaternion
@@ -287,6 +288,7 @@ private:
     void updateHandDrag( vr::TrackedDevicePose_t* devicePoses, double angle );
     void updateHandTurn( vr::TrackedDevicePose_t* devicePoses, double angle );
     void updateGravity();
+    bool calibratedFloorOffset( float& floorOffset ) const;
     void updateSpace( bool forceUpdate = false );
     vr::HmdMatrix34_t orientationOffsetMatrix() const;
     bool hasTiltOffset() const;

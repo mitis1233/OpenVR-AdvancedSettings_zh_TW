@@ -47,7 +47,7 @@
         </message>
         <message>
             <source>Reset</source>
-            <translation>重製</translation>
+            <translation>重置</translation>
         </message>
     </context>
     <context>
@@ -1435,7 +1435,7 @@
         </message>
         <message>
             <source>Reset</source>
-            <translation>重製</translation>
+            <translation>重置</translation>
         </message>
     </context>
     <context>
