@@ -1,3 +1,18 @@
+cd Z:\OpenVR-AdvancedSettings-qt6
+
+Remove-Item .\build -Recurse -Force -ErrorAction SilentlyContinue
+
+& "C:\Qt\Tools\CMake_64\bin\cmake.exe" -S . -B build -G "Visual Studio 17 2022" -A x64 -DQt6_DIR:PATH="C:/Qt/6.8.3/msvc2022_64/lib/cmake/Qt6"
+
+
+& "C:\Qt\Tools\CMake_64\bin\cmake.exe" --build build --config Release --target AdvancedSettingsPackage --parallel
+
+
+
+
+
+
+
 D:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers\null\resources\settings
         "enable": false,
 無VR啟動
