@@ -1,20 +1,26 @@
 cmake_minimum_required(VERSION 3.30)
 
-# 強制指定 Qt6 與 Vulkan SDK 安裝路徑
-set(CMAKE_PREFIX_PATH "C:/Qt/6.8.3/msvc2022_64")
-set(Qt6_DIR "C:/Qt/6.8.3/msvc2022_64/lib/cmake/Qt6")
-set(Vulkan_INCLUDE_DIR "C:/VulkanSDK/1.4.363.1/include")
-set(Vulkan_LIBRARY "C:/VulkanSDK/1.4.363.1/lib/vulkan-1.lib")
-
-#app version will be auto-deployed to app
+# Application version
 if(NOT DEFINED OVRAS_VERSION)
     set(OVRAS_VERSION 6.0.0)
 endif()
 
 project(AdvancedSettings VERSION ${OVRAS_VERSION} LANGUAGES CXX)
 
+# This project is intentionally Windows-only.
+if(NOT WIN32)
+    message(FATAL_ERROR "AdvancedSettings currently supports Windows only.")
+endif()
+if(NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
+    message(FATAL_ERROR "AdvancedSettings requires a 64-bit Windows toolchain (x64).")
+endif()
+if(NOT MSVC)
+    message(FATAL_ERROR "Use an MSVC toolchain for this Windows build (the bundled OpenVR library is the MSVC x64 build).")
+endif()
 
-project(AdvancedSettings VERSION ${OVRAS_VERSION} LANGUAGES CXX)
+# Do not hard-code Qt or Vulkan SDK paths here.
+# Configure with -DCMAKE_PREFIX_PATH=<Qt MSVC installation> or -DQt6_DIR=<Qt6 config dir>.
+# FindVulkan uses the VULKAN_SDK environment variable or the normal SDK search paths.
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -24,10 +30,21 @@ set(CMAKE_VS_INCLUDE_INSTALL_TO_DEFAULT_BUILD 1)
 
 
 
+# Qt 6.8 MSVC 2022 x64. Prefer an explicitly supplied Qt6_DIR or
+# CMAKE_PREFIX_PATH; otherwise fall back to the original local Qt installation.
+set(QT_DEFAULT_ROOT "C:/Qt/6.8.3/msvc2022_64")
+
+if(EXISTS "${QT_DEFAULT_ROOT}/lib/cmake/Qt6/Qt6Config.cmake")
+    list(PREPEND CMAKE_PREFIX_PATH "${QT_DEFAULT_ROOT}")
+    if(NOT Qt6_DIR OR Qt6_DIR MATCHES "-NOTFOUND$")
+        set(Qt6_DIR "${QT_DEFAULT_ROOT}/lib/cmake/Qt6" CACHE PATH "Directory containing Qt6Config.cmake" FORCE)
+    endif()
+endif()
+
 #find_package(QT NAMES Qt6 REQUIRED COMPONENTS Core)
 #find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Gui Multimedia Qml Quick WebSockets Widgets QuickControls2 QuickDialogs2 Svg)
 #find_package(Qt${QT_VERSION_MAJOR} OPTIONAL_COMPONENTS DBus)
-find_package(Qt6 REQUIRED COMPONENTS Gui Multimedia Qml Quick WebSockets Widgets QuickControls2 QuickDialogs2 Svg LinguistTools)
+find_package(Qt6 6.8 REQUIRED COMPONENTS Gui Multimedia Qml Quick WebSockets Widgets QuickControls2 QuickDialogs2 Svg LinguistTools)
 find_package(Vulkan REQUIRED)
 
 # I18N_TRANSLATED_LANGUAGES must match the languageModel in src/res/qml/common/mainwidget.qml
@@ -307,13 +324,8 @@ qt_add_translations(AdvancedSettings
 target_include_directories(AdvancedSettings PUBLIC
     third-party/nlohmann
     third-party/openvr/headers
-    ${Vulkan_INCLUDE_DIR}
+    ${Vulkan_INCLUDE_DIRS}
 )
-
-# Avoid collision between executable name and QML module directory (QTBUG-98568).
-if(NOT WIN32 AND NOT APPLE)
-    set_property(TARGET AdvancedSettings PROPERTY OUTPUT_NAME AdvancedSettings_app)
-endif()
 
 target_compile_definitions(AdvancedSettings PRIVATE
     APPLICATION_VERSION=\"${PROJECT_VERSION}\"
@@ -331,20 +343,11 @@ target_compile_definitions(AdvancedSettings PRIVATE
 #    NO_DEFAULT_PATH
 #    NO_CMAKE_FIND_ROOT_PATH)
 
-add_library(openvr_api SHARED IMPORTED)
-if (WIN32)
-    set_target_properties(openvr_api PROPERTIES
-            IMPORTED_LOCATION "${CMAKE_SOURCE_DIR}/third-party/openvr/bin/win64/openvr_api.dll"
-            IMPORTED_IMPLIB "${CMAKE_SOURCE_DIR}/third-party/openvr/lib/win64/openvr_api.lib"
-    )
-else ()
-    # NO_SONAME links with -lopenvr_api so the binary needs "libopenvr_api.so"
-    # instead of an absolute path into the source tree
-    set_target_properties(openvr_api PROPERTIES
-            IMPORTED_LOCATION "${CMAKE_SOURCE_DIR}/third-party/openvr/lib/linux64/libopenvr_api.so"
-            IMPORTED_NO_SONAME TRUE
-    )
-endif ()
+add_library(openvr_api SHARED IMPORTED GLOBAL)
+set_target_properties(openvr_api PROPERTIES
+        IMPORTED_LOCATION "${CMAKE_SOURCE_DIR}/third-party/openvr/bin/win64/openvr_api.dll"
+        IMPORTED_IMPLIB "${CMAKE_SOURCE_DIR}/third-party/openvr/lib/win64/openvr_api.lib"
+)
 
 target_link_libraries(AdvancedSettings PRIVATE
     Qt::Gui
@@ -447,144 +450,70 @@ if (WIN32)
     )
 endif ()
 
-#Windows step actually puts all files in correct location
-if (WIN32)
-    set(WINDEPLOYQT "${Qt6_DIR}/../../../bin/windeployqt.exe")
-    set(QT_BIN_DIR "${Qt6_DIR}/../../../bin")
-    add_custom_command(TARGET AdvancedSettings POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E env "PATH=${QT_BIN_DIR};$ENV{PATH}"
-            "${WINDEPLOYQT}"
-            --qmldir "${CMAKE_SOURCE_DIR}/src/res/qml"
-            "$<IF:$<CONFIG:Debug>,--debug,--release>"
-            "${COPY_DEST_DIR}/AdvancedSettings.exe"
-    )
-endif ()
+# Deploy Qt libraries, plugins and QML imports beside the executable.
+# This creates a Windows deployment folder; SteamVR and VC++ runtime remain prerequisites.
+get_filename_component(QT_INSTALL_PREFIX "${Qt6_DIR}/../../.." ABSOLUTE)
+set(QT_BIN_DIR "${QT_INSTALL_PREFIX}/bin")
+set(WINDEPLOYQT "${QT_BIN_DIR}/windeployqt.exe")
 
-# Linux equivalent of windeployqt
-if (UNIX AND NOT APPLE)
-    set(LINUX_DEPLOY_DIR "${CMAKE_CURRENT_BINARY_DIR}/deploy/$<CONFIG>")
-    # new target ensures empty folder, install wont' remove stale files
-    add_custom_target(AdvancedSettingsDeploy ALL
-            COMMAND ${CMAKE_COMMAND} -E rm -rf "${LINUX_DEPLOY_DIR}"
-            COMMAND ${CMAKE_COMMAND} --install "${CMAKE_CURRENT_BINARY_DIR}"
-            --config $<CONFIG>
-            --prefix "${LINUX_DEPLOY_DIR}"
-            COMMENT "Deploying Qt runtime to ${LINUX_DEPLOY_DIR}"
-            VERBATIM
-    )
-    add_dependencies(AdvancedSettingsDeploy AdvancedSettings)
-endif ()
+if(NOT EXISTS "${WINDEPLOYQT}")
+    message(FATAL_ERROR "windeployqt.exe was not found: ${WINDEPLOYQT}. Check Qt6_DIR.")
+endif()
+
+add_custom_command(TARGET AdvancedSettings POST_BUILD
+        # Invoke windeployqt by absolute path. Passing the inherited Windows PATH
+        # through cmake -E env is unsafe here because PATH uses semicolons, which
+        # CMake may split into separate command arguments in generated build files.
+        COMMAND "${WINDEPLOYQT}"
+        --dir "${COPY_DEST_DIR}"
+        --qmldir "${CMAKE_SOURCE_DIR}/src/res/qml"
+        "$<IF:$<CONFIG:Debug>,--debug,--release>"
+        --no-compiler-runtime
+        "$<TARGET_FILE:AdvancedSettings>"
+        COMMENT "Deploying Qt/QML runtime next to AdvancedSettings.exe"
+        VERBATIM
+)
+
+# Create a ZIP containing the deployed application folder.
+# The target PC still needs the official VC++ Redistributable and SteamVR installed.
+# cmake --build <build-dir> --config Release --target AdvancedSettingsPackage
+add_custom_target(AdvancedSettingsPackage
+        COMMAND ${CMAKE_COMMAND} -E tar
+        "cf" "${CMAKE_CURRENT_BINARY_DIR}/AdvancedSettings-${PROJECT_VERSION}-$<CONFIG>-Windows-x64.zip"
+        --format=zip .
+        WORKING_DIRECTORY "${COPY_DEST_DIR}"
+        DEPENDS AdvancedSettings
+        COMMENT "Packaging Windows deployment folder"
+        VERBATIM
+)
 
 target_include_directories(AdvancedSettings PRIVATE
         third-party/openvr/headers
         third-party/policyconfig
 )
 
-if (WIN32)
-    target_sources(AdvancedSettings PRIVATE
-            src/keyboard_input/input_sender_win.cpp
-            src/media_keys/media_keys_win.cpp
-            src/tabcontrollers/audiomanager/AudioManagerWindows.cpp
-            src/tabcontrollers/audiomanager/AudioManagerWindows.h
-    )
+target_sources(AdvancedSettings PRIVATE
+        src/keyboard_input/input_sender_win.cpp
+        src/media_keys/media_keys_win.cpp
+        src/tabcontrollers/audiomanager/AudioManagerWindows.cpp
+        src/tabcontrollers/audiomanager/AudioManagerWindows.h
+)
 
-    target_link_libraries(AdvancedSettings PRIVATE
-            ole32
-            user32
-    )
+target_link_libraries(AdvancedSettings PRIVATE
+        ole32
+        user32
+)
 
-    if (MSVC)
-        target_compile_definitions(AdvancedSettings PRIVATE
-                _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING
-        )
-        target_compile_options(AdvancedSettings PRIVATE
-                /GL /Gw /W4 /permissive- /w14254 /w14263 /w14265 /w14287 /w14296 /w14311
-                /w14545 /w14546 /w14547 /w14549 /w14555 /w14640 /w14826 /w14905 /w14906
-                /w14928 /wd4127 /we4289 /Zc:__cplusplus
-        )
-        if (warnings_as_errors)
-            target_compile_options(AdvancedSettings PRIVATE /WX)
-        endif ()
-    endif ()
-elseif (UNIX)
-    if (NOT APPLE AND NOT noX11)
-        target_sources(AdvancedSettings PRIVATE
-                src/keyboard_input/input_sender_X11.cpp
-        )
-        find_package(X11 REQUIRED)
-        target_link_libraries(AdvancedSettings PRIVATE ${X11_LIBRARIES} X11::Xtst)
-    elseif (NOT APPLE AND noX11)
-        target_sources(AdvancedSettings PRIVATE
-                src/keyboard_input/input_sender_dummy.cpp
-        )
-    endif ()
-
-    if (NOT APPLE AND NOT noDBUS)
-        target_sources(AdvancedSettings PRIVATE
-                src/media_keys/media_keys_dbus.cpp
-        )
-        find_package(Qt6 OPTIONAL_COMPONENTS DBus)
-        target_link_libraries(AdvancedSettings PRIVATE Qt6::DBus)
-    elseif (NOT APPLE AND noDBUS)
-        target_sources(AdvancedSettings PRIVATE
-                src/media_keys/media_keys_dummy.cpp
-        )
-    endif ()
-
-    if (NOT APPLE AND NOT noPulse)
-        target_sources(AdvancedSettings PRIVATE
-                src/tabcontrollers/audiomanager/AudioManagerPulse.cpp
-                src/tabcontrollers/audiomanager/AudioManagerPulse.h
-                src/tabcontrollers/audiomanager/AudioManagerPulse_internal.h
-        )
-        target_link_libraries(AdvancedSettings PRIVATE pulse)
-    elseif (NOT APPLE AND noPulse)
-        target_sources(AdvancedSettings PRIVATE
-                src/tabcontrollers/audiomanager/AudioManagerDummy.cpp
-                src/tabcontrollers/audiomanager/AudioManagerDummy.h
-        )
-    endif ()
-
-    if (APPLE)
-        target_sources(AdvancedSettings PRIVATE
-                src/keyboard_input/input_sender_dummy.cpp
-                src/media_keys/media_keys_dummy.cpp
-                src/tabcontrollers/audiomanager/AudioManagerDummy.cpp
-                src/tabcontrollers/audiomanager/AudioManagerDummy.h
-        )
-    endif ()
-
-    if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-        target_compile_options(AdvancedSettings PRIVATE
-                -Wcast-align
-                -Wconversion
-                -Wdouble-promotion
-                -Wextra
-                -Wformat=2
-                -Wno-sign-conversion
-                -Wnon-virtual-dtor
-                -Wnull-dereference
-                -Wold-style-cast
-                -Woverloaded-virtual
-                -Wpedantic
-                -Wshadow
-                -Wunused
-                -Wzero-as-null-pointer-constant
-                #-flto
-        )
-        # GCC-only warnings, clang rejects these as unknown
-        if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-            target_compile_options(AdvancedSettings PRIVATE
-                    -Wduplicated-branches
-                    -Wduplicated-cond
-                    -Wlogical-op
-                    -Wrestrict
-            )
-        endif ()
-        if (warnings_as_errors)
-            target_compile_options(AdvancedSettings PRIVATE -Werror)
-        endif ()
-    endif ()
+target_compile_definitions(AdvancedSettings PRIVATE
+        _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING
+)
+target_compile_options(AdvancedSettings PRIVATE
+        /GL /Gw /W4 /permissive- /w14254 /w14263 /w14265 /w14287 /w14296 /w14311
+        /w14545 /w14546 /w14547 /w14549 /w14555 /w14640 /w14826 /w14905 /w14906
+        /w14928 /wd4127 /we4289 /Zc:__cplusplus
+)
+if (warnings_as_errors)
+    target_compile_options(AdvancedSettings PRIVATE /WX)
 endif ()
 
 if (debugSymbolsAndLogs)
@@ -596,8 +525,7 @@ install(TARGETS AdvancedSettings
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
-# Windows loads DLLs from next to the exe, Linux finds the .so through the
-# $ORIGIN/../lib RPATH set by qt_standard_project_setup
+# Install the Windows OpenVR runtime DLL beside the executable.
 install(IMPORTED_RUNTIME_ARTIFACTS openvr_api
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
@@ -627,9 +555,7 @@ if (WIN32)
     )
 endif ()
 
-# Deploys Qt libraries, plugins and QML modules
-# qgtk3 is excluded because it needs GTK3, which the Steam Linux Runtime
-# (steamrt4) does not ship; Qt falls back to its built-in theme without it.
+# Adds Qt's runtime deployment script for the cmake --install workflow.
 qt_generate_deploy_qml_app_script(
     TARGET AdvancedSettings
     OUTPUT_SCRIPT deploy_script
@@ -637,21 +563,6 @@ qt_generate_deploy_qml_app_script(
 )
 install(SCRIPT ${deploy_script})
 message(STATUS "Deploy Script ${deploy_script}")
-
-# Remove SymLinks if made in build process (wsl/windows)
-if (UNIX AND NOT APPLE)
-    install(CODE [[
-        file(GLOB_RECURSE _ovras_files LIST_DIRECTORIES false "${CMAKE_INSTALL_PREFIX}/*")
-        foreach(_link IN LISTS _ovras_files)
-            if(IS_SYMLINK "${_link}")
-                file(REAL_PATH "${_link}" _real)
-                file(REMOVE "${_link}")
-                file(RENAME "${_real}" "${_link}")
-            endif()
-        endforeach()
-        message(STATUS "Replaced library symlinks with real files")
-    ]])
-endif ()
 
 if (WIN32)
 

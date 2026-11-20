@@ -1439,7 +1439,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[C:/VulkanSDK/1.4.363.1/lib/vulkan-1.lib][C:/VulkanSDK/1.4.363.1/include][cfound components: glslc glslangValidator ][v1.4.363()]"
+			"value" : "[C:/VulkanSDK/1.4.363.1/Lib/vulkan-1.lib][C:/VulkanSDK/1.4.363.1/Include][cfound components: glslc glslangValidator ][v1.4.363()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_WrapAtomic",
@@ -1463,7 +1463,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[C:/VulkanSDK/1.4.363.1/include][v()]"
+			"value" : "[C:/VulkanSDK/1.4.363.1/Include][v()]"
 		},
 		{
 			"name" : "HAVE_STDATOMIC",
@@ -7754,6 +7754,18 @@
 			"value" : "C:/Qt/6.8.3/msvc2022_64/lib/cmake/Qt6ZlibPrivate"
 		},
 		{
+			"name" : "Qt6_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Directory containing Qt6Config.cmake"
+				}
+			],
+			"type" : "PATH",
+			"value" : "C:/Qt/6.8.3/msvc2022_64/lib/cmake/Qt6"
+		},
+		{
 			"name" : "Vulkan_GLSLANG_VALIDATOR_EXECUTABLE",
 			"properties" : 
 			[
@@ -7784,6 +7796,38 @@
 			],
 			"type" : "FILEPATH",
 			"value" : "C:/VulkanSDK/1.4.363.1/Bin/glslc.exe"
+		},
+		{
+			"name" : "Vulkan_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "C:/VulkanSDK/1.4.363.1/Include"
+		},
+		{
+			"name" : "Vulkan_LIBRARY",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "C:/VulkanSDK/1.4.363.1/Lib/vulkan-1.lib"
 		},
 		{
 			"name" : "WINDEPLOYQT_EXECUTABLE",

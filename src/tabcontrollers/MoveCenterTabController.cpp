@@ -1177,22 +1177,17 @@ void MoveCenterTabController::calibrateVrc()
     calibrateFront( true );
 }
 
-// Where the physical floor under the HMD lies, expressed as an offsetY value.
+// The play space is rotated by B * O(roll,pitch,yaw) around the HMD after a
+// "calibrate front" / "VRC calibrate". Gravity has to follow the rotated
+// world, otherwise things fall (and land) in a direction that is wrong for the
+// calibrated world.
 //
-// The gravity code treats "offsetY == floor" as standing on the ground. That
-// is only true while the play space is not tilted/rotated about the HMD. After
-// "calibrate front" / "VRC calibrate" the play space is rotated around the
-// HMD (and the offsets were recomputed to keep it in place), so offsetY == 0
-// is no longer the floor and gravity would leave the player hanging in the
-// air. Solve for the offsetY at which the physical floor point below the HMD
-// maps to universe height 0 again.
-bool MoveCenterTabController::calibratedFloorOffset( float& floorOffset ) const
+// Offsets live in the raw (Rc) frame:  t = t0 + Rc * offsets. This returns the
+// universe "up" axis expressed in offset coordinates (unit length). Moving the
+// offsets along +normal lowers the player in the universe (that is "falling"),
+// exactly like +offsetY does without any rotation.
+bool MoveCenterTabController::calibratedGravityNormal( double normal[3] ) const
 {
-    vr::HmdMatrix34_t hmd;
-    if ( !readHmdRawPose( hmd ) )
-    {
-        return false;
-    }
     const vr::HmdMatrix34_t& center
         = ( m_trackingUniverse == vr::TrackingUniverseSeated )
               ? m_seatedCenterForReset
@@ -1207,32 +1202,44 @@ bool MoveCenterTabController::calibratedFloorOffset( float& floorOffset ) const
     const Mat3d O = orientationRotation( static_cast<double>( m_roll ),
                                          static_cast<double>( m_pitch ),
                                          static_cast<double>( m_yaw ) );
-    const Mat3d BO = mul( B, O );
-
-    // HMD position relative to the unmodified zero pose
-    Vec3d rel0;
-    for ( int i = 0; i < 3; i++ )
-    {
-        rel0.v[i] = static_cast<double>( hmd.m[i][3] )
-                    - static_cast<double>( center.m[i][3] );
-    }
-    rel0 = mulT( Rc, rel0 );
-    // the floor point straight below the HMD (along the raw vertical),
-    // relative to the current X/Z offsets. Its universe height is
-    //   w.y - offsetY * d.y   with  w = BO^T Rc (rel0 - offsetsXZ),
-    //   d = BO^T Rc e_y,  so it is zero for  offsetY = w.y / d.y
-    const Vec3d horizontal = { { rel0.v[0] - static_cast<double>( m_offsetX ),
-                                 0.0,
-                                 rel0.v[2] - static_cast<double>( m_offsetZ ) } };
-    const Vec3d w = mulT( BO, mul( Rc, horizontal ) );
     const Vec3d up = { { 0.0, 1.0, 0.0 } };
-    const Vec3d d = mulT( BO, mul( Rc, up ) );
-    if ( std::abs( d.v[1] ) < 0.2 )
+    const Vec3d n = mulT( Rc, mul( mul( B, O ), up ) );
+    const double len
+        = std::sqrt( n.v[0] * n.v[0] + n.v[1] * n.v[1] + n.v[2] * n.v[2] );
+    if ( !( len > 0.5 ) )
     {
         return false;
     }
-    floorOffset = static_cast<float>( w.v[1] / d.v[1] );
-    return std::isfinite( floorOffset );
+    for ( int i = 0; i < 3; i++ )
+    {
+        normal[i] = n.v[i] / len;
+    }
+    return true;
+}
+
+// How far the player currently is above the gravity floor, measured along the
+// gravity axis (positive = above the floor). Used to keep the player's height
+// unchanged across a calibration.
+double MoveCenterTabController::gravityHeightAboveFloor() const
+{
+    double n[3] = { 0.0, 1.0, 0.0 };
+    double calibrationFloor = 0.0;
+    if ( m_calibrationUndoValid )
+    {
+        if ( !calibratedGravityNormal( n ) )
+        {
+            for ( int i = 0; i < 3; i++ )
+            {
+                n[i] = m_lastGravityNormal[i];
+            }
+        }
+        calibrationFloor = m_calibrationFloor;
+    }
+    const double along = n[0] * static_cast<double>( m_offsetX )
+                         + n[1] * static_cast<double>( m_offsetY )
+                         + n[2] * static_cast<double>( m_offsetZ );
+    return ( calibrationFloor + static_cast<double>( m_gravityFloor ) )
+           - along;
 }
 
 void MoveCenterTabController::calibrateFront( bool alsoYaw )
@@ -1380,6 +1387,12 @@ void MoveCenterTabController::calibrateFront( bool alsoYaw )
     }
     const Vec3d offsetsNew = mulT( Rc, tNew );
 
+    // How high above the gravity floor the player is right now. The
+    // calibration keeps the HMD where it is, so this height has to stay the
+    // same afterwards; otherwise turning gravity on would drop the player
+    // (a "half crouch") or leave them floating.
+    const double heightAboveFloorBefore = gravityHeightAboveFloor();
+
     // remember what we are about to change so it can be undone
     m_calibrationUndo.pitch = m_pitch;
     m_calibrationUndo.yaw = m_yaw;
@@ -1417,6 +1430,25 @@ void MoveCenterTabController::calibrateFront( bool alsoYaw )
     if ( solveRoll )
     {
         modOffsetRoll( deltaRollDeg );
+    }
+
+    // Place the gravity floor so the player keeps the height above it that
+    // they had before the calibration. The floor is fixed at this moment, so
+    // walking around afterwards does not change the player's height.
+    {
+        double n[3];
+        if ( calibratedGravityNormal( n ) )
+        {
+            const double along = n[0] * static_cast<double>( m_offsetX )
+                                 + n[1] * static_cast<double>( m_offsetY )
+                                 + n[2] * static_cast<double>( m_offsetZ );
+            m_calibrationFloor = along + heightAboveFloorBefore
+                                 - static_cast<double>( m_gravityFloor );
+        }
+        else
+        {
+            m_calibrationFloor = 0.0;
+        }
     }
 
     // Any residual velocity (gravity / fling) would move the HMD again
@@ -2996,38 +3028,99 @@ void MoveCenterTabController::updateHandTurn(
     m_lastRotateHand = m_activeTurnHand;
 }
 
+// Time step for the gravity physics.
+//
+// With vsync enabled the main loop runs once per compositor frame, but the
+// moment inside the frame at which it runs varies (timer granularity, the
+// work done in the other tabs). Integrating with the wall clock time between
+// two runs then moves the world by a different amount each frame even though
+// the frames are presented at a constant rate, which shows up as stutter while
+// flying. Stepping by whole compositor frames gives every presented frame the
+// same movement. Falls back to the wall clock whenever the two disagree (dash
+// closed, paused, vsync disabled, ...).
+double MoveCenterTabController::gravityTimeStep( double wallSeconds )
+{
+    if ( parent->vsyncDisabled() || !vr::VRSystem() )
+    {
+        m_lastGravityVsyncFrame = 0;
+        m_gravityFrameConsumed = 0.0;
+        return wallSeconds;
+    }
+    uint64_t frame = 0;
+    vr::VRSystem()->GetTimeSinceLastVsync( nullptr, &frame );
+    const float frequency = vr::VRSystem()->GetFloatTrackedDeviceProperty(
+        vr::k_unTrackedDeviceIndex_Hmd, vr::Prop_DisplayFrequency_Float );
+
+    if ( m_lastGravityVsyncFrame == 0 || frequency < 30.0f )
+    {
+        m_lastGravityVsyncFrame = frame;
+        m_gravityFrameConsumed = 0.0;
+        return wallSeconds;
+    }
+    if ( frame <= m_lastGravityVsyncFrame )
+    {
+        // an extra run inside the same compositor frame (vsync was late):
+        // use the real time and remember it, so the next frame step does not
+        // count it twice
+        m_gravityFrameConsumed += wallSeconds;
+        return wallSeconds;
+    }
+    const double framesSeconds
+        = static_cast<double>( frame - m_lastGravityVsyncFrame )
+          / static_cast<double>( frequency );
+    double step = wallSeconds;
+    if ( std::abs( framesSeconds - ( wallSeconds + m_gravityFrameConsumed ) )
+         < 1.5 / static_cast<double>( frequency ) )
+    {
+        step = std::max( framesSeconds - m_gravityFrameConsumed, 0.0 );
+    }
+    m_gravityFrameConsumed = 0.0;
+    m_lastGravityVsyncFrame = frame;
+    return step;
+}
+
 void MoveCenterTabController::updateGravity()
 {
-    // After a front/VRC calibration the real floor is no longer at offsetY == 0
-    // (see calibratedFloorOffset), so shift the landing height accordingly.
-    // m_gravityFloor keeps holding only the height-toggle part.
-    float calibrationFloor = 0.0f;
+    // Gravity axis (universe "up" in offset coordinates) and the floor along
+    // it. Without a calibration this is the plain offsetY axis with floor 0.
+    double n[3] = { 0.0, 1.0, 0.0 };
+    double calibrationFloor = 0.0;
     if ( m_calibrationUndoValid )
     {
-        if ( calibratedFloorOffset( calibrationFloor ) )
+        if ( calibratedGravityNormal( n ) )
         {
-            m_lastCalibrationFloor = calibrationFloor;
+            for ( int i = 0; i < 3; i++ )
+            {
+                m_lastGravityNormal[i] = n[i];
+            }
         }
         else
         {
-            calibrationFloor = m_lastCalibrationFloor;
+            for ( int i = 0; i < 3; i++ )
+            {
+                n[i] = m_lastGravityNormal[i];
+            }
         }
+        calibrationFloor = m_calibrationFloor;
     }
-    else
-    {
-        m_lastCalibrationFloor = 0.0f;
-    }
-    const float gravityFloor = m_gravityFloor + calibrationFloor;
+    // m_gravityFloor keeps holding only the height-toggle part.
+    const double gravityFloor
+        = calibrationFloor + static_cast<double>( m_gravityFloor );
+    auto heightAlongGravity = [&]() {
+        return n[0] * static_cast<double>( m_offsetX )
+               + n[1] * static_cast<double>( m_offsetY )
+               + n[2] * static_cast<double>( m_offsetZ );
+    };
 
     float currentGravity = gravityStrength();
     if ( m_gravityReversed )
     {
         currentGravity *= -1.0f;
     }
-    double secondsSinceLastGravityUpdate
-        = std::chrono::duration<double>( std::chrono::steady_clock::now()
-                                         - m_lastGravityUpdateTimePoint )
-              .count();
+    double secondsSinceLastGravityUpdate = gravityTimeStep(
+        std::chrono::duration<double>( std::chrono::steady_clock::now()
+                                       - m_lastGravityUpdateTimePoint )
+            .count() );
 
     // apply friction
     if ( frictionPercent() > 0 )
@@ -3078,7 +3171,27 @@ void MoveCenterTabController::updateGravity()
     }
 
     // clamp to terminal velocity
-    clampVelocity( m_velocity );
+    if ( m_calibrationUndoValid )
+    {
+        // The gravity axis is tilted here, so clamping every axis on its own
+        // would bend the direction of travel once one axis saturates. Scale
+        // the whole vector instead.
+        const double fastest = std::max(
+            { std::abs( m_velocity[0] ),
+              std::abs( m_velocity[1] ),
+              std::abs( m_velocity[2] ) } );
+        if ( fastest > k_terminalVelocity_mps )
+        {
+            const double scale = k_terminalVelocity_mps / fastest;
+            m_velocity[0] *= scale;
+            m_velocity[1] *= scale;
+            m_velocity[2] *= scale;
+        }
+    }
+    else
+    {
+        clampVelocity( m_velocity );
+    }
 
     // make axis lock checkboxes lock velocity on that axis
     if ( lockXToggle() )
@@ -3095,35 +3208,47 @@ void MoveCenterTabController::updateGravity()
     }
 
     // are we falling?
-    // note: up is negative y
+    // note: up is negative along the gravity axis (n), downward is positive
     // note: set to always fall if gravity reversed (currentGravity < 0)
-    if ( ( m_offsetY < gravityFloor ) || ( currentGravity < 0 ) )
+    const double height = heightAlongGravity();
+    const double verticalVelocity
+        = n[0] * m_velocity[0] + n[1] * m_velocity[1] + n[2] * m_velocity[2];
+    if ( ( height < gravityFloor ) || ( currentGravity < 0 ) )
     {
         // check if we're about to land
         // note: we don't land if gravity is reversed (currentGravity < 0)
-        if ( ( m_offsetY
-                   + static_cast<float>( m_velocity[1]
-                                         * secondsSinceLastGravityUpdate )
+        if ( ( height + verticalVelocity * secondsSinceLastGravityUpdate
                >= gravityFloor )
              && currentGravity >= 0 )
         {
-            // get ratio of how much from y velocity applied to overcome y
-            // offset and get down to ground.
+            // get ratio of how much from the vertical velocity applied to
+            // overcome the height and get down to ground.
             double ratioVelocityScaledByTouchdown
                 = 1
-                  - ( ( static_cast<double>( m_offsetY - gravityFloor )
-                        + ( m_velocity[1] * secondsSinceLastGravityUpdate ) )
-                      / ( m_velocity[1] * secondsSinceLastGravityUpdate ) );
-            // apply that ratio to X and Z velocties
-            m_velocity[0] *= ratioVelocityScaledByTouchdown;
-            m_velocity[2] *= ratioVelocityScaledByTouchdown;
+                  - ( ( ( height - gravityFloor )
+                        + ( verticalVelocity * secondsSinceLastGravityUpdate ) )
+                      / ( verticalVelocity * secondsSinceLastGravityUpdate ) );
+            // apply that ratio to the sideways velocity (everything that is
+            // not along the gravity axis)
+            double sideways[3];
+            for ( int i = 0; i < 3; i++ )
+            {
+                sideways[i] = ( m_velocity[i] - verticalVelocity * n[i] )
+                              * ratioVelocityScaledByTouchdown;
+            }
 
             // update offsets
-            m_offsetX += static_cast<float>( m_velocity[0]
+            m_offsetX += static_cast<float>( sideways[0]
                                              * secondsSinceLastGravityUpdate );
-            m_offsetY = gravityFloor;
-            m_offsetZ += static_cast<float>( m_velocity[2]
+            m_offsetY += static_cast<float>( sideways[1]
                                              * secondsSinceLastGravityUpdate );
+            m_offsetZ += static_cast<float>( sideways[2]
+                                             * secondsSinceLastGravityUpdate );
+            // and put us exactly on the floor
+            const double toFloor = gravityFloor - heightAlongGravity();
+            m_offsetX += static_cast<float>( n[0] * toFloor );
+            m_offsetY += static_cast<float>( n[1] * toFloor );
+            m_offsetZ += static_cast<float>( n[2] * toFloor );
             emit offsetXChanged( m_offsetX );
             emit offsetYChanged( m_offsetY );
             emit offsetZChanged( m_offsetZ );
@@ -3144,19 +3269,27 @@ void MoveCenterTabController::updateGravity()
             emit offsetZChanged( m_offsetZ );
 
             // accelerate downward velocity for the next update
-            // note: downward is positive y
-            m_velocity[1] = m_velocity[1]
-                            + ( static_cast<double>( currentGravity )
-                                * secondsSinceLastGravityUpdate );
+            // note: downward is positive along n
+            const double accel = static_cast<double>( currentGravity )
+                                 * secondsSinceLastGravityUpdate;
+            m_velocity[0] += n[0] * accel;
+            m_velocity[1] += n[1] * accel;
+            m_velocity[2] += n[2] * accel;
             return;
         }
     }
     // check if we're underground and force us to ground level.
-    // note: downward is positive y
-    if ( m_offsetY > gravityFloor )
+    // note: downward is positive along n
+    const double heightNow = heightAlongGravity();
+    if ( heightNow > gravityFloor )
     {
-        m_offsetY = gravityFloor;
+        const double toFloor = gravityFloor - heightNow;
+        m_offsetX += static_cast<float>( n[0] * toFloor );
+        m_offsetY += static_cast<float>( n[1] * toFloor );
+        m_offsetZ += static_cast<float>( n[2] * toFloor );
+        emit offsetXChanged( m_offsetX );
         emit offsetYChanged( m_offsetY );
+        emit offsetZChanged( m_offsetZ );
     }
     // Touchdown! We've landed, velocity set to 0.
     m_velocity[0] = 0.0;
@@ -3237,7 +3370,8 @@ void MoveCenterTabController::updateSpace( bool forceUpdate )
            + abs( m_offsetZ - m_oldOffsetZ ) + abs( m_roll - m_oldRoll )
            + abs( m_pitch - m_oldPitch ) + abs( m_yaw - m_oldYaw ) )
              == 0
-         && m_rotation == m_oldRotation && !forceUpdate )
+         && m_rotation == m_oldRotation && !forceUpdate
+         && !m_workingCopyStale )
     {
         // the server rebuilds the transforms on chaperone changes, so keep
         // re-applying pitch and roll
@@ -3413,6 +3547,41 @@ void MoveCenterTabController::updateSpace( bool forceUpdate )
         m_orientedSeatedZeroPose = offsetSeatedCenter;
         m_orientedSeatedActive = true;
     }
+
+    // While flying under gravity with a pitch/roll offset the offsets change
+    // every tick. Committing the yaw-only working copy each time makes the
+    // runtime rebuild its transforms without the tilt, until our tilted
+    // transform is written back, so frames rendered in between show the world
+    // un-tilted and the flight jitters. Only the tilted transform carries the
+    // full pose, so in this situation write just that and leave the working
+    // copy alone. The working copy is brought up to date by the first regular
+    // update afterwards (m_workingCopyStale forces one).
+    const bool gravityFlightFastPath
+        = m_gravityActive
+          && m_activeDragHand == vr::TrackedControllerRole_Invalid
+          && hasTiltOffset() && !forceUpdate
+          // only while the offsets are actually moving; once they stop, the
+          // regular update below refreshes the working copy
+          && ( m_offsetX != m_oldOffsetX || m_offsetY != m_oldOffsetY
+               || m_offsetZ != m_oldOffsetZ )
+          && m_trackingUniverse == vr::TrackingUniverseStanding
+          && m_roll == m_oldRoll && m_pitch == m_oldPitch
+          && m_yaw == m_oldYaw && m_rotation == m_oldRotation
+          && !parent->m_chaperoneTabController.m_centerMarkerOverlayNeedsUpdate
+          && chaperoneTransformsValid();
+    if ( gravityFlightFastPath )
+    {
+        m_orientedStandingZeroPose = offsetUniverseCenter;
+        applyOrientationTransforms();
+        // (the working copy, and with it the bounds, is left untouched here,
+        // so there is nothing to reload)
+        m_workingCopyStale = true;
+        m_oldOffsetX = m_offsetX;
+        m_oldOffsetY = m_offsetY;
+        m_oldOffsetZ = m_offsetZ;
+        return;
+    }
+    m_workingCopyStale = false;
 
     // Center Marker for playspace.
     if ( parent->m_chaperoneTabController.m_centerMarkerOverlayNeedsUpdate )

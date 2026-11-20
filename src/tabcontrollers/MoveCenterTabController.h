@@ -1,6 +1,7 @@
 
 #pragma once
 
+#include <cstdint>
 #include <QObject>
 #include <QStringList>
 #include <openvr.h>
@@ -192,7 +193,11 @@ private:
     bool m_calibrationUndoValid = false;
     bool m_heightToggle = false;
     float m_gravityFloor = 0.0f;
-    float m_lastCalibrationFloor = 0.0f;
+    double m_lastGravityNormal[3] = { 0.0, 1.0, 0.0 };
+    bool m_workingCopyStale = false;
+    double m_calibrationFloor = 0.0;
+    uint64_t m_lastGravityVsyncFrame = 0;
+    double m_gravityFrameConsumed = 0.0;
     bool m_ignoreChaperoneState = false;
     // Set lastHandQuaternion.w to -1000.0 when last hand is invalid.
     vr::HmdQuaternion_t m_lastHandQuaternion
@@ -288,7 +293,9 @@ private:
     void updateHandDrag( vr::TrackedDevicePose_t* devicePoses, double angle );
     void updateHandTurn( vr::TrackedDevicePose_t* devicePoses, double angle );
     void updateGravity();
-    bool calibratedFloorOffset( float& floorOffset ) const;
+    bool calibratedGravityNormal( double normal[3] ) const;
+    double gravityHeightAboveFloor() const;
+    double gravityTimeStep( double wallSeconds );
     void updateSpace( bool forceUpdate = false );
     vr::HmdMatrix34_t orientationOffsetMatrix() const;
     bool hasTiltOffset() const;

@@ -386,11 +386,20 @@ Qt6Widgets_DIR:PATH=C:/Qt/6.8.3/msvc2022_64/lib/cmake/Qt6Widgets
 //The directory containing a CMake configuration file for Qt6ZlibPrivate.
 Qt6ZlibPrivate_DIR:PATH=C:/Qt/6.8.3/msvc2022_64/lib/cmake/Qt6ZlibPrivate
 
+//Directory containing Qt6Config.cmake
+Qt6_DIR:PATH=C:/Qt/6.8.3/msvc2022_64/lib/cmake/Qt6
+
 //Path to a program.
 Vulkan_GLSLANG_VALIDATOR_EXECUTABLE:FILEPATH=C:/VulkanSDK/1.4.363.1/Bin/glslangValidator.exe
 
 //Path to a program.
 Vulkan_GLSLC_EXECUTABLE:FILEPATH=C:/VulkanSDK/1.4.363.1/Bin/glslc.exe
+
+//Path to a file.
+Vulkan_INCLUDE_DIR:PATH=C:/VulkanSDK/1.4.363.1/Include
+
+//Path to a library.
+Vulkan_LIBRARY:FILEPATH=C:/VulkanSDK/1.4.363.1/Lib/vulkan-1.lib
 
 //Path to a program.
 WINDEPLOYQT_EXECUTABLE:FILEPATH=C:/Qt/6.8.3/msvc2022_64/bin/windeployqt.exe
@@ -559,11 +568,11 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding Vulkan
-FIND_PACKAGE_MESSAGE_DETAILS_Vulkan:INTERNAL=[C:/VulkanSDK/1.4.363.1/lib/vulkan-1.lib][C:/VulkanSDK/1.4.363.1/include][cfound components: glslc glslangValidator ][v1.4.363()]
+FIND_PACKAGE_MESSAGE_DETAILS_Vulkan:INTERNAL=[C:/VulkanSDK/1.4.363.1/Lib/vulkan-1.lib][C:/VulkanSDK/1.4.363.1/Include][cfound components: glslc glslangValidator ][v1.4.363()]
 //Details about finding WrapAtomic
 FIND_PACKAGE_MESSAGE_DETAILS_WrapAtomic:INTERNAL=[1][v()]
 //Details about finding WrapVulkanHeaders
-FIND_PACKAGE_MESSAGE_DETAILS_WrapVulkanHeaders:INTERNAL=[C:/VulkanSDK/1.4.363.1/include][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_WrapVulkanHeaders:INTERNAL=[C:/VulkanSDK/1.4.363.1/Include][v()]
 //Test HAVE_STDATOMIC
 HAVE_STDATOMIC:INTERNAL=1
 //Qt feature: abstractbutton (from target Qt6::Widgets)
@@ -1537,6 +1546,10 @@ QT_TOOL_COMMAND_WRAPPER_PATH:INTERNAL=Z:/OpenVR-AdvancedSettings-qt6/out/build/x
 Vulkan_GLSLANG_VALIDATOR_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Vulkan_GLSLC_EXECUTABLE
 Vulkan_GLSLC_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Vulkan_INCLUDE_DIR
+Vulkan_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Vulkan_LIBRARY
+Vulkan_LIBRARY-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=Z:/OpenVR-AdvancedSettings-qt6/out/install/x64-Release
 _Qt6_LINGUIST_TOOLS_DIR:INTERNAL=C:/Qt/6.8.3/msvc2022_64/lib/cmake/Qt6LinguistTools

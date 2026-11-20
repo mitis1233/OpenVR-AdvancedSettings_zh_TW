@@ -1,11 +1,12 @@
 {
-	"backtrace" : 4,
+	"backtrace" : 5,
 	"backtraceGraph" : 
 	{
 		"commands" : 
 		[
 			"add_custom_target",
-			"_qt_internal_qml_type_registration",
+			"_qt_internal_qml_copy_files_to_build_dir",
+			"qt6_target_qml_sources",
 			"qt6_add_qml_module",
 			"qt_add_qml_module"
 		],
@@ -20,28 +21,34 @@
 				"file" : 1
 			},
 			{
-				"command" : 3,
+				"command" : 4,
 				"file" : 1,
-				"line" : 291,
+				"line" : 308,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 1254,
 				"parent" : 1
 			},
 			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 916,
+				"parent" : 2
+			},
+			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 796,
-				"parent" : 2
+				"line" : 3488,
+				"parent" : 3
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 3825,
-				"parent" : 3
+				"line" : 2868,
+				"parent" : 4
 			}
 		]
 	},
@@ -49,8 +56,8 @@
 	{
 		"name" : "QtInternalTargets"
 	},
-	"id" : "AdvancedSettings_qmltyperegistration::@6890427a1f51a3e7e1df",
-	"name" : "AdvancedSettings_qmltyperegistration",
+	"id" : "AdvancedSettings_copy_res::@6890427a1f51a3e7e1df",
+	"name" : "AdvancedSettings_copy_res",
 	"paths" : 
 	{
 		"build" : ".",
@@ -77,21 +84,21 @@
 	"sources" : 
 	[
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"isGenerated" : true,
-			"path" : "out/build/x64-Release/CMakeFiles/AdvancedSettings_qmltyperegistration",
+			"path" : "out/build/x64-Release/CMakeFiles/AdvancedSettings_copy_res",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "out/build/x64-Release/CMakeFiles/AdvancedSettings_qmltyperegistration.rule",
+			"path" : "out/build/x64-Release/CMakeFiles/AdvancedSettings_copy_res.rule",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "out/build/x64-Release/advancedsettings_qmltyperegistrations.cpp.rule",
+			"path" : "out/build/x64-Release/.qt/AdvancedSettings_res.txt.rule",
 			"sourceGroupIndex" : 1
 		}
 	],

@@ -4,13 +4,13 @@
 #include <QtDebug>
 #include <QDateTime>
 #ifdef ENABLE_DEBUG_LOGGING
-constexpr auto debugLoggingEnabled = true;
+[[maybe_unused]] constexpr auto debugLoggingEnabled = true;
 #else
-constexpr auto debugLoggingEnabled = false;
+[[maybe_unused]] constexpr auto debugLoggingEnabled = false;
 #endif
 
 QtMessageHandler originalMessageHandler = nullptr;
-static FILE* f;
+static FILE* logFile;
 
 // Maps a QtMsgType to its single-letter tag (D/I/W/C/F) so we can format the
 // leading bracket in mainQtMessageHandler.
@@ -40,10 +40,10 @@ void mainQtMessageHandler( QtMsgType type,
     // Format: [Level] yyyy-MM-dd hh:mm:ss.zzz message
     const QString line
         = QString( "[%1] %2 %3" ).arg( severityTag( type ), timestamp, msg );
-    if ( f )
+    if ( logFile )
     {
-        fprintf( f, "%s\n", qPrintable( line ) );
-        fflush( f );
+        fprintf( logFile, "%s\n", qPrintable( line ) );
+        fflush( logFile );
     }
     if ( originalMessageHandler )
         ( *originalMessageHandler )( type, context, msg );
@@ -342,6 +342,13 @@ void setUpLogging()
     const auto logPath
         = QFileInfo( settings::getQSettings().fileName() ).absolutePath()
           + "/AdvancedSettings.log";
-    f = fopen( logPath.toStdString().c_str(), "a" );
+#ifdef _MSC_VERSION
+    if ( fopen_s( &logFile, logPath.toStdString().c_str(), "a" ) != 0 )
+    {
+        logFile = nullptr;
+    }
+#else
+    logFile = fopen( logPath.toStdString().c_str(), "a" );
+#endif
     originalMessageHandler = qInstallMessageHandler( mainQtMessageHandler );
 }

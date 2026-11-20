@@ -23,7 +23,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 291,
+				"line" : 308,
 				"parent" : 0
 			},
 			{
@@ -47,7 +47,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 1501,
+				"line" : 1539,
 				"parent" : 4
 			}
 		]
@@ -62,8 +62,8 @@
 	{
 		"name" : "QtInternalTargets/QmlLinter"
 	},
-	"id" : "AdvancedSettings_qmllint_json::@6890427a1f51a3e7e1df",
-	"name" : "AdvancedSettings_qmllint_json",
+	"id" : "AdvancedSettings_qmllint_module::@6890427a1f51a3e7e1df",
+	"name" : "AdvancedSettings_qmllint_module",
 	"paths" : 
 	{
 		"build" : ".",
@@ -91,13 +91,13 @@
 		{
 			"backtrace" : 5,
 			"isGenerated" : true,
-			"path" : "out/build/x64-Release/CMakeFiles/AdvancedSettings_qmllint_json",
+			"path" : "out/build/x64-Release/CMakeFiles/AdvancedSettings_qmllint_module",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "out/build/x64-Release/CMakeFiles/AdvancedSettings_qmllint_json.rule",
+			"path" : "out/build/x64-Release/CMakeFiles/AdvancedSettings_qmllint_module.rule",
 			"sourceGroupIndex" : 1
 		}
 	],

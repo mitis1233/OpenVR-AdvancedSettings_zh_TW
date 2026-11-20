@@ -87,7 +87,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 281,
+				"line" : 298,
 				"parent" : 0
 			},
 			{
@@ -111,25 +111,25 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 594,
+				"line" : 523,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 349,
+				"line" : 352,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 491,
+				"line" : 502,
 				"parent" : 0
 			},
 			{
 				"command" : 8,
 				"file" : 1,
-				"line" : 30,
+				"line" : 47,
 				"parent" : 0
 			},
 			{
@@ -213,7 +213,7 @@
 			{
 				"command" : 12,
 				"file" : 1,
-				"line" : 291,
+				"line" : 308,
 				"parent" : 0
 			},
 			{
@@ -449,7 +449,7 @@
 			{
 				"command" : 14,
 				"file" : 10,
-				"line" : 3488,
+				"line" : 3482,
 				"parent" : 67
 			},
 			{
@@ -461,7 +461,7 @@
 			{
 				"command" : 14,
 				"file" : 10,
-				"line" : 3482,
+				"line" : 3488,
 				"parent" : 67
 			},
 			{
@@ -514,31 +514,31 @@
 			{
 				"command" : 21,
 				"file" : 1,
-				"line" : 500,
+				"line" : 510,
 				"parent" : 0
 			},
 			{
 				"command" : 22,
 				"file" : 1,
-				"line" : 318,
+				"line" : 330,
 				"parent" : 0
 			},
 			{
 				"command" : 22,
 				"file" : 1,
-				"line" : 497,
+				"line" : 507,
 				"parent" : 0
 			},
 			{
 				"command" : 23,
 				"file" : 1,
-				"line" : 307,
+				"line" : 324,
 				"parent" : 0
 			},
 			{
 				"command" : 23,
 				"file" : 1,
-				"line" : 478,
+				"line" : 490,
 				"parent" : 0
 			},
 			{
@@ -556,7 +556,7 @@
 			{
 				"command" : 25,
 				"file" : 1,
-				"line" : 288,
+				"line" : 305,
 				"parent" : 0
 			},
 			{
@@ -1630,7 +1630,7 @@
 			{
 				"command" : 25,
 				"file" : 1,
-				"line" : 484,
+				"line" : 495,
 				"parent" : 0
 			},
 			{
@@ -1966,7 +1966,7 @@
 				{
 					"backtrace" : 82,
 					"isSystem" : true,
-					"path" : "C:/VulkanSDK/1.4.363.1/include"
+					"path" : "C:/VulkanSDK/1.4.363.1/Include"
 				},
 				{
 					"backtrace" : 0,
@@ -2363,7 +2363,7 @@
 				{
 					"backtrace" : 82,
 					"isSystem" : true,
-					"path" : "C:/VulkanSDK/1.4.363.1/include"
+					"path" : "C:/VulkanSDK/1.4.363.1/Include"
 				},
 				{
 					"backtrace" : 0,
@@ -2738,7 +2738,7 @@
 				{
 					"backtrace" : 82,
 					"isSystem" : true,
-					"path" : "C:/VulkanSDK/1.4.363.1/include"
+					"path" : "C:/VulkanSDK/1.4.363.1/Include"
 				},
 				{
 					"backtrace" : 0,
@@ -2835,19 +2835,19 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "AdvancedSettings_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 69,
-			"id" : "AdvancedSettings_copy_res::@6890427a1f51a3e7e1df"
+			"id" : "AdvancedSettings_copy_qml::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 71,
-			"id" : "AdvancedSettings_copy_qml::@6890427a1f51a3e7e1df"
+			"id" : "AdvancedSettings_copy_res::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 78,
 			"id" : "AdvancedSettings_qmlimportscan::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "AdvancedSettings_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 0,

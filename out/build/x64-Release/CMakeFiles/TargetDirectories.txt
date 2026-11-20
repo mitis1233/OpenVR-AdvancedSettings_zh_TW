@@ -9,6 +9,7 @@ Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/CMakeFiles/all_qmllint_json
 Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/CMakeFiles/all_qmllint_module.dir
 Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/CMakeFiles/AdvancedSettings_copy_qml.dir
 Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/CMakeFiles/AdvancedSettings_copy_res.dir
+Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/CMakeFiles/AdvancedSettingsPackage.dir
 Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/CMakeFiles/module_AdvancedSettings_aotstats_target.dir
 Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/CMakeFiles/all_aotstats.dir
 Z:/OpenVR-AdvancedSettings-qt6/out/build/x64-Release/CMakeFiles/AdvancedSettings_lupdate.dir

@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Release-449a2bfdf709f5c403af.json",
+					"jsonFile" : "directory-.-Release-7f9e0ab3897163fa3ea9.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -36,7 +36,8 @@
 						17,
 						18,
 						19,
-						20
+						20,
+						21
 					]
 				}
 			],
@@ -71,7 +72,8 @@
 						17,
 						18,
 						19,
-						20
+						20,
+						21
 					]
 				}
 			],
@@ -80,8 +82,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "AdvancedSettings::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-AdvancedSettings-Release-4dcae9220debd37ba1a1.json",
+					"jsonFile" : "target-AdvancedSettings-Release-4e6d7d6aa74cfd44d17d.json",
 					"name" : "AdvancedSettings",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "AdvancedSettingsPackage::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AdvancedSettingsPackage-Release-8c51a3cc21695e540dd9.json",
+					"name" : "AdvancedSettingsPackage",
 					"projectIndex" : 0
 				},
 				{
@@ -94,21 +103,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "AdvancedSettings_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-AdvancedSettings_autogen_timestamp_deps-Release-773b42edf703a0a2f925.json",
+					"jsonFile" : "target-AdvancedSettings_autogen_timestamp_deps-Release-dc473cb6b35ea6140268.json",
 					"name" : "AdvancedSettings_autogen_timestamp_deps",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "AdvancedSettings_copy_qml::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-AdvancedSettings_copy_qml-Release-134cb9c0dda3bc247833.json",
+					"jsonFile" : "target-AdvancedSettings_copy_qml-Release-62be073d6202b27e83ef.json",
 					"name" : "AdvancedSettings_copy_qml",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "AdvancedSettings_copy_res::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-AdvancedSettings_copy_res-Release-5be937f4db689ce9cb51.json",
+					"jsonFile" : "target-AdvancedSettings_copy_res-Release-e1ffb1fe91acb8090b7f.json",
 					"name" : "AdvancedSettings_copy_res",
 					"projectIndex" : 0
 				},
@@ -143,28 +152,28 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "AdvancedSettings_qmllint::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-AdvancedSettings_qmllint-Release-e5ed596f63a3ecf1724a.json",
+					"jsonFile" : "target-AdvancedSettings_qmllint-Release-2e775da7747193233b84.json",
 					"name" : "AdvancedSettings_qmllint",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "AdvancedSettings_qmllint_json::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-AdvancedSettings_qmllint_json-Release-16158e48f8143163b351.json",
+					"jsonFile" : "target-AdvancedSettings_qmllint_json-Release-8442a604adf5280b1473.json",
 					"name" : "AdvancedSettings_qmllint_json",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "AdvancedSettings_qmllint_module::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-AdvancedSettings_qmllint_module-Release-5750d28b8218d04a84da.json",
+					"jsonFile" : "target-AdvancedSettings_qmllint_module-Release-818f86f5653636dde235.json",
 					"name" : "AdvancedSettings_qmllint_module",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "AdvancedSettings_qmltyperegistration::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-AdvancedSettings_qmltyperegistration-Release-155a52f2003045d52acd.json",
+					"jsonFile" : "target-AdvancedSettings_qmltyperegistration-Release-c3c30759542be51f0f54.json",
 					"name" : "AdvancedSettings_qmltyperegistration",
 					"projectIndex" : 0
 				},
@@ -178,28 +187,28 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-all_qmllint-Release-716536d48a75ab1c2dc7.json",
+					"jsonFile" : "target-all_qmllint-Release-e3f267cb2ae8ce7d6ace.json",
 					"name" : "all_qmllint",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-all_qmllint_json-Release-3fd390a942ab16287575.json",
+					"jsonFile" : "target-all_qmllint_json-Release-cabbf16b9d4b1310a483.json",
 					"name" : "all_qmllint_json",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-all_qmllint_module-Release-b50f6094ade4d51cd768.json",
+					"jsonFile" : "target-all_qmllint_module-Release-fc4da3b935b2d5148059.json",
 					"name" : "all_qmllint_module",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-all_qmltyperegistrations-Release-c672e65e2e4343726c03.json",
+					"jsonFile" : "target-all_qmltyperegistrations-Release-66349c2293866ab531cf.json",
 					"name" : "all_qmltyperegistrations",
 					"projectIndex" : 0
 				},
